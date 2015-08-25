@@ -1,5 +1,10 @@
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "javax.inject:javax.inject:1"
+
+    testCompile project(":components/hamcrest-kotlin")
+    testCompile project(":components/spring-test-kotlin")
+    testCompile "com.jayway.jsonpath:json-path:2.0.0"
 }
 
 apply plugin: "spring-boot"

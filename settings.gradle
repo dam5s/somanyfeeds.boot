@@ -1,3 +1,5 @@
 rootProject.name="somanyfeeds.boot"
 
 include "applications/somanyfeeds-application"
+include "components/hamcrest-kotlin"
+include "components/spring-test-kotlin"
