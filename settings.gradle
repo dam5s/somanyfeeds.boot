@@ -1,0 +1,3 @@
+rootProject.name="somanyfeeds.boot"
+
+include "applications/somanyfeeds-application"
