@@ -1,31 +1,32 @@
 import TestArticlesRepository
 import com.somanyfeeds.somanyfeedsapplication.ArticlesController
 import com.somanyfeeds.somanyfeedsapplication.ArticlesRepository
-import io.damo.hamcrestkotlin.hasSize
-import io.damo.springtestkotlin.get
-import io.damo.springtestkotlin.jsonPath
-import io.damo.springtestkotlin.standaloneSetup
-import io.damo.springtestkotlin.status
-import org.hamcrest.Matcher
+import io.damo.kotlinext.nn
+import org.hamcrest.Matchers.hasSize
 import org.junit.Before
 import org.junit.Test
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup
+import kotlin.properties.Delegates
 
 class ArticlesControllerTest {
-    var repository: TestArticlesRepository? = null;
-    var controller: ArticlesController? = null;
-    var mockMvc: MockMvc? = null;
+    var repository: TestArticlesRepository by nn();
+    var controller: ArticlesController by nn();
+    var mockMvc: MockMvc by nn();
 
     @Before
     fun setup() {
         repository = TestArticlesRepository();
-        controller = ArticlesController(repository!!);
-        mockMvc = standaloneSetup(controller!!).build()
+        controller = ArticlesController(repository);
+        mockMvc = standaloneSetup(controller).build()
     }
 
     @Test
     fun listArticles_HappyPath() {
-        mockMvc!!
+        mockMvc
             .perform(get("/"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.articles", hasSize<Any>(3)))
