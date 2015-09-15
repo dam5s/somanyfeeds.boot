@@ -16,14 +16,9 @@ class ArticlesController {
 
     @RequestMapping("/")
     fun listArticles(): ArticleListJson {
-        return ArticleListJson(articles = listOf(
-            Article(id = 100),
-            Article(id = 101),
-            Article(id = 102)
-        ));
+        val articleEntities = articlesRepository.findAll()
+        return ArticleListJson(articles = articleEntities.map(::presentEntity));
     }
+
+    private data class ArticleListJson(val articles: List<ArticleViewModel>)
 }
-
-data class ArticleListJson(val articles: List<Article>)
-
-data class Article(val id: Int?)

@@ -1,10 +1,14 @@
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile project(":components/json-serialization")
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "javax.inject:javax.inject:1"
 
-    testCompile "org.springframework:spring-test:$springVersion"
-    testCompile "org.hamcrest:hamcrest-core:$hamcrestVersion"
-    testCompile "org.hamcrest:hamcrest-library:$hamcrestVersion"
+    testCompile "org.springframework:spring-test"
+    testCompile "junit:junit"
+    testCompile "org.hamcrest:hamcrest-core"
+    testCompile "org.hamcrest:hamcrest-library"
     testCompile "com.jayway.jsonpath:json-path:2.0.0"
 }
 
