@@ -1,5 +1,6 @@
 package com.somanyfeeds.somanyfeedsapplication
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.somanyfeeds.jsonserialization.ObjectMapperProvider
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -18,5 +19,5 @@ open class SoManyFeedsApplication {
 
     @Bean
     @Primary
-    fun objectMapper() = ObjectMapperProvider().get()
+    public open fun objectMapper(): ObjectMapper = ObjectMapperProvider().get()
 }
