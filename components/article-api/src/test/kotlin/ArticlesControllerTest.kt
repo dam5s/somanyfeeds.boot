@@ -1,5 +1,4 @@
-import com.somanyfeeds.somanyfeedsapplication.ArticlesController
-import io.damo.kotlinext.nn
+import com.somanyfeeds.articleapi.ArticlesController
 import org.hamcrest.Matchers.hasSize
 import org.junit.Before
 import org.junit.Test
@@ -13,9 +12,9 @@ import testing.buildArticleEntity
 import java.time.ZonedDateTime
 
 class ArticlesControllerTest {
-    var repository: FakeArticlesRepository by nn();
-    var controller: ArticlesController by nn();
-    var mockMvc: MockMvc by nn();
+    lateinit var repository: FakeArticlesRepository
+    lateinit var controller: ArticlesController
+    lateinit var mockMvc: MockMvc
 
     @Before
     fun setup() {

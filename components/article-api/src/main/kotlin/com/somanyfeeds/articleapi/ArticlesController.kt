@@ -1,5 +1,6 @@
-package com.somanyfeeds.somanyfeedsapplication
+package com.somanyfeeds.articleapi
 
+import com.somanyfeeds.articledataaccess.ArticlesRepository
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import javax.inject.Inject
@@ -17,7 +18,9 @@ class ArticlesController {
     @RequestMapping("/")
     fun listArticles(): ArticleListJson {
         val articleEntities = articlesRepository.findAll()
-        return ArticleListJson(articles = articleEntities.map(::presentEntity));
+        val presentedArticles = articleEntities.map { presentArticle(it, "My Feed") }
+
+        return ArticleListJson(articles = presentedArticles);
     }
 
     private data class ArticleListJson(val articles: List<ArticleViewModel>)

@@ -1,23 +1,21 @@
 package com.somanyfeeds.somanyfeedsapplication
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.somanyfeeds.jsonserialization.ObjectMapperProvider
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Primary
-import kotlin.platform.platformStatic
 
 @SpringBootApplication
 open class SoManyFeedsApplication {
     companion object {
-        @platformStatic
-        public fun main(args: Array<String>) {
-            SpringApplication.run(javaClass<SoManyFeedsApplication>(), *args)
+        @JvmStatic
+        fun main(args: Array<String>) {
+            SpringApplication.run(SoManyFeedsApplication::class.java, *args)
         }
     }
 
     @Bean
     @Primary
-    public open fun objectMapper(): ObjectMapper = ObjectMapperProvider().get()
+    open fun objectMapper() = ObjectMapperProvider().get()
 }

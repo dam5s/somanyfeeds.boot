@@ -1,7 +1,7 @@
 package testing
 
-import com.somanyfeeds.somanyfeedsapplication.ArticleEntity
-import com.somanyfeeds.somanyfeedsapplication.ArticleViewModel
+import com.somanyfeeds.articleapi.ArticleViewModel
+import com.somanyfeeds.articledataaccess.ArticleEntity
 import java.time.ZonedDateTime
 
 fun buildArticleEntity(
@@ -14,8 +14,9 @@ fun buildArticleEntity(
 
 fun buildArticleViewModel(
     id: Long? = null,
+    source: String = "My Feed",
     title: String = "My Article",
     link: String = "http://example.com/blog/article-1",
     content: String = "This is a great article on a very interesting topic...",
     date: ZonedDateTime = ZonedDateTime.now()
-) = ArticleViewModel(id, title, link, content, date)
+) = ArticleViewModel(id, source, title, link, content, date)

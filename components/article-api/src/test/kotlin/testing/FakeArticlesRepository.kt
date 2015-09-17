@@ -1,8 +1,8 @@
 package testing
 
-import com.somanyfeeds.somanyfeedsapplication.ArticleEntity
-import com.somanyfeeds.somanyfeedsapplication.ArticlesRepository
-import java.util.Random
+import com.somanyfeeds.articledataaccess.ArticleEntity
+import com.somanyfeeds.articledataaccess.ArticlesRepository
+import java.util.*
 
 class FakeArticlesRepository(var articles: MutableList<ArticleEntity> = arrayListOf()) : ArticlesRepository {
 
@@ -18,16 +18,15 @@ class FakeArticlesRepository(var articles: MutableList<ArticleEntity> = arrayLis
         }
     }
 
-    override fun delete(entities: MutableIterable<ArticleEntity>) =
-        entities.forEach { delete(it.id) }
+    override fun delete(entities: MutableIterable<ArticleEntity>) = entities.forEach { delete(it.id) }
 
-    @suppress("UNCHECKED_CAST")
-    override fun <S : ArticleEntity?> save(entity: S): S {
+    @Suppress("UNCHECKED_CAST")
+    override fun <S : ArticleEntity> save(entity: S): S {
         articles.add(entity)
         return entity.copy(id = Random().nextLong()) as S
     }
 
-    override fun <S : ArticleEntity?> save(entities: MutableIterable<S>): MutableIterable<S>?
+    override fun <S : ArticleEntity> save(entities: MutableIterable<S>): MutableIterable<S>?
         = entities.map { save(it) }.toArrayList()
 
     override fun findOne(id: Long): ArticleEntity? = articles.first { it.id == id }

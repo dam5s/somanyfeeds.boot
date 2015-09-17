@@ -1,5 +1,6 @@
 rootProject.name="somanyfeeds.boot"
 
 include "applications/somanyfeeds-application"
-include "components/kotlin-extensions"
 include "components/json-serialization"
+include "components/article-data-access"
+include "components/article-api"

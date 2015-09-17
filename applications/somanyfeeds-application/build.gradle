@@ -1,17 +1,11 @@
 dependencies {
-    compile project(":components/json-serialization")
+    compile project(":components/article-api")
 
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "org.postgresql:postgresql:9.3-1102-jdbc41"
 
     compile "javax.inject:javax.inject:1"
-
-    testCompile "org.springframework:spring-test"
-    testCompile "junit:junit"
-    testCompile "org.hamcrest:hamcrest-core"
-    testCompile "org.hamcrest:hamcrest-library"
-    testCompile "com.jayway.jsonpath:json-path:2.0.0"
 }
 
 apply plugin: "spring-boot"
