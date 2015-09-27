@@ -25,7 +25,7 @@ open class RepositoryTest {
     constructor() {
         val entityManagerFactoryBean = LocalContainerEntityManagerFactoryBean().apply {
             setDataSource(dataSource)
-            setPackagesToScan("com.somanyfeeds.articledataaccess")
+            setPackagesToScan("com.somanyfeeds")
             setJpaVendorAdapter(HibernateJpaVendorAdapter())
             setJpaProperties(Properties().apply {
                 put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
