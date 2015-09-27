@@ -1,31 +1,33 @@
 import com.somanyfeeds.articleapi.ArticlesController
+import com.somanyfeeds.articledataaccess.ArticleRepository
 import org.hamcrest.Matchers.hasSize
 import org.junit.Before
 import org.junit.Test
+import org.mockito.Mockito.doReturn
+import org.mockito.Mockito.mock
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup
-import testing.FakeArticlesRepository
 import testing.buildArticleEntity
 import java.time.ZonedDateTime
 
 class ArticlesControllerTest {
-    lateinit var repository: FakeArticlesRepository
+    lateinit var mockRepository: ArticleRepository
     lateinit var controller: ArticlesController
     lateinit var mockMvc: MockMvc
 
     @Before
     fun setup() {
-        repository = FakeArticlesRepository();
-        controller = ArticlesController(repository);
+        mockRepository = mock(ArticleRepository::class.java);
+        controller = ArticlesController(mockRepository);
         mockMvc = standaloneSetup(controller).build()
     }
 
     @Test
     fun listArticles_HappyPath() {
-        repository.articles = arrayListOf(
+        val articles = arrayListOf(
             buildArticleEntity(
                 id = 100,
                 title = "Awesome Article",
@@ -36,6 +38,8 @@ class ArticlesControllerTest {
             buildArticleEntity(id = 101),
             buildArticleEntity(id = 102)
         )
+
+        doReturn(articles).`when`(mockRepository).findAll()
 
         mockMvc
             .perform(get("/"))

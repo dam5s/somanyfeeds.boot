@@ -1,8 +1,7 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost/somanyfeeds
-    username: somanyfeeds
-    password:
+    username: dam5s
     driver-class-name: org.postgresql.Driver
 
   jpa:

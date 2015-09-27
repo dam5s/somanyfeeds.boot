@@ -1,4 +1,4 @@
-package com.somanyfeeds.somanyfeedsapplication
+package com.somanyfeeds
 
 import com.somanyfeeds.jsonserialization.ObjectMapperProvider
 import org.springframework.boot.SpringApplication
