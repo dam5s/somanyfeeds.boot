@@ -1,7 +1,7 @@
 package com.somanyfeeds.articledataaccess
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory
-import java.time.*
+import java.time.ZoneId
 import java.util.*
 import javax.inject.Inject
 
@@ -33,10 +33,4 @@ fun buildArticleEntity(entity: ArticleCrudEntity) = ArticleEntity(
     date = entity.date.toZonedDateTime()
 )
 
-fun Date.toZonedDateTime(): ZonedDateTime {
-    val instant = toInstant()
-    val zoneOffset = ZoneOffset.ofTotalSeconds(timezoneOffset * 60)
-    val zoneId = ZoneId.ofOffset("", zoneOffset)
-
-    return ZonedDateTime.ofInstant(instant, zoneId)
-}
+fun Date.toZonedDateTime() = toInstant().atZone(ZoneId.systemDefault())

@@ -23,6 +23,8 @@ open class RepositoryTest {
 
 
     constructor() {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+
         val entityManagerFactoryBean = LocalContainerEntityManagerFactoryBean().apply {
             setDataSource(dataSource)
             setPackagesToScan("com.somanyfeeds")
