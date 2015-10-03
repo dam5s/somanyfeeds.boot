@@ -2,3 +2,6 @@ build
 .gradle
 .idea
 *.iml
+
+*.js
+*.js.map

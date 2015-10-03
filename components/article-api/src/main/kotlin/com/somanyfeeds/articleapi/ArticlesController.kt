@@ -15,7 +15,7 @@ class ArticlesController {
         this.articleRepository = articleRepository;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/articles")
     fun listArticles(): ArticleListJson {
         val articleEntities = articleRepository.findAll()
         val presentedArticles = articleEntities.map { presentArticle(it, "My Feed") }

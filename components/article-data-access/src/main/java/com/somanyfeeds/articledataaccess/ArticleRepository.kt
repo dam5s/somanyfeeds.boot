@@ -1,17 +1,19 @@
 package com.somanyfeeds.articledataaccess
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory
+import org.springframework.stereotype.Repository
 import java.time.ZoneId
 import java.util.*
 import javax.inject.Inject
 
-public interface ArticleRepository {
+interface ArticleRepository {
     fun findAll(): Iterable<ArticleEntity>
 }
 
-public class JpaArticleRepository : ArticleRepository {
+@Repository
+open class JpaArticleRepository : ArticleRepository {
 
-    lateinit val crudRepo: ArticleCrudRepository
+    val crudRepo: ArticleCrudRepository
 
     @Inject
     constructor(crudRepo: ArticleCrudRepository) {

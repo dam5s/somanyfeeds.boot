@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <title>damo.io</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:100,300,400,700">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/small-screens.css">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <script type="application/javascript"
+          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script type="application/javascript" src="js/feed.js"></script>
+  <script type="application/javascript" src="js/app.js"></script>
+</head>
+<body ng-app="SoManyFeedsApp" ng-controller="articlesController">
+<header id="app-header">
+  <h1>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+      <circle
+        cx="595"
+        cy="100"
+        r="130"
+        fill="#00BCD4">
+      </circle>
+      <text
+        x="0"
+        y="160"
+        text-anchor="start"
+        font-family="Roboto Slab"
+        font-size="180"
+        font-weight="500"
+        fill="#FFFFFF">
+        damo.io
+      </text>
+    </svg>
+  </h1>
+
+  <aside id="app-menu">
+    <ul>
+      <li ng-repeat="feed in feeds" class="{{feed.selectedClass}}">
+        <a href="{{feed.path}}">{{feed.name}}</a>
+      </li>
+    </ul>
+  </aside>
+</header>
+
+<section id="app-content">
+  ${section}
+</section>
+
+</body>
+</html>
+
+

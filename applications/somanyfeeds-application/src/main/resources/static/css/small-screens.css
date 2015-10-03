@@ -1,0 +1,30 @@
+@media (max-width: 800px) {
+    #app-content {
+        width: 90%;
+
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+
+        padding: 0 1% 1em 1%;
+    }
+
+    article {
+        margin: 1em 0;
+    }
+}
+
+@media (max-width: 500px) {
+    #app-header h1 svg {
+        width: 5em;
+    }
+
+    #app-content {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    article {
+        padding: 1em;
+    }
+}

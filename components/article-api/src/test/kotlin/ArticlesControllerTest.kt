@@ -42,7 +42,7 @@ class ArticlesControllerTest {
         doReturn(articles).`when`(mockRepository).findAll()
 
         mockMvc
-            .perform(get("/"))
+            .perform(get("/articles"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.articles", hasSize<Any>(3)))
 
