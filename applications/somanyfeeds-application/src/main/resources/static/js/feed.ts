@@ -15,10 +15,11 @@ module SoManyFeeds {
 
         export class Presenter {
             present(feed: Entity, availableFeeds: Array<Entity>): ViewModel {
-                var path: String = "/";
-                var selectedSlugs = availableFeeds
+                let selectedSlugs = availableFeeds
                     .filter(feed => feed.selected)
                     .map(feed => feed.slug);
+
+                var path: String = "/";
 
                 if (feed.selected) {
                     path += selectedSlugs

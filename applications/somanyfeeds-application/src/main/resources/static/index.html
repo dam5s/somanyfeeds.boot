@@ -15,7 +15,13 @@
 
   <script type="application/javascript"
           src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  <script type="application/javascript"
+          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.js"></script>
+  <script type="application/javascript"
+          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.js"></script>
+
   <script type="application/javascript" src="js/feed.js"></script>
+  <script type="application/javascript" src="js/article.js"></script>
   <script type="application/javascript" src="js/app.js"></script>
 </head>
 <body ng-app="SoManyFeedsApp" ng-controller="articlesController">
@@ -51,7 +57,15 @@
 </header>
 
 <section id="app-content">
-  ${section}
+  <article ng-repeat="article in articles">
+    <header>
+      <h1><a href="{{article.link}}">{{article.title}}</a></h1>
+
+      <h2 class="date">{{article.date}}</h2>
+    </header>
+    <section ng-bind-html="article.content">
+    </section>
+  </article>
 </section>
 
 </body>
