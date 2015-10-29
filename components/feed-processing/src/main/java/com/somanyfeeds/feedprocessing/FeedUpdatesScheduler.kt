@@ -30,7 +30,7 @@ class DefaultFeedUpdatesScheduler : FeedUpdatesScheduler {
             } catch (e: Exception) {
                 logger.error("There was an error when updating feeds", e)
             }
-        }, 1, 5, TimeUnit.SECONDS)
+        }, 0, 15, TimeUnit.MINUTES)
     }
 
     override fun stop() {
