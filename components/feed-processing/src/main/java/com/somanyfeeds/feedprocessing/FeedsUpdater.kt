@@ -24,10 +24,14 @@ class FeedsUpdater : Runnable {
 
     override fun run() {
         feedRepository.findAll().forEach { feed ->
-            val processor = feedProcessors[feed.type]
-            val articles = processor!!.process(feed)
+            try {
+                val processor = feedProcessors[feed.type]
+                val articles = processor!!.process(feed)
 
-            articleUpdater.updateArticles(articles, feed)
+                articleUpdater.updateArticles(articles, feed)
+            } catch (e: Exception) {
+                throw Exception("There was an error when processing feed $feed", e)
+            }
         }
     }
 }
