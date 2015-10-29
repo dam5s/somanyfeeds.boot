@@ -1,5 +1,6 @@
 package com.somanyfeeds.feedprocessing;
 
+import org.slf4j.LoggerFactory
 import java.util.concurrent.*
 import javax.inject.Inject
 
@@ -10,8 +11,9 @@ interface FeedUpdatesScheduler {
 
 class DefaultFeedUpdatesScheduler : FeedUpdatesScheduler {
 
-    val scheduledExecutorService: ScheduledExecutorService
-    val feedsUpdater: Runnable
+    private val logger = LoggerFactory.getLogger(javaClass)
+    private val scheduledExecutorService: ScheduledExecutorService
+    private val feedsUpdater: Runnable
 
     @Inject
     constructor(scheduledExecutorService: ScheduledExecutorService, feedsUpdater: Runnable) {
@@ -22,7 +24,13 @@ class DefaultFeedUpdatesScheduler : FeedUpdatesScheduler {
     var future: ScheduledFuture<out Any?>? = null
 
     override fun start() {
-        future = scheduledExecutorService.scheduleAtFixedRate(feedsUpdater, 0, 5, TimeUnit.SECONDS)
+        future = scheduledExecutorService.scheduleAtFixedRate({
+            try {
+                feedsUpdater.run()
+            } catch (e: Exception) {
+                logger.error("There was an error when updating feeds", e)
+            }
+        }, 1, 5, TimeUnit.SECONDS)
     }
 
     override fun stop() {

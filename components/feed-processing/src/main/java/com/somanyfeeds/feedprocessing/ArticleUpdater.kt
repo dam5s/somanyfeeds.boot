@@ -4,6 +4,7 @@ import com.somanyfeeds.articledataaccess.ArticleEntity
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import javax.inject.Inject
+import javax.transaction.Transactional
 
 interface ArticleUpdater {
     fun updateArticles(articles: List<ArticleEntity>, feed: FeedEntity)
@@ -20,6 +21,7 @@ class DefaultArticleUpdater : ArticleUpdater {
         this.articleLimit = articleLimit
     }
 
+    @Transactional
     override fun updateArticles(articles: List<ArticleEntity>, feed: FeedEntity) {
         articleRepo.deleteByFeed(feed)
 

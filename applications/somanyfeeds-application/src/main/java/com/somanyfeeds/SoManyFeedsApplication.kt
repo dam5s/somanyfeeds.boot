@@ -3,8 +3,7 @@ package com.somanyfeeds
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedRepository
 import com.somanyfeeds.feeddataaccess.FeedType
-import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
-import com.somanyfeeds.feedprocessing.FeedsUpdater
+import com.somanyfeeds.feedprocessing.*
 import com.somanyfeeds.feedprocessing.atom.AtomFeedProcessor
 import com.somanyfeeds.feedprocessing.rss.RssFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
@@ -44,12 +43,13 @@ open class SoManyFeedsApplication {
     open fun execService() = ScheduledThreadPoolExecutor(2)
 
     @Bean
-    open fun feedsUpdater(feedRepo: FeedRepository, articleRepo: ArticleRepository, httpGateway: HttpGateway): FeedsUpdater {
-        val articleUpdater = DefaultArticleUpdater(articleRepo, 20)
+    open fun articleUpdater(articleRepo: ArticleRepository): ArticleUpdater
+        = DefaultArticleUpdater(articleRepo, 20)
 
-        return FeedsUpdater(feedRepo, articleUpdater, mapOf(
+    @Bean
+    open fun feedsUpdater(feedRepo: FeedRepository, articleUpdater: ArticleUpdater, httpGateway: HttpGateway)
+        = FeedsUpdater(feedRepo, articleUpdater, mapOf(
             FeedType.RSS to RssFeedProcessor(httpGateway),
             FeedType.ATOM to AtomFeedProcessor(httpGateway)
         ))
-    }
 }

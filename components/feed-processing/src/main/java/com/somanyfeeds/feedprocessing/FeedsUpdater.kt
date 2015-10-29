@@ -24,7 +24,7 @@ class FeedsUpdater : Runnable {
 
     override fun run() {
         feedRepository.findAll().forEach { feed ->
-            val processor = feedProcessors.get(feed.type)
+            val processor = feedProcessors[feed.type]
             val articles = processor!!.process(feed)
 
             articleUpdater.updateArticles(articles, feed)
