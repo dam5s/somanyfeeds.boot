@@ -1,4 +1,4 @@
 dependencies {
-    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.6.2"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKotlinVersion"
     runtime "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 }

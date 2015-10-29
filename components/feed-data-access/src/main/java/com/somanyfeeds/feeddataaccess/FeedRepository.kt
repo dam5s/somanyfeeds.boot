@@ -10,12 +10,8 @@ interface FeedRepository {
 @Repository
 open class JpaFeedRepository : FeedRepository {
 
-    val crudRepo: FeedCrudRepository
-
     @Inject
-    constructor(crudRepo: FeedCrudRepository) {
-        this.crudRepo = crudRepo
-    }
+    private lateinit var crudRepo: FeedCrudRepository
 
     override fun findAll() = crudRepo.findAll().map(::buildFeedEntity)
 }

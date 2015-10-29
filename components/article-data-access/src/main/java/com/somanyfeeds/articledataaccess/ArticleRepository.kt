@@ -14,12 +14,9 @@ interface ArticleRepository {
 
 @Repository
 open class JpaArticleRepository : ArticleRepository {
-    val crudRepo: ArticleCrudRepository
 
     @Inject
-    constructor(crudRepo: ArticleCrudRepository) {
-        this.crudRepo = crudRepo
-    }
+    private lateinit var crudRepo: ArticleCrudRepository
 
     override fun findAll() = crudRepo.findAll().map(::buildArticleEntity)
 

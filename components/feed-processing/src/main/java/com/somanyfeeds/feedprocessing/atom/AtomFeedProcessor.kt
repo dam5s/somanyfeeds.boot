@@ -36,8 +36,7 @@ class AtomFeedProcessor : FeedProcessor {
             )
         }
 
-        logger.debug("Processed #{} articles", articles.size())
-
+        logger.debug("Processed #{} articles", articles.size)
         return articles
     }
 }

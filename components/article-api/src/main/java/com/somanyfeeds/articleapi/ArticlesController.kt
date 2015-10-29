@@ -23,5 +23,5 @@ class ArticlesController {
         return ArticleListJson(articles = presentedArticles);
     }
 
-    private data class ArticleListJson(val articles: List<ArticleViewModel>)
+    data class ArticleListJson(val articles: List<ArticleViewModel>)
 }
