@@ -1,0 +1,1351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+    <id>tag:github.com,2008:/dam5s</id>
+    <link type="text/html" rel="alternate" href="https://github.com/dam5s"/>
+    <link type="application/atom+xml" rel="self" href="https://github.com/dam5s.atom"/>
+    <title>dam5s&#39;s Activity</title>
+    <updated>2014-07-27T15:57:56Z</updated>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/2205357004</id>
+        <published>2014-07-27T15:57:56Z</published>
+        <updated>2014-07-27T15:57:56Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/somanyfeeds.java/compare/master"/>
+        <title type="html">dam5s created branch master at dam5s/somanyfeeds.java</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt; branch
+            &lt;a href=&quot;/dam5s/somanyfeeds.java/tree/master&quot; class=&quot;css-truncate css-truncate-target
+            branch-link&quot; title=&quot;master&quot;&gt;&lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;master&lt;/a&gt;
+            at &lt;a href=&quot;https://github.com/dam5s/somanyfeeds.java&quot; class=&quot;css-truncate
+            css-truncate-target&quot;&gt;dam5s/somanyfeeds.java&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-27T15:57:56Z&quot; is=&quot;relative-time&quot;&gt;July 27, 2014&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/2205356854</id>
+        <published>2014-07-27T15:57:38Z</published>
+        <updated>2014-07-27T15:57:38Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/somanyfeeds.java"/>
+        <title type="html">dam5s created repository dam5s/somanyfeeds.java</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-repo&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt;
+            repository &lt;a href=&quot;/dam5s/somanyfeeds.java&quot; class=&quot;css-truncate css-truncate-target&quot;
+            title=&quot;dam5s/somanyfeeds.java&quot;&gt;dam5s/somanyfeeds.java&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-27T15:57:38Z&quot; is=&quot;relative-time&quot;&gt;July 27, 2014&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/2204927163</id>
+        <published>2014-07-26T19:37:17Z</published>
+        <updated>2014-07-26T19:37:17Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/dam5s/la_table_francophone/compare/93b6636cdd...3a30270c63"/>
+        <title type="html">dam5s pushed to master at dam5s/la_table_francophone</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-26T19:37:17Z&quot; is=&quot;relative-time&quot;&gt;July 26, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/dam5s/la_table_francophone/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/dam5s/la_table_francophone&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/la_table_francophone&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/dam5s/la_table_francophone/commit/3a30270c630377bda58fcfe3197593b5857ab473&quot;&gt;3a30270&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Updated time and location.
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/2204925952</id>
+        <published>2014-07-26T19:34:46Z</published>
+        <updated>2014-07-26T19:34:46Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/dam5s/la_table_francophone/compare/cb8651f10f...93b6636cdd"/>
+        <title type="html">dam5s pushed to master at dam5s/la_table_francophone</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-26T19:34:46Z&quot; is=&quot;relative-time&quot;&gt;July 26, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/dam5s/la_table_francophone/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/dam5s/la_table_francophone&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/la_table_francophone&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/dam5s/la_table_francophone/commit/93b6636cdd15de1434835500b026047827be601e&quot;&gt;93b6636&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Updated time and location.
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CommitCommentEvent/2179177931</id>
+        <published>2014-07-09T21:30:38Z</published>
+        <updated>2014-07-09T21:30:38Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/clubdesign/floatlabels.js/commit/9dec978136f7206bdc8672bb55d16597122723cc#-P0"/>
+        <title type="html">dam5s commented on commit clubdesign/floatlabels.js@9dec978136</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- commit_comment --&gt;
+            &lt;span class=&quot;mega-octicon octicon-comment-discussion&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-09T21:30:38Z&quot; is=&quot;relative-time&quot;&gt;July 09, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;commented&lt;/span&gt; on
+            commit &lt;a href=&quot;https://github.com/clubdesign/floatlabels.js/commit/9dec978136f7206bdc8672bb55d16597122723cc#commitcomment-6952724&quot;&gt;clubdesign/floatlabels.js@9dec978136&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+            &lt;div class=&quot;message markdown-body&quot;&gt;
+            &lt;blockquote&gt;
+            &lt;p&gt;The comment has since been removed.&lt;/p&gt;
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CommitCommentEvent/2179176878</id>
+        <published>2014-07-09T21:30:04Z</published>
+        <updated>2014-07-09T21:30:04Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/clubdesign/floatlabels.js/commit/9dec978136f7206bdc8672bb55d16597122723cc#-P0"/>
+        <title type="html">dam5s commented on commit clubdesign/floatlabels.js@9dec978136</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- commit_comment --&gt;
+            &lt;span class=&quot;mega-octicon octicon-comment-discussion&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-09T21:30:04Z&quot; is=&quot;relative-time&quot;&gt;July 09, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;commented&lt;/span&gt; on
+            commit &lt;a href=&quot;https://github.com/clubdesign/floatlabels.js/commit/9dec978136f7206bdc8672bb55d16597122723cc#commitcomment-6952719&quot;&gt;clubdesign/floatlabels.js@9dec978136&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+            &lt;div class=&quot;message markdown-body&quot;&gt;
+            &lt;blockquote&gt;
+            &lt;p&gt;The comment has since been removed.&lt;/p&gt;
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:IssuesEvent/2174783072</id>
+        <published>2014-07-07T16:15:23Z</published>
+        <updated>2014-07-07T16:15:23Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/spring-projects/spring-boot/issues/1215"/>
+        <title type="html">dam5s opened issue spring-projects/spring-boot#1215</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- issues --&gt;
+            &lt;span class=&quot;mega-octicon octicon-issue-opened&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-07-07T16:15:23Z&quot; is=&quot;relative-time&quot;&gt;July 07, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;opened&lt;/span&gt; issue
+            &lt;a href=&quot;https://github.com/spring-projects/spring-boot/issues/1215&quot; title=&quot;Regression
+            (between 1.0.2 and 1.1.3) when building a spring-boot JAR with gradle. External JAR file is not embedded.&quot;&gt;spring-projects/spring-boot#1215&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Regression (between 1.0.2 and 1.1.3) when building a spring-boot JAR with gradle. External JAR file is not
+            embedded.
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1991012215</id>
+        <published>2014-02-23T23:01:33Z</published>
+        <updated>2014-02-23T23:01:33Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/dam5s/webrouter/compare/0993f8b685...0a1008132a"/>
+        <title type="html">dam5s pushed to master at dam5s/webrouter</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-02-23T23:01:33Z&quot; is=&quot;relative-time&quot;&gt;February 23, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/dam5s/webrouter/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/dam5s/webrouter&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/webrouter&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/dam5s/webrouter/commit/0a1008132a6a747b515aed9d2dbeaf8d968cec70&quot;&gt;0a10081&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Added sample app with example unit test for route
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/1990940876</id>
+        <published>2014-02-23T20:42:14Z</published>
+        <updated>2014-02-23T20:42:14Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/webrouter/compare/master"/>
+        <title type="html">dam5s created branch master at dam5s/webrouter</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt; branch
+            &lt;a href=&quot;/dam5s/webrouter/tree/master&quot; class=&quot;css-truncate css-truncate-target branch-link&quot;
+            title=&quot;master&quot;&gt;&lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;master&lt;/a&gt;
+            at &lt;a href=&quot;https://github.com/dam5s/webrouter&quot; class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/webrouter&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-02-23T20:42:14Z&quot; is=&quot;relative-time&quot;&gt;February 23, 2014&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/1990940463</id>
+        <published>2014-02-23T20:41:33Z</published>
+        <updated>2014-02-23T20:41:33Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/webrouter"/>
+        <title type="html">dam5s created repository dam5s/webrouter</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-repo&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt;
+            repository &lt;a href=&quot;/dam5s/webrouter&quot; class=&quot;css-truncate css-truncate-target&quot; title=&quot;dam5s/webrouter&quot;&gt;dam5s/webrouter&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-02-23T20:41:33Z&quot; is=&quot;relative-time&quot;&gt;February 23, 2014&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1939378677</id>
+        <published>2014-01-09T23:55:57Z</published>
+        <updated>2014-01-09T23:55:57Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/463c9d937e...b2b2b43f37"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-09T23:55:57Z&quot; is=&quot;relative-time&quot;&gt;January 09, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/b2b2b43f37bbeebe2a605e3e20600105b758ed02&quot;&gt;b2b2b43&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Add https mbus handler
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/c8c81cad6dfaa783e573f2d820eff854ca43ef23&quot;&gt;c8c81ca&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Cleaned unwanted file
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;more&quot;&gt;&lt;a href=&quot;https://github.com/cloudfoundry/bosh/compare/463c9d937e...b2b2b43f37&quot;&gt;View
+            comparison for these 2 commits &amp;raquo;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1937968670</id>
+        <published>2014-01-08T23:09:44Z</published>
+        <updated>2014-01-08T23:09:44Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/c8ad1abcd8...27a62ee484"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-08T23:09:44Z&quot; is=&quot;relative-time&quot;&gt;January 08, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/27a62ee484b53092748336a308e8aa610ae3e970&quot;&gt;27a62ee&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Added monit config for smtp alerts with go agent
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/36d444a09a696f375e0ee47f0081b13fd951fa88&quot;&gt;36d444a&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Replace http interface for alerts with smtp server
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;more&quot;&gt;&lt;a href=&quot;https://github.com/cloudfoundry/bosh/compare/c8ad1abcd8...27a62ee484&quot;&gt;1
+            more commit &amp;raquo;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/1937954779</id>
+        <published>2014-01-08T22:57:07Z</published>
+        <updated>2014-01-08T22:57:07Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/android-starter/compare/gh-pages"/>
+        <title type="html">dam5s created branch gh-pages at dam5s/android-starter</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt; branch
+            &lt;a href=&quot;/dam5s/android-starter/tree/gh-pages&quot; class=&quot;css-truncate css-truncate-target
+            branch-link&quot; title=&quot;gh-pages&quot;&gt;&lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;gh-pages&lt;/a&gt;
+            at &lt;a href=&quot;https://github.com/dam5s/android-starter&quot; class=&quot;css-truncate
+            css-truncate-target&quot;&gt;dam5s/android-starter&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-08T22:57:07Z&quot; is=&quot;relative-time&quot;&gt;January 08, 2014&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PullRequestEvent/1937864758</id>
+        <published>2014-01-08T21:10:59Z</published>
+        <updated>2014-01-08T21:10:59Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/bradfitz/go-smtpd/pull/4"/>
+        <title type="html">dam5s opened pull request bradfitz/go-smtpd#4</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- pull_request --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-pull-request&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-08T21:10:59Z&quot; is=&quot;relative-time&quot;&gt;January 08, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;opened&lt;/span&gt; pull
+            request &lt;a href=&quot;https://github.com/bradfitz/go-smtpd/pull/4&quot;&gt;bradfitz/go-smtpd#4&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;Added some tests and fixed parsing to support the way monit sends email&lt;/blockquote&gt;
+            &lt;div class=&quot;pull-info&quot;&gt;
+            &lt;span class=&quot;octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+            &lt;em&gt;1&lt;/em&gt; commit with
+            &lt;em&gt;107&lt;/em&gt; additions and
+            &lt;em&gt;2&lt;/em&gt; deletions
+            &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1937862038</id>
+        <published>2014-01-08T21:08:37Z</published>
+        <updated>2014-01-08T21:08:37Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/pivotal/go-smtpd/compare/5bc930704b...0af6982457"/>
+        <title type="html">dam5s pushed to master at pivotal/go-smtpd</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-08T21:08:37Z&quot; is=&quot;relative-time&quot;&gt;January 08, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/pivotal/go-smtpd/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/pivotal/go-smtpd&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;pivotal/go-smtpd&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/pivotal/go-smtpd/commit/0af6982457e5e683c4e238a1abf5dcd73b014504&quot;&gt;0af6982&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Added some tests and fixed parsing to support the way monit sends email
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1936697537</id>
+        <published>2014-01-07T23:19:27Z</published>
+        <updated>2014-01-07T23:19:27Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/420bf4bacb...fb92c98461"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-07T23:19:27Z&quot; is=&quot;relative-time&quot;&gt;January 07, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/fb92c984614771bc1b0f780e068db8bd51dabbb1&quot;&gt;fb92c98&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Listen for job failures over HTTP and send over MBus
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1936609898</id>
+        <published>2014-01-07T22:00:29Z</published>
+        <updated>2014-01-07T22:00:29Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/f066e3a953...dfe9c5acde"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-07T22:00:29Z&quot; is=&quot;relative-time&quot;&gt;January 07, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/dfe9c5acdec3f5543520a7c2f3d79e642b89a361&quot;&gt;dfe9c5a&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Moved s3cli to pivotal repository
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1936592491</id>
+        <published>2014-01-07T21:45:55Z</published>
+        <updated>2014-01-07T21:45:55Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/7dfce5408c...e165ef30a5"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-07T21:45:55Z&quot; is=&quot;relative-time&quot;&gt;January 07, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;benjaminleesmith&quot;&gt;
+            &lt;img alt=&quot;Benjamin Smith&quot; data-user=&quot;47796&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/47796?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/e165ef30a5c5ac601403ca74238e857d8811eb29&quot;&gt;e165ef3&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Added initial dav blobstore cli implementation
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1932579637</id>
+        <published>2014-01-02T23:47:49Z</published>
+        <updated>2014-01-02T23:47:49Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/3d6b1929b8...63d582c520"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2014-01-02T23:47:49Z&quot; is=&quot;relative-time&quot;&gt;January 02, 2014&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/63d582c5201ece65864c53fb3d7647cb1b6a4d01&quot;&gt;63d582c&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Refactored generation of vitals
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/bfcb34560bd855d0f285fb30ca400065a99574f3&quot;&gt;bfcb345&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Use Percentage type for stats
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;more&quot;&gt;&lt;a href=&quot;https://github.com/cloudfoundry/bosh/compare/3d6b1929b8...63d582c520&quot;&gt;5
+            more commits &amp;raquo;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1931375237</id>
+        <published>2013-12-31T22:39:08Z</published>
+        <updated>2013-12-31T22:39:08Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/bd085a107d...3d6b1929b8"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-31T22:39:08Z&quot; is=&quot;relative-time&quot;&gt;December 31, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;nwade&quot;&gt;
+            &lt;img alt=&quot;Nick Wade&quot; data-user=&quot;303629&quot; height=&quot;16&quot; src=&quot;https://avatars3.githubusercontent.com/u/303629?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/3d6b1929b8d9acd6762934b8e4c06b3ce14f5ff0&quot;&gt;3d6b192&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Use go naming conventions for monit package
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;zacclark&quot;&gt;
+            &lt;img alt=&quot;Zac Clark&quot; data-user=&quot;12772&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/12772?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/0ad2616f055185ec559ffac806187d4a2f994f6e&quot;&gt;0ad2616&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Rename monitor to jobsupervisor
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;more&quot;&gt;&lt;a href=&quot;https://github.com/cloudfoundry/bosh/compare/bd085a107d...3d6b1929b8&quot;&gt;1
+            more commit &amp;raquo;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1931200110</id>
+        <published>2013-12-31T16:45:33Z</published>
+        <updated>2013-12-31T16:45:33Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/0fbdecfd89...554bffa4b1"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-31T16:45:33Z&quot; is=&quot;relative-time&quot;&gt;December 31, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;nwade&quot;&gt;
+            &lt;img alt=&quot;Nick Wade&quot; data-user=&quot;303629&quot; height=&quot;16&quot; src=&quot;https://avatars3.githubusercontent.com/u/303629?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/554bffa4b1048d5717aeb036ceae57a283b086d6&quot;&gt;554bffa&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Update monit status to include system status
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1930802318</id>
+        <published>2013-12-30T23:54:35Z</published>
+        <updated>2013-12-30T23:54:35Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/a93a7a86a1...0fbdecfd89"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-30T23:54:35Z&quot; is=&quot;relative-time&quot;&gt;December 30, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;zacclark&quot;&gt;
+            &lt;img alt=&quot;Zac Clark&quot; data-user=&quot;12772&quot; height=&quot;16&quot; src=&quot;https://avatars1.githubusercontent.com/u/12772?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/0fbdecfd892778468912394c1ec42307235c73f6&quot;&gt;0fbdecf&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Respond to get_state with defaults for spec.json
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1930756847</id>
+        <published>2013-12-30T22:39:26Z</published>
+        <updated>2013-12-30T22:39:26Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/244beb346b...1a0a812503"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-30T22:39:26Z&quot; is=&quot;relative-time&quot;&gt;December 30, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;nwade&quot;&gt;
+            &lt;img alt=&quot;Nick Wade&quot; data-user=&quot;303629&quot; height=&quot;16&quot; src=&quot;https://avatars3.githubusercontent.com/u/303629?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/1a0a812503ac003f8c914e28262364d0b37ce494&quot;&gt;1a0a812&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Refactor drain and its tests
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1929187595</id>
+        <published>2013-12-27T17:43:25Z</published>
+        <updated>2013-12-27T17:43:25Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/106e0c0509...7e1ac47a88"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-27T17:43:25Z&quot; is=&quot;relative-time&quot;&gt;December 27, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;nwade&quot;&gt;
+            &lt;img alt=&quot;Nick Wade&quot; data-user=&quot;303629&quot; height=&quot;16&quot; src=&quot;https://avatars3.githubusercontent.com/u/303629?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/7e1ac47a886c8af57641d3f3ef6c100f2b5b148e&quot;&gt;7e1ac47&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Pass directories provider through to heartbeat and eliminate VCAP_BAS…
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;nwade&quot;&gt;
+            &lt;img alt=&quot;Nick Wade&quot; data-user=&quot;303629&quot; height=&quot;16&quot; src=&quot;https://avatars3.githubusercontent.com/u/303629?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/79264e7aa02e9ce9fadbb6798dc6bbf87f7d8429&quot;&gt;79264e7&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Add GetDirProvider to platforms
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;more&quot;&gt;&lt;a href=&quot;https://github.com/cloudfoundry/bosh/compare/106e0c0509...7e1ac47a88&quot;&gt;5
+            more commits &amp;raquo;&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1926314721</id>
+        <published>2013-12-22T16:50:07Z</published>
+        <updated>2013-12-22T16:50:07Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/dam5s/somanyfeeds.go/compare/388aaa6efc...7c61911613"/>
+        <title type="html">dam5s pushed to master at dam5s/somanyfeeds.go</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-22T16:50:07Z&quot; is=&quot;relative-time&quot;&gt;December 22, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/dam5s/somanyfeeds.go/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/dam5s/somanyfeeds.go&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/somanyfeeds.go&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/dam5s/somanyfeeds.go/commit/7c61911613569809beff3a41b7ca0d3058592499&quot;&gt;7c61911&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Initial commit
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1926314405</id>
+        <published>2013-12-22T16:49:10Z</published>
+        <updated>2013-12-22T16:49:10Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/dam5s/somanyfeeds.go/compare/ab69244bc2...388aaa6efc"/>
+        <title type="html">dam5s pushed to master at dam5s/somanyfeeds.go</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-22T16:49:10Z&quot; is=&quot;relative-time&quot;&gt;December 22, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/dam5s/somanyfeeds.go/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/dam5s/somanyfeeds.go&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/somanyfeeds.go&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/dam5s/somanyfeeds.go/commit/388aaa6efc38a32f2530d5dbee84efa73ea8b98a&quot;&gt;388aaa6&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Initial commit
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/1926308552</id>
+        <published>2013-12-22T16:31:16Z</published>
+        <updated>2013-12-22T16:31:16Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/somanyfeeds.go/compare/master"/>
+        <title type="html">dam5s created branch master at dam5s/somanyfeeds.go</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt; branch
+            &lt;a href=&quot;/dam5s/somanyfeeds.go/tree/master&quot; class=&quot;css-truncate css-truncate-target
+            branch-link&quot; title=&quot;master&quot;&gt;&lt;span class=&quot;octicon octicon-git-branch&quot;&gt;&lt;/span&gt;master&lt;/a&gt;
+            at &lt;a href=&quot;https://github.com/dam5s/somanyfeeds.go&quot; class=&quot;css-truncate
+            css-truncate-target&quot;&gt;dam5s/somanyfeeds.go&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-22T16:31:16Z&quot; is=&quot;relative-time&quot;&gt;December 22, 2013&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:CreateEvent/1926308401</id>
+        <published>2013-12-22T16:30:50Z</published>
+        <updated>2013-12-22T16:30:50Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/somanyfeeds.go"/>
+        <title type="html">dam5s created repository dam5s/somanyfeeds.go</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- create --&gt;
+            &lt;div class=&quot;simple&quot;&gt;
+            &lt;span class=&quot;octicon octicon-repo&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;created&lt;/span&gt;
+            repository &lt;a href=&quot;/dam5s/somanyfeeds.go&quot; class=&quot;css-truncate css-truncate-target&quot;
+            title=&quot;dam5s/somanyfeeds.go&quot;&gt;dam5s/somanyfeeds.go&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-22T16:30:50Z&quot; is=&quot;relative-time&quot;&gt;December 22, 2013&lt;/time&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1926305571</id>
+        <published>2013-12-22T16:21:25Z</published>
+        <updated>2013-12-22T16:21:25Z</updated>
+        <link type="text/html" rel="alternate" href="https://github.com/dam5s/assert/compare/d3ed78cdb3...143ecba0dc"/>
+        <title type="html">dam5s pushed to master at dam5s/assert</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-22T16:21:25Z&quot; is=&quot;relative-time&quot;&gt;December 22, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/dam5s/assert/tree/master&quot;&gt;master&lt;/a&gt; at &lt;a href=&quot;https://github.com/dam5s/assert&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;dam5s/assert&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits pusher-is-only-committer&quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;dam5s&quot;&gt;
+            &lt;img alt=&quot;Damien Le Berrigaud&quot; data-user=&quot;7207&quot; height=&quot;16&quot; src=&quot;https://avatars0.githubusercontent.com/u/7207?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/dam5s/assert/commit/143ecba0dc8c15a31679263fbd1b784cd4b33eab&quot;&gt;143ecba&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Added nil comparison
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+    <entry>
+        <id>tag:github.com,2008:PushEvent/1923918502</id>
+        <published>2013-12-19T16:07:24Z</published>
+        <updated>2013-12-19T16:07:24Z</updated>
+        <link type="text/html" rel="alternate"
+              href="https://github.com/cloudfoundry/bosh/compare/22962c937e...86297dd98e"/>
+        <title type="html">dam5s pushed to develop at cloudfoundry/bosh</title>
+        <author>
+            <name>dam5s</name>
+            <uri>https://github.com/dam5s</uri>
+        </author>
+        <media:thumbnail height="30" width="30" url="https://avatars0.githubusercontent.com/u/7207?s=30"/>
+        <content type="html">&lt;!-- push --&gt;
+            &lt;span class=&quot;mega-octicon octicon-git-commit&quot;&gt;&lt;/span&gt;
+
+            &lt;div class=&quot;time&quot;&gt;
+            &lt;time datetime=&quot;2013-12-19T16:07:24Z&quot; is=&quot;relative-time&quot;&gt;December 19, 2013&lt;/time&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;title&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;dam5s&lt;/a&gt; &lt;span&gt;pushed&lt;/span&gt; to &lt;a
+            href=&quot;/cloudfoundry/bosh/tree/develop&quot;&gt;develop&lt;/a&gt; at &lt;a href=&quot;https://github.com/cloudfoundry/bosh&quot;
+            class=&quot;css-truncate css-truncate-target&quot;&gt;cloudfoundry/bosh&lt;/a&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;details&quot;&gt;
+            &lt;a href=&quot;https://github.com/dam5s&quot;&gt;&lt;img alt=&quot;Damien Le Berrigaud&quot; class=&quot;gravatar&quot;
+            data-user=&quot;7207&quot; height=&quot;30&quot; src=&quot;https://avatars1.githubusercontent.com/u/7207?s=60&quot;
+            width=&quot;30&quot; /&gt;&lt;/a&gt;
+
+            &lt;div class=&quot;commits &quot;&gt;
+            &lt;ul&gt;
+            &lt;li&gt;
+            &lt;span title=&quot;nwade&quot;&gt;
+            &lt;img alt=&quot;Nick Wade&quot; data-user=&quot;303629&quot; height=&quot;16&quot; src=&quot;https://avatars3.githubusercontent.com/u/303629?s=32&quot;
+            width=&quot;16&quot; /&gt;
+            &lt;/span&gt;
+            &lt;code&gt;&lt;a href=&quot;/cloudfoundry/bosh/commit/86297dd98ea7153668e880ad6f1707264d74259c&quot;&gt;86297dd&lt;/a&gt;&lt;/code&gt;
+            &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote&gt;
+            Upload job logs to store
+            &lt;/blockquote&gt;
+            &lt;/div&gt;
+            &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        </content>
+    </entry>
+</feed>

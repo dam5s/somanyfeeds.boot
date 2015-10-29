@@ -1,0 +1,10 @@
+dependencies {
+    compile project(":components/feed-data-access")
+    compile project(":components/article-data-access")
+    compile project(":components/http-gateway")
+
+    compile "javax.inject:javax.inject:1"
+
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.5.4"
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+}

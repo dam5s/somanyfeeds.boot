@@ -11,7 +11,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPat
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup
 import testing.buildArticleEntity
-import java.time.ZonedDateTime
+import java.time.LocalDateTime
 
 class ArticlesControllerTest {
     lateinit var mockRepository: ArticleRepository
@@ -33,7 +33,7 @@ class ArticlesControllerTest {
                 title = "Awesome Article",
                 link = "http://example.com/articles/1",
                 content = "This is it.",
-                date = ZonedDateTime.parse("2011-02-03T04:05:06+00:00")
+                date = LocalDateTime.parse("2011-02-03T04:05:06")
             ),
             buildArticleEntity(id = 101),
             buildArticleEntity(id = 102)

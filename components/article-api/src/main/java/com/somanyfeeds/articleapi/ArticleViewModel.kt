@@ -1,7 +1,7 @@
 package com.somanyfeeds.articleapi
 
 import com.somanyfeeds.articledataaccess.ArticleEntity
-import java.time.ZonedDateTime
+import java.time.LocalDateTime
 
 data class ArticleViewModel(
     val id: Long?,
@@ -9,7 +9,7 @@ data class ArticleViewModel(
     val title: String,
     val link: String,
     val content: String,
-    val date: ZonedDateTime
+    val date: LocalDateTime
 )
 
 fun presentArticle(article: ArticleEntity, feedName: String) = ArticleViewModel(

@@ -1,19 +1,20 @@
 package com.somanyfeeds.articledataaccess;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "article")
 class ArticleCrudEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long feedId;
     private String title;
     private String link;
     private String content;
-    private Date date;
+    private LocalDateTime date;
 
     public Long getId() {
         return id;
@@ -21,6 +22,14 @@ class ArticleCrudEntity {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getFeedId() {
+        return feedId;
+    }
+
+    public void setFeedId(Long feedId) {
+        this.feedId = feedId;
     }
 
     public String getTitle() {
@@ -47,11 +56,11 @@ class ArticleCrudEntity {
         this.content = content;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 }

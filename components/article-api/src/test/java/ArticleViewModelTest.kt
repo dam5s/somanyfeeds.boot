@@ -4,7 +4,7 @@ import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
 import org.junit.Test
 import testing.buildArticleViewModel
-import java.time.ZonedDateTime
+import java.time.LocalDateTime
 
 class ArticleViewModelTest {
     val mapper = ObjectMapperProvider().get()
@@ -16,17 +16,17 @@ class ArticleViewModelTest {
             title = "My Article",
             link = "http://example.com/blog/article-1",
             content = "This is a great article on a very interesting topic...",
-            date = ZonedDateTime.parse("2011-02-03T04:05:06+07:00")
+            date = LocalDateTime.parse("2011-02-03T04:05:06")
         )
 
 
         val json = mapper.writeValueAsString(article)
 
 
-        assertThat(read<Int>(json, "$.id"), equalTo(1011))
-        assertThat(read<String>(json, "$.title"), equalTo("My Article"))
-        assertThat(read<String>(json, "$.link"), equalTo("http://example.com/blog/article-1"))
-        assertThat(read<String>(json, "$.content"), equalTo("This is a great article on a very interesting topic..."))
-        assertThat(read<String>(json, "$.date"), equalTo("2011-02-03T04:05:06+07:00"))
+        assertThat(read(json, "$.id"), equalTo(1011))
+        assertThat(read(json, "$.title"), equalTo("My Article"))
+        assertThat(read(json, "$.link"), equalTo("http://example.com/blog/article-1"))
+        assertThat(read(json, "$.content"), equalTo("This is a great article on a very interesting topic..."))
+        assertThat(read(json, "$.date"), equalTo("2011-02-03T04:05:06Z"))
     }
 }

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>
+            <![CDATA[Public RSS-Feed of Damien Le Berrigaud. Created with the PIXELMECHANICS 'GPlusRSS-Webtool' at http://gplusrss.com]]></title>
+        <link>https://plus.google.com/105039413587880910287</link>
+        <description><![CDATA[Software Engineer, web and mobile.]]></description>
+        <generator><![CDATA[http://gplusrss.com]]></generator>
+        <image>
+            <url>https://lh3.googleusercontent.com/-Qh4QCErNqOs/AAAAAAAAAAI/AAAAAAAAEAk/NjDgwwWkzjM/photo.jpg?sz=200
+            </url>
+            <title>
+                <![CDATA[Public RSS-Feed of Damien Le Berrigaud. Created with the PIXELMECHANICS 'GPlusRSS-Webtool' at http://gplusrss.com]]></title>
+            <link>https://plus.google.com/105039413587880910287</link>
+        </image>
+        <lastBuildDate>Sat, 13 Jun 2015 20:43:47 +0000</lastBuildDate>
+        <ttl>60</ttl>
+        <language>en-us</language>
+        <atom:link href="http://gplusrss.com/rss/feed/aa49b266059d0628a1c112dabaec23a152aa2bad054d8" rel="self"
+                   type="application/rss+xml"/>
+
+        <item>
+            <title>
+                <![CDATA[After doing mobile again (iOSs and Android) for a few months, AngularJS has struck me by how it encourages...]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/KM1oPsWrEf9</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/KM1oPsWrEf9</guid>
+            <pubDate>Sat, 13 Jun 2015 22:43:47 +0200</pubDate>
+            <description>
+                <![CDATA[<div class='content'>After doing mobile again (iOSs and Android) for a few months, AngularJS has struck me by how it encourages really complex views with lots of logic...<br /><br />On mobile, when you create a view, you create a description of the elements that can be displayed there, you lay them out, and that&#39;s it. There is absolutely zero logic in the views. You just give yourself a mean to mediate them from your controller/activity or even a mediator object (<a href="https://en.wikipedia.org/wiki/Mediator_pattern">https://en.wikipedia.org/wiki/Mediator_pattern</a>) when it becomes complex.<br /><br />In Angular, you are encouraged to use ng-if, ng-show... in your markup, which will automagically be updated based on the scope being observed. This makes for a huge mess of views.<br /><br />Do yourself a favor, stay away from that bad pattern. The fact you have an app running on the client should make your views much nicer to work with, not the opposite.﻿</div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Oh my goodness... This is an addictive game!]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/2E1fe3Hnzuj</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/2E1fe3Hnzuj</guid>
+            <pubDate>Fri, 05 Jun 2015 06:54:49 +0200</pubDate>
+            <description><![CDATA[<div class='content'>Oh my goodness... This is an addictive game!﻿</div><div class='attachments'><div class='attachment article'><p class='attachment_preview'>
+												<a href='https://play.google.com/store/apps/details?id=se.hellothere.kungfurygame' target='_blank'>
+													<img src='https://lh3.googleusercontent.com/lCI_0gjksM-du_1BEGpJW_MJADicq4k42H1K2TtGlapryeGIh8CA93wxZDcF8qMeczg=w506-h303-p' height='100'/>
+												</a>
+											</p><p class='attachment_article_content'>
+												<a href='https://play.google.com/store/apps/details?id=se.hellothere.kungfurygame' target='_blank'>
+													<span class='attachment_article_text'>INTRODUCING – AS SEEN IN THE MOTION PICTURE! ****** KUNG FURY: STREET RAGE™...</span>
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Reshared post from Jeff Springer:]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/NY95hjzXjRb</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/NY95hjzXjRb</guid>
+            <pubDate>Mon, 01 Jun 2015 15:40:30 +0200</pubDate>
+            <description><![CDATA[<div class='content reshared'><div class='annotation'>Well, I love the first version. So I think I&#39;m gonna upgrade when available!</div><div class='original_content'><p><strong><a href='https://plus.google.com/+JeffSpringer86/posts/DGcLdX8aetA' target='_blank'>Original Post</a> from <a href='https://plus.google.com/104934861351346950405' target='_blank'>Jeff Springer</a>:</strong></p><p>ASUS ZenWatch 2 announced, specs in article!﻿</p></div></div><div class='attachments'><div class='attachment article'><p class='attachment_preview'>
+												<a href='http://news.highonandroid.com/2015/05/31/asus-unveils-zenwatch-2-at-computex/' target='_blank'>
+													<img src='https://lh5.googleusercontent.com/proxy/SbCMSFxixQJ_OF_5qgLC7YsX-_qAkpsx3XvjYJlai4PouiPJ_8Lw4nN52XOKi_w1T2pvf_zHvEgEauGQxgiuS5I4SQ2jA23X5IzbdKdbTYu-J0AB6ESStLP8sVZrYE1KHuMJzczhCqye2borF57Jww1i5gM9OMG4YvAW1aCWutshUNPJQIV3rg=w506-h303-p' height='100'/>
+												</a>
+											</p><p class='attachment_article_content'>
+												<a href='http://news.highonandroid.com/2015/05/31/asus-unveils-zenwatch-2-at-computex/' target='_blank'>
+													<span class='attachment_article_text'>ASUS is currently in the middle of their Computex event in Taipei, and they have announced their second generation Android Wear watch, the ZenWatch 2. ASUS has</span>
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Thank goodness Inbox is now available even on Google Enterprise!]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/WHwHsDNhoiZ</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/WHwHsDNhoiZ</guid>
+            <pubDate>Sun, 31 May 2015 18:15:34 +0200</pubDate>
+            <description>
+                <![CDATA[<div class='content'>Thank goodness Inbox is now available even on Google Enterprise!﻿</div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Android starter project with Kotlin, Robolectric, and Espresso.
+
+https://github.com/dam5s/android-example...]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/MLPm3nEGMHT</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/MLPm3nEGMHT</guid>
+            <pubDate>Sat, 09 May 2015 16:47:52 +0200</pubDate>
+            <description><![CDATA[<div class='content'>Android starter project with Kotlin, Robolectric, and Espresso.<br /><br /><a href="https://github.com/dam5s/android-example-kotlin">https://github.com/dam5s/android-example-kotlin</a><br /><br />I&#39;m about to start a new Android project, so I thought I&#39;d create a base structure for modern Android application development with Kotlin, Robolectric, Espresso, and using the Gradle build system. It plays nicely with Android Studio and allows for running Robolectric tests within the IDE.<br /><br />Getting started with it would just be a matter of copying the entire source tree and renaming your packages and classes. (Only 4 of them in the existing project).<br /><br />Enjoy!﻿</div><div class='attachments'><div class='attachment article'><p class='attachment_preview'>
+												<a href='https://github.com/dam5s/android-example-kotlin' target='_blank'>
+													<img src='https://lh4.googleusercontent.com/proxy/xdlL7MDpbfD-ECZAA--2_iRjZ0levXuTq-Vj0gCCZsPIUDqUlbdP4aATiw-6mTm-0J1JSQ5nZTXvv3FuKO32oYayuv74gdU=w506-h303-p' height='100'/>
+												</a>
+											</p><p class='attachment_article_content'>
+												<a href='https://github.com/dam5s/android-example-kotlin' target='_blank'>
+													<span class='attachment_article_text'>android-example-kotlin - An example of basic Android application setup using Kotlin. It can run Robolectric and Espresso tests.</span>
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[After a few upgrades.]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/VQ3ir3Rn2h9</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/VQ3ir3Rn2h9</guid>
+            <pubDate>Tue, 28 Apr 2015 01:51:21 +0200</pubDate>
+            <description><![CDATA[<div class='content'>After a few upgrades.﻿</div><div class='attachments'><div class='attachment photo'><p class='attachment_preview'>
+												<a href='https://lh3.googleusercontent.com/-9nTjbfwqVQY/VT7LePX7h4I/AAAAAAAAI3Y/QFK_55vef1E/w3120-h4160/IMG_20150427_174234.jpg' target='_blank'>
+													<img src='https://lh3.googleusercontent.com/-9nTjbfwqVQY/VT7LePX7h4I/AAAAAAAAI3Y/QFK_55vef1E/w506-h750/IMG_20150427_174234.jpg' />
+												</a>
+											</p><p class='attachment_photo_content'>
+												<a href='https://lh3.googleusercontent.com/-9nTjbfwqVQY/VT7LePX7h4I/AAAAAAAAI3Y/QFK_55vef1E/w3120-h4160/IMG_20150427_174234.jpg' target='_blank'>
+													IMG_20150427_174234.jpg
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title>
+                <![CDATA[If you refuse to use an IDE because you don't want to use a mouse. I agree with you, you should not ...]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/jajhwQ6KdTV</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/jajhwQ6KdTV</guid>
+            <pubDate>Mon, 27 Apr 2015 03:45:30 +0200</pubDate>
+            <description><![CDATA[<div class='content'>If you refuse to use an IDE because you don&#39;t want to use a mouse. I agree with you, you should not need to use the mouse, but your idea of what an IDE is, is wrong.<br /><br />Since I started working for Pivotal Labs in Boulder, around 3 years ago, I&#39;ve started using Rubymine, then IntelliJ Idea, App Code... And I do not need to use the mouse. If a workmate is using his mouse too much, I will take it away from him.<br /><br />We&#39;ve been using the MacOSX 10.5+ shortcut with only a few additions for about 2 years in our office. Our shortcuts are available on Github: <a href="http://github.com/pivotal-boulder/ide-preferences">http://github.com/pivotal-boulder/ide-preferences</a><br /><br />Almost everything can be done with keyboard in Jetbrain&#39;s products, including refactorings and many useful code conversion tools. You&#39;ll also find a series of blog posts by Jared Caroll on our blog: <a href="http://pivotallabs.com/author/jcarroll/">http://pivotallabs.com/author/jcarroll/</a><br /><br />Enjoy faster editing, and refactoring!﻿</div><div class='attachments'><div class='attachment article'><p class='attachment_preview'>
+												<a href='http://github.com/pivotal-boulder/ide-preferences' target='_blank'>
+													<img src='https://lh6.googleusercontent.com/proxy/Le0Tue0IuSkfrT4BylledOcwkV7uCDS4qo5i8YHD-V17X9pXowAsGEY4WkaCMFbVYor9I_24iYRMGCs5gkWCIa-XfxsY_MGDNZM=w120-h120' height='100'/>
+												</a>
+											</p><p class='attachment_article_content'>
+												<a href='http://github.com/pivotal-boulder/ide-preferences' target='_blank'>
+													<span class='attachment_article_text'>Pivotal-Boulder/IDE-Preferences · GitHub</span>
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Reshared post from Ars Technica:]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/3PuwENeqRaB</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/3PuwENeqRaB</guid>
+            <pubDate>Mon, 27 Apr 2015 01:28:50 +0200</pubDate>
+            <description><![CDATA[<div class='content reshared'><div class='annotation'>I keep telling people that they should not bring in a library if they are able to implement it in a couple hours.AFNetworking is the perfect example of that. HTTP requests and asynchronous processing are not hard problems to solve with your own code.Don&#39;t be afraid to write code, pulling-in a library will most of the time result in extra complexity and sub-par solutions to your problems.</div><div class='original_content'><p><strong><a href='https://plus.google.com/+ArsTechnica/posts/1ee3aUqoyZL' target='_blank'>Original Post</a> from <a href='https://plus.google.com/114621063293418511073' target='_blank'>Ars Technica</a>:</strong></p><p>The AFNetworking situation is even worse than first thought for iOS apps.﻿</p></div></div><div class='attachments'><div class='attachment article'><p class='attachment_preview'>
+												<a href='https://arstechnica.com/security/2015/04/24/critical-https-bug-may-open-25000-ios-apps-to-eavesdropping-attacks/' target='_blank'>
+													<img src='https://lh3.googleusercontent.com/proxy/koVRHtIumxwLyUdOOwLfHfNqnEHiV90HiJ0-aMOCzfnbnjtYTpn8mpkNB1LhTgc_UXJdsj7QaOGtgSDV7Cpw-GVKYtImmAuczSfYv1hxSn5Gt_QY4gbfFGyfpw=w506-h303' height='100'/>
+												</a>
+											</p><p class='attachment_article_content'>
+												<a href='https://arstechnica.com/security/2015/04/24/critical-https-bug-may-open-25000-ios-apps-to-eavesdropping-attacks/' target='_blank'>
+													<span class='attachment_article_text'>Just when you thought it was safe to use AFNetworking apps, a new threat emerges.</span>
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Geeky weekend. And I'm gonna label every single one of them!]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/S6GYioCBFw3</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/S6GYioCBFw3</guid>
+            <pubDate>Sat, 11 Apr 2015 22:33:49 +0200</pubDate>
+            <description><![CDATA[<div class='content'>Geeky weekend. And I&#39;m gonna label every single one of them!﻿</div><div class='attachments'><div class='attachment photo'><p class='attachment_preview'>
+												<a href='https://lh3.googleusercontent.com/-sbNloeDhIso/VSmFLHzZNcI/AAAAAAAAIzI/NrXIHSSdHKo/w3120-h4160/IMG_20150411_143244.jpg' target='_blank'>
+													<img src='https://lh3.googleusercontent.com/-sbNloeDhIso/VSmFLHzZNcI/AAAAAAAAIzI/NrXIHSSdHKo/w506-h750/IMG_20150411_143244.jpg' />
+												</a>
+											</p><p class='attachment_photo_content'>
+												<a href='https://lh3.googleusercontent.com/-sbNloeDhIso/VSmFLHzZNcI/AAAAAAAAIzI/NrXIHSSdHKo/w3120-h4160/IMG_20150411_143244.jpg' target='_blank'>
+													IMG_20150411_143244.jpg
+												</a>
+											</p></div></div>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[#ChromeSelfie]]></title>
+            <link>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/MbyFW2eiqNb</link>
+            <guid>https://plus.google.com/+DamienLeBerrigaudLovesCheese/posts/MbyFW2eiqNb</guid>
+            <pubDate>Wed, 01 Apr 2015 16:10:02 +0200</pubDate>
+            <description><![CDATA[<div class='content'><a rel="nofollow" class="ot-hashtag" href="https://plus.google.com/s/%23ChromeSelfie">#ChromeSelfie</a>﻿</div><div class='attachments'><div class='attachment photo'><p class='attachment_preview'>
+												<a href='https://lh3.googleusercontent.com/-McqMQ2jZCtQ/VRv8OJKPisI/AAAAAAAAIwc/cWWXyM5v6Q8/w1080-h1701/15%2B-%2B1' target='_blank'>
+													<img src='https://lh3.googleusercontent.com/-McqMQ2jZCtQ/VRv8OJKPisI/AAAAAAAAIwc/cWWXyM5v6Q8/w506-h750/15%2B-%2B1' />
+												</a>
+											</p><p class='attachment_photo_content'>
+												<a href='https://lh3.googleusercontent.com/-McqMQ2jZCtQ/VRv8OJKPisI/AAAAAAAAIwc/cWWXyM5v6Q8/w1080-h1701/15%2B-%2B1' target='_blank'>
+													4/1/15 - 1
+												</a>
+											</p></div></div>]]></description>
+        </item>
+    </channel>
+</rss>

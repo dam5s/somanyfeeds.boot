@@ -1,7 +1,10 @@
 dependencies {
     compile project(":components/article-api")
+    compile project(":components/feed-processing")
+    compile project(":components/http-gateway")
 
     compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.data:spring-data-jpa:$springDataVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "org.postgresql:postgresql:9.3-1102-jdbc41"
 
@@ -9,3 +12,7 @@ dependencies {
 }
 
 apply plugin: "spring-boot"
+
+springBoot {
+    mainClassName = "com.somanyfeeds.SoManyFeedsApplication"
+}

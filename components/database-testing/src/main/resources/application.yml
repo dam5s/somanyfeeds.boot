@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/somanyfeeds_test
+    username: dam5s
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
