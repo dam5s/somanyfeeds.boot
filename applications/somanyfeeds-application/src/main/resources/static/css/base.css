@@ -33,8 +33,13 @@ p {
     margin: .3em 0;
 }
 
-#app-content {
+section.content {
     width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+#app-content {
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0 1% 1em 0;
@@ -59,6 +64,11 @@ p {
     z-index: 10;
 
     box-shadow: 0 2px 1px rgba(0, 0, 0, .3);
+}
+
+#app-header section.content {
+    position: relative;
+    height: 100%;
 }
 
 #app-header h1 {

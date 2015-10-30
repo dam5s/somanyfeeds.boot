@@ -26,37 +26,39 @@
 </head>
 <body ng-app="SoManyFeedsApp" ng-controller="articlesController">
 <header id="app-header">
-  <h1>
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
-      <circle
-        cx="595"
-        cy="100"
-        r="130"
-        fill="#00BCD4">
-      </circle>
-      <text
-        x="0"
-        y="160"
-        text-anchor="start"
-        font-family="Roboto Slab"
-        font-size="180"
-        font-weight="500"
-        fill="#FFFFFF">
-        damo.io
-      </text>
-    </svg>
-  </h1>
+  <section class="content">
+    <h1>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+        <circle
+          cx="595"
+          cy="100"
+          r="130"
+          fill="#00BCD4">
+        </circle>
+        <text
+          x="0"
+          y="160"
+          text-anchor="start"
+          font-family="Roboto Slab"
+          font-size="180"
+          font-weight="500"
+          fill="#FFFFFF">
+          damo.io
+        </text>
+      </svg>
+    </h1>
 
-  <aside id="app-menu">
-    <ul>
-      <li ng-repeat="feed in feeds" class="{{feed.selectedClass}}">
-        <a href="{{feed.path}}" ng-click="toggleFeed(feed.slug)">{{feed.name}}</a>
-      </li>
-    </ul>
-  </aside>
+    <aside id="app-menu">
+      <ul>
+        <li ng-repeat="feed in feeds" class="{{feed.selectedClass}}">
+          <a href="{{feed.path}}" ng-click="toggleFeed(feed.slug)">{{feed.name}}</a>
+        </li>
+      </ul>
+    </aside>
+  </section>
 </header>
 
-<section id="app-content">
+<section id="app-content" class="content">
   <article ng-repeat="article in articles">
     <header>
       <h1><a href="{{article.link}}">{{article.title}}</a></h1>
