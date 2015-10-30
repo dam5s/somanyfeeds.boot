@@ -3,6 +3,14 @@
 ///<reference path="article.ts"/>
 
 module SoManyFeeds {
+    interface ArticlesListResponse {
+        articles: Array<Article.Entity>
+    }
+
+    interface ArticlesService {
+        getByFeeds(feeds: Array<Feed.Entity>): angular.IHttpPromise<ArticlesListResponse>
+    }
+
     angular
         .module("SoManyFeedsApp", ["ngResource", "ngSanitize"])
 
@@ -31,11 +39,12 @@ module SoManyFeeds {
                                                     availableFeeds: Array<Feed.Entity>,
                                                     feedPresenter: Feed.Presenter,
                                                     articlePresenter: Article.Presenter,
-                                                    articlesService) {
+                                                    articlesService: ArticlesService) {
 
             let presentFeed = (feed) => feedPresenter.present(feed, availableFeeds);
             let presentArticle = (article) => articlePresenter.present(article);
             let selectedFeeds = () => availableFeeds.filter(f => f.selected);
+
             let refreshFeeds = () => {
                 articlesService.getByFeeds(selectedFeeds()).then(function (response) {
                     let entities: Array<Article.Entity> = response.data.articles;
