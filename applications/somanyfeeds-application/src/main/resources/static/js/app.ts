@@ -36,6 +36,7 @@ module SoManyFeeds {
         })
 
         .controller("articlesController", function ($scope,
+                                                    $location: angular.ILocationService,
                                                     availableFeeds: Array<Feed.Entity>,
                                                     feedPresenter: Feed.Presenter,
                                                     articlePresenter: Article.Presenter,
@@ -53,15 +54,13 @@ module SoManyFeeds {
                 $scope.feeds = availableFeeds.map(presentFeed);
             };
 
-            $scope.toggleFeed = (feedSlug: string) => {
+            $scope.$on("$locationChangeSuccess", () => {
+                let slugs = $location.path().replace(/^\//, "").split(",");
+
                 availableFeeds.forEach((feed: Feed.Entity) => {
-                    if (feed.slug == feedSlug) {
-                        feed.selected = !feed.selected;
-                    }
+                    feed.selected = slugs.some((s) => s == feed.slug);
                 });
                 refreshFeeds();
-            };
-
-            refreshFeeds();
+            });
         });
 }
