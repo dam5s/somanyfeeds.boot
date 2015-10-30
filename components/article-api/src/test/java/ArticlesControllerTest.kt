@@ -39,11 +39,12 @@ class ArticlesControllerTest {
             buildArticleEntity(id = 102)
         )
 
-        doReturn(articles).`when`(mockRepository).findAll()
+        val expectedSlugs = listOf("github", "gplus", "pivotal")
+        doReturn(articles).`when`(mockRepository).findAllBySlugs(expectedSlugs)
 
         mockMvc
-            .perform(get("/articles"))
-            .andExpect(status().isOk())
+            .perform(get("/articles/github,gplus,pivotal"))
+            .andExpect(status().isOk)
             .andExpect(jsonPath("$.articles", hasSize<Any>(3)))
 
             .andExpect(jsonPath("$.articles[0].id").value(100))

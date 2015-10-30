@@ -22,7 +22,7 @@ insert into feed (name, slug, url, type) values
 
 create table article (
   id      bigserial primary key,
-  feed_id int references feed (id),
+  feed_id int references feed (id) on delete cascade,
   title   text,
   link    text,
   content text,

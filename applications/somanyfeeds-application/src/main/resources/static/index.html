@@ -50,7 +50,7 @@
   <aside id="app-menu">
     <ul>
       <li ng-repeat="feed in feeds" class="{{feed.selectedClass}}">
-        <a href="{{feed.path}}">{{feed.name}}</a>
+        <a href="{{feed.path}}" ng-click="toggleFeed(feed.slug)">{{feed.name}}</a>
       </li>
     </ul>
   </aside>

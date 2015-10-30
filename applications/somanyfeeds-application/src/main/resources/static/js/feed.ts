@@ -9,6 +9,7 @@ module SoManyFeeds {
 
         export interface ViewModel {
             name: string,
+            slug: string,
             path: string,
             selectedClass: string
         }
@@ -19,7 +20,7 @@ module SoManyFeeds {
                     .filter(feed => feed.selected)
                     .map(feed => feed.slug);
 
-                var path: String = "/";
+                var path: string = "/#/";
 
                 if (feed.selected) {
                     path += selectedSlugs
@@ -35,6 +36,7 @@ module SoManyFeeds {
 
                 return {
                     name: feed.name,
+                    slug: feed.slug,
                     path: path,
                     selectedClass: feed.selected ? "selected" : "not-selected"
                 }

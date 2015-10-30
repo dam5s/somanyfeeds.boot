@@ -1,6 +1,7 @@
 package com.somanyfeeds
 
 import org.springframework.boot.test.SpringApplicationConfiguration
+import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests
 import java.util.*
 
@@ -16,3 +17,6 @@ open class RepositoryTest : AbstractTransactionalJUnit4SpringContextTests() {
         jdbcTemplate.execute(sql)
     }
 }
+
+fun JdbcTemplate.getCount(sql: String) = this.queryForObject(sql, java.lang.Long::class.java) as Long
+

@@ -5,10 +5,14 @@ import com.somanyfeeds.articledataaccess.ArticleEntity
 import com.somanyfeeds.articledataaccess.JpaArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedType
+import com.somanyfeeds.getCount
+import org.hamcrest.Matchers.equalTo
+import org.hamcrest.Matchers.hasSize
+import org.junit.Assert.assertThat
+import org.junit.Before
 import org.junit.Test
 import java.time.LocalDateTime
 import javax.inject.Inject
-import kotlin.test.assertEquals
 
 
 class ArticleRepositoryTest : RepositoryTest() {
@@ -16,16 +20,20 @@ class ArticleRepositoryTest : RepositoryTest() {
     @Inject
     lateinit var repo: JpaArticleRepository
 
-    @Test
-    fun testFindAll() {
+    @Before
+    fun setup() {
         execSql("truncate table feed cascade")
 
         execSql("""
           insert into feed(id, name, slug, url, type) values
           (10, 'My Feed', 'my-feed', 'http://example.com/feed.rss', 'RSS'),
-          (11, 'My Other Feed', 'my-other-feed', 'http://example.com/other-feed.atom', 'ATOM')
+          (11, 'My Other Feed', 'my-other-feed', 'http://example.com/other-feed.atom', 'ATOM'),
+          (12, 'My Last Feed', 'my-last-feed', 'http://example.com/last-feed.atom', 'ATOM')
         """)
+    }
 
+    @Test
+    fun testFindAll() {
         execSql("""
           insert into article(id, feed_id, title, link, content, date) values
           (100, 10, 'My First Article', 'http://example.com/blog/articles/1', 'This is a first great article...', '2010-01-02T03:04:05'),
@@ -44,60 +52,61 @@ class ArticleRepositoryTest : RepositoryTest() {
             content = "This is a first great article...",
             date = LocalDateTime.parse("2010-01-02T03:04:05")
         )
-        assertEquals(3, entities.count())
-        assertEquals(expectedArticle, entities.first())
+        assertThat(entities, hasSize(3))
+        assertThat(entities.first(), equalTo(expectedArticle))
+    }
+
+    @Test
+    fun testFindAllBySlugs() {
+        execSql("""
+          insert into article(id, feed_id, title, link, content, date) values
+          (100, 10, 'My First Article', 'http://example.com/blog/articles/1', 'This is a first great article...', '2010-01-02T03:04:05'),
+          (101, 11, 'My Second Article', 'http://example.com/blog/articles/2', 'This is a second great article...', '2011-01-02T03:04:05'),
+          (102, 12, 'My Other Article', 'http://example.com/blog/other-articles/1', 'This is another great article...', '2012-01-02T03:04:05')
+        """)
+
+
+        val entities = repo.findAllBySlugs(listOf("my-feed", "my-last-feed"))
+
+
+        assertThat(entities, hasSize(2))
+        assertThat(entities.first(), equalTo(ArticleEntity(
+            id = 100,
+            title = "My First Article",
+            link = "http://example.com/blog/articles/1",
+            content = "This is a first great article...",
+            date = LocalDateTime.parse("2010-01-02T03:04:05")
+        )))
     }
 
     @Test
     fun testCreate() {
-        execSql("truncate table feed cascade")
-        execSql("""
-            insert into feed(id, name, slug, url, type) values
-            (10, 'My Feed', 'my-feed', 'http://example.com/feed.rss', 'RSS')
-        """)
-
-
+        val feed = buildFeedEntity(id = 10)
         val article = ArticleEntity(
             title = "My Article",
             link = "http://example.com/my/article",
             content = "It's great and stuff...",
             date = LocalDateTime.parse("2010-01-02T03:04:05")
         )
-        val feed = FeedEntity(
-            id = 10,
-            name = "My Feed",
-            slug = "my-feed",
-            url = "http://example.com/feed.rss",
-            type = FeedType.RSS
-        )
 
 
         val created = repo.create(article, feed)
 
+        val count = jdbcTemplate.getCount("select count(*) from article where id = $created")
+        assertThat(count, equalTo(1L))
 
-        var found = 0
         jdbcTemplate.query("select * from article where id = $created") { rs ->
-            found++
-
-            assertEquals(created, rs.getLong("id"))
-            assertEquals(10L, rs.getLong("feed_id"))
-            assertEquals("My Article", rs.getString("title"))
-            assertEquals("http://example.com/my/article", rs.getString("link"))
-            assertEquals("It's great and stuff...", rs.getString("content"))
-            assertEquals("2010-01-02 03:04:05", rs.getString("date"))
+            assertThat(rs.getLong("id"), equalTo(created))
+            assertThat(rs.getLong("feed_id"), equalTo(10L))
+            assertThat(rs.getString("title"), equalTo("My Article"))
+            assertThat(rs.getString("link"), equalTo("http://example.com/my/article"))
+            assertThat(rs.getString("content"), equalTo("It's great and stuff..."))
+            assertThat(rs.getString("date"), equalTo("2010-01-02 03:04:05"))
         }
-
-        assertEquals(1, found)
     }
 
     @Test
     fun testDeleteByFeed() {
-        execSql("truncate table feed cascade")
-        execSql("""
-            insert into feed(id, name, slug, url, type) values
-            (10, 'My Feed', 'my-feed', 'http://example.com/feed.rss', 'RSS'),
-            (11, 'My Other Feed', 'my-other-feed', 'http://example.com/other-feed.atom', 'ATOM')
-        """)
         execSql("""
             insert into article(id, feed_id, title, link, content, date) values
             (20, 10, 'My Article 1', 'http://example.com/article1', 'content 1...', '2010-01-02T03:04:05Z'),
@@ -109,18 +118,17 @@ class ArticleRepositoryTest : RepositoryTest() {
         repo.deleteByFeed(buildFeedEntity(id = 10))
 
 
-        var found = 0
-        jdbcTemplate.query("select * from article") { rs ->
-            found++
+        val count = jdbcTemplate.getCount("select count(*) from article")
+        assertThat(count, equalTo(1L))
 
-            assertEquals(22L, rs.getLong("id"))
-            assertEquals(11L, rs.getLong("feed_id"))
-            assertEquals("My Article 3", rs.getString("title"))
-            assertEquals("http://example.com/article3", rs.getString("link"))
-            assertEquals("content 3...", rs.getString("content"))
-            assertEquals("2010-01-02 03:04:05", rs.getString("date"))
+        jdbcTemplate.query("select * from article") { rs ->
+            assertThat(rs.getLong("id"), equalTo(22L))
+            assertThat(rs.getLong("feed_id"), equalTo(11L))
+            assertThat(rs.getString("title"), equalTo("My Article 3"))
+            assertThat(rs.getString("link"), equalTo("http://example.com/article3"))
+            assertThat(rs.getString("content"), equalTo("content 3..."))
+            assertThat(rs.getString("date"), equalTo("2010-01-02 03:04:05"))
         }
-        assertEquals(1, found)
     }
 }
 

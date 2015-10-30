@@ -7,6 +7,8 @@ import javax.inject.Inject
 interface ArticleRepository {
     fun findAll(): Iterable<ArticleEntity>
 
+    fun findAllBySlugs(slugs: List<String>): Iterable<ArticleEntity>
+
     fun create(article: ArticleEntity, feed: FeedEntity): Long
 
     fun deleteByFeed(feed: FeedEntity)
@@ -19,6 +21,9 @@ open class JpaArticleRepository : ArticleRepository {
     private lateinit var crudRepo: ArticleCrudRepository
 
     override fun findAll() = crudRepo.findAll().map(::buildArticleEntity)
+
+    override fun findAllBySlugs(slugs: List<String>)
+        = crudRepo.findAllBySlugs(slugs).map(::buildArticleEntity)
 
     override fun create(article: ArticleEntity, feed: FeedEntity): Long {
         val crudEntity = ArticleCrudEntity().apply {

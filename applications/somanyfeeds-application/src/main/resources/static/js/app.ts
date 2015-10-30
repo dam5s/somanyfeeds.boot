@@ -13,26 +13,46 @@ module SoManyFeeds {
         ])
 
         .service("feedPresenter", () => new Feed.Presenter())
-        .service("articlePresenter", ["$sanitize", ($san) => new Article.Presenter($san)])
-        .factory("articlesResource", ["$resource", ($res) => $res("/articles")])
+        .service("articlePresenter", ($sanitize) => new Article.Presenter($sanitize))
+        .factory("articlesService", ($http: angular.IHttpService) => {
+            return {
+                getByFeeds: (feeds: Array<Feed.Entity>) => {
+                    let slugs = feeds
+                        .map(f => f.slug)
+                        .sort()
+                        .join(",");
 
-        .controller("articlesController", ["$scope", "availableFeeds", "feedPresenter", "articlePresenter", "articlesResource",
-            function ($scope,
-                      availableFeeds: Array<Feed.Entity>,
-                      feedPresenter: Feed.Presenter,
-                      articlePresenter: Article.Presenter,
-                      articlesResource) {
-
-                let presentFeed = (feed) => feedPresenter.present(feed, availableFeeds);
-                let presentArticle = (article) => articlePresenter.present(article);
-
-                $scope.feeds = availableFeeds.map(presentFeed);
-
-                articlesResource.get()
-                    .$promise.then(function (response) {
-                        let entities: Array<Article.Entity> = response.articles;
-                        $scope.articles = entities.map(presentArticle)
-                    })
+                    return $http.get(`/articles/${slugs}`)
+                }
             }
-        ]);
+        })
+
+        .controller("articlesController", function ($scope,
+                                                    availableFeeds: Array<Feed.Entity>,
+                                                    feedPresenter: Feed.Presenter,
+                                                    articlePresenter: Article.Presenter,
+                                                    articlesService) {
+
+            let presentFeed = (feed) => feedPresenter.present(feed, availableFeeds);
+            let presentArticle = (article) => articlePresenter.present(article);
+            let selectedFeeds = () => availableFeeds.filter(f => f.selected);
+            let refreshFeeds = () => {
+                articlesService.getByFeeds(selectedFeeds()).then(function (response) {
+                    let entities: Array<Article.Entity> = response.data.articles;
+                    $scope.articles = entities.map(presentArticle)
+                });
+                $scope.feeds = availableFeeds.map(presentFeed);
+            };
+
+            $scope.toggleFeed = (feedSlug: string) => {
+                availableFeeds.forEach((feed: Feed.Entity) => {
+                    if (feed.slug == feedSlug) {
+                        feed.selected = !feed.selected;
+                    }
+                });
+                refreshFeeds();
+            };
+
+            refreshFeeds();
+        });
 }
