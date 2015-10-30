@@ -5,7 +5,6 @@ import com.somanyfeeds.articledataaccess.ArticleEntity
 import com.somanyfeeds.articledataaccess.JpaArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedType
-import com.somanyfeeds.getCount
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.Matchers.hasSize
 import org.junit.Assert.assertThat
@@ -92,8 +91,7 @@ class ArticleRepositoryTest : RepositoryTest() {
 
         val created = repo.create(article, feed)
 
-        val count = jdbcTemplate.getCount("select count(*) from article where id = $created")
-        assertThat(count, equalTo(1L))
+        assertThat(getCount("select count(*) from article where id = $created"), equalTo(1L))
 
         jdbcTemplate.query("select * from article where id = $created") { rs ->
             assertThat(rs.getLong("id"), equalTo(created))
@@ -118,8 +116,7 @@ class ArticleRepositoryTest : RepositoryTest() {
         repo.deleteByFeed(buildFeedEntity(id = 10))
 
 
-        val count = jdbcTemplate.getCount("select count(*) from article")
-        assertThat(count, equalTo(1L))
+        assertThat(getCount("select count(*) from article"), equalTo(1L))
 
         jdbcTemplate.query("select * from article") { rs ->
             assertThat(rs.getLong("id"), equalTo(22L))
@@ -130,7 +127,13 @@ class ArticleRepositoryTest : RepositoryTest() {
             assertThat(rs.getString("date"), equalTo("2010-01-02 03:04:05"))
         }
     }
+
+    @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN")
+    private fun getCount(sql: String): Long {
+        return jdbcTemplate.queryForObject(sql, java.lang.Long::class.java) as Long
+    }
 }
+
 
 private fun buildFeedEntity(
     id: Long? = 10,
