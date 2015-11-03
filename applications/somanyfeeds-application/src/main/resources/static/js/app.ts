@@ -47,39 +47,23 @@ module SoManyFeeds {
             let presentArticle = (article) => articlePresenter.present(article);
             let selectedFeeds = () => availableFeeds.filter(f => f.selected);
 
-            let aboutArticle: Article.ViewModel = {
-                title: "About",
-                link: "http://damo.io",
-                content: document.getElementById("about-article-content").innerHTML,
-                date: "",
-            };
-
             let refreshFeeds = () => {
                 let feeds = selectedFeeds();
                 let feedsWithoutAbout = feeds.filter(f => f.slug != "about");
 
-                let displayArticles = (articles: Array<Article.ViewModel>) => {
-                    let shouldDisplayAbout = feeds.some(f => f.slug == "about");
-
-                    if (shouldDisplayAbout) {
-                        articles.unshift(aboutArticle);
-                    }
-
-                    $scope.articles = articles;
-                };
+                $scope.aboutSelected = feeds.some(f => f.slug == "about");
 
                 if (feedsWithoutAbout.length > 0) {
                     articlesService
                         .getByFeeds(feedsWithoutAbout)
                         .then((response) => {
-                            let presentedArticles = response
+                            $scope.articles = response
                                 .data
                                 .articles
                                 .map(presentArticle);
-                            displayArticles(presentedArticles);
                         });
                 } else {
-                    displayArticles([]);
+                    $scope.articles = [];
                 }
 
                 $scope.feeds = availableFeeds.map(presentFeed);
