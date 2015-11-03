@@ -17,7 +17,9 @@ class ArticlesController {
     @RequestMapping("/articles/{slugs}")
     fun listArticles(@PathVariable slugs: List<String>): ArticleListJson {
         val articleEntities = articleRepository.findAllBySlugs(slugs)
-        val presentedArticles = articleEntities.map { presentArticle(it, "My Feed") }
+        val presentedArticles = articleEntities
+            .sortedByDescending { it.date }
+            .map { presentArticle(it, "My Feed") }
 
         return ArticleListJson(articles = presentedArticles);
     }

@@ -26,17 +26,23 @@ class ArticlesControllerTest {
     }
 
     @Test
-    fun listArticles_HappyPath() {
+    fun listArticles_ReturnsThemInReverseChronologicalOrder() {
         val articles = arrayListOf(
             buildArticleEntity(
                 id = 100,
+                date = LocalDateTime.parse("2011-02-03T04:05:06")
+            ),
+            buildArticleEntity(
+                id = 101,
                 title = "Awesome Article",
                 link = "http://example.com/articles/1",
                 content = "This is it.",
-                date = LocalDateTime.parse("2011-02-03T04:05:06")
+                date = LocalDateTime.parse("2011-02-04T04:05:07")
             ),
-            buildArticleEntity(id = 101),
-            buildArticleEntity(id = 102)
+            buildArticleEntity(
+                id = 102,
+                date = LocalDateTime.parse("2011-02-03T04:05:07")
+            )
         )
 
         val expectedSlugs = listOf("github", "gplus", "pivotal")
@@ -47,12 +53,12 @@ class ArticlesControllerTest {
             .andExpect(status().isOk)
             .andExpect(jsonPath("$.articles", hasSize<Any>(3)))
 
-            .andExpect(jsonPath("$.articles[0].id").value(100))
+            .andExpect(jsonPath("$.articles[0].id").value(101))
             .andExpect(jsonPath("$.articles[0].title").value("Awesome Article"))
             .andExpect(jsonPath("$.articles[0].link").value("http://example.com/articles/1"))
             .andExpect(jsonPath("$.articles[0].content").value("This is it."))
 
-            .andExpect(jsonPath("$.articles[1].id").value(101))
-            .andExpect(jsonPath("$.articles[2].id").value(102))
+            .andExpect(jsonPath("$.articles[1].id").value(102))
+            .andExpect(jsonPath("$.articles[2].id").value(100))
     }
 }
