@@ -30,7 +30,7 @@ a:link, a:hover, a:visited, a:active {
 }
 
 p {
-    margin: .3em 0;
+    margin: 1em 0;
 }
 
 section.content {
@@ -53,6 +53,8 @@ section.content {
     column-count: 2;
     column-gap: 1em;
     column-fill: auto;
+
+    background: inherit url("../svg/bg.svg") no-repeat center;
 }
 
 #app-header {

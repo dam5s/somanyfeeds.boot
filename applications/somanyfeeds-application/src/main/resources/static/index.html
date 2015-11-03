@@ -59,16 +59,61 @@
 </header>
 
 <section id="app-content" class="content">
-  <article ng-repeat="article in articles">
-    <header>
-      <h1><a href="{{article.link}}">{{article.title}}</a></h1>
+  <div ng-if="articles.length > 0">
+    <article ng-repeat="article in articles">
+      <header>
+        <h1><a href="{{article.link}}">{{article.title}}</a></h1>
 
-      <h2 class="date">{{article.date}}</h2>
-    </header>
-    <section ng-bind-html="article.content">
-    </section>
-  </article>
+        <h2 class="date">{{article.date}}</h2>
+      </header>
+      <section ng-bind-html="article.content">
+      </section>
+    </article>
+  </div>
+  <div ng-if="articles.length == 0">
+    <article>
+      <header>
+        <h1><a href="http://damo.io">Nothing to see here.</a></h1>
+      </header>
+      <section>
+        <p>
+          You have deselected all the feeds in the menu. There is nothing to show.
+          Feel free to select one or more feeds to display more entries.
+        </p>
+      </section>
+    </article>
+  </div>
 </section>
+
+<script type="text/html" id="about-article-content">
+  <p>
+    I'm <strong>Damien Le Berrigaud</strong>, Software Engineer for
+    <a href="https://pivotal.io/labs">Pivotal Labs</a>. I like working with
+    <a href="https://kotlinlang.org">Kotlin</a>,
+    <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>,
+    <a href="https://spring.io">Spring</a>,
+    <a href="https://developer.android.com">Android</a>,
+    <a href="https://developer.apple.com/ios">iOS (Swift or Objective-C)</a>,
+    <a href="https://golang.org">Go</a>...
+    and I've had previous experiences in
+    <a href="https://www.ruby-lang.org">Ruby</a> and
+    <a href="https://www.microsoft.com/net">.NET</a>.
+  </p>
+  <p>
+    That's a lot of technologies that I got to work with while working at <em>Pivotal Labs</em> and in my previous jobs.
+    In order to keep up-to-date, I keep rebuilding this website.
+  </p>
+  <p>
+    This version is written in <em>Kotlin</em>, using <em>Spring Boot</em>: including <em>Spring MVC</em> and <em>Spring
+    Data JPA</em>.
+    The current front-end is written with <em>AngularJS</em> in <em>TypeScript</em>. The source code is entirely
+    available
+    <a href="https://github.com/dam5s/somanyfeeds.boot">on my github</a>.
+  </p>
+  <p>
+    You can choose to follow multiple of my feeds, on a single page, by using the menu at the top of the page.
+  </p>
+</script>
 
 </body>
 </html>
