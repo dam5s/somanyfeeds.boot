@@ -16,3 +16,8 @@ apply plugin: "spring-boot"
 springBoot {
     mainClassName = "com.somanyfeeds.SoManyFeedsApplication"
 }
+
+task deploy(type: Exec) {
+    workingDir project.projectDir
+    commandLine "cf", "push", "damo", "-p", "build/libs/applications/somanyfeeds-application.jar"
+}
