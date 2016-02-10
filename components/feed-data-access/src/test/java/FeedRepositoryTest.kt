@@ -1,8 +1,11 @@
 import com.somanyfeeds.RepositoryTest
-import com.somanyfeeds.feeddataaccess.*
+import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.feeddataaccess.FeedType
+import com.somanyfeeds.feeddataaccess.JpaFeedRepository
+import org.hamcrest.Matchers.equalTo
+import org.junit.Assert.assertThat
 import org.junit.Test
 import javax.inject.Inject
-import kotlin.test.assertEquals
 
 class FeedRepositoryTest : RepositoryTest() {
 
@@ -47,6 +50,6 @@ class FeedRepositoryTest : RepositoryTest() {
                 type = FeedType.RSS
             )
         )
-        assertEquals(expectedFeeds, feeds)
+        assertThat(expectedFeeds, equalTo(feeds))
     }
 }
