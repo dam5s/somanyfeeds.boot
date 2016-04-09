@@ -1,19 +1,16 @@
-import com.somanyfeeds.RepositoryTest
+import com.somanyfeeds.RepositorySpec
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feeddataaccess.JpaFeedRepository
+import io.damo.kspec.spring.inject
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
-import org.junit.Test
-import javax.inject.Inject
 
-class FeedRepositoryTest : RepositoryTest() {
+class FeedRepositoryTest : RepositorySpec({
 
-    @Inject
-    lateinit var repo: JpaFeedRepository
+    val repo = inject(JpaFeedRepository::class)
 
-    @Test
-    fun testFindAll() {
+    test("#findAll") {
         execSql("truncate table feed cascade")
 
         execSql("""
@@ -52,4 +49,4 @@ class FeedRepositoryTest : RepositoryTest() {
         )
         assertThat(expectedFeeds, equalTo(feeds))
     }
-}
+})

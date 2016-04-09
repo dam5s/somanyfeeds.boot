@@ -1,26 +1,22 @@
 package articledataaccess
 
-import com.somanyfeeds.RepositoryTest
+import com.somanyfeeds.RepositorySpec
 import com.somanyfeeds.articledataaccess.ArticleEntity
 import com.somanyfeeds.articledataaccess.JpaArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedType
+import io.damo.kspec.spring.inject
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.Matchers.hasSize
 import org.junit.Assert.assertThat
-import org.junit.Before
-import org.junit.Test
 import java.time.LocalDateTime
-import javax.inject.Inject
 
 
-class ArticleRepositoryTest : RepositoryTest() {
+class ArticleRepositoryTest : RepositorySpec({
 
-    @Inject
-    lateinit var repo: JpaArticleRepository
+    val repo = inject(JpaArticleRepository::class)
 
-    @Before
-    fun setup() {
+    before {
         execSql("truncate table feed cascade")
 
         execSql("""
@@ -31,8 +27,7 @@ class ArticleRepositoryTest : RepositoryTest() {
         """)
     }
 
-    @Test
-    fun testFindAll() {
+    test("#findAll") {
         execSql("""
           insert into article(id, feed_id, title, link, content, date) values
           (100, 10, 'My First Article', 'http://example.com/blog/articles/1', 'This is a first great article...', '2010-01-02T03:04:05'),
@@ -55,8 +50,7 @@ class ArticleRepositoryTest : RepositoryTest() {
         assertThat(entities.first(), equalTo(expectedArticle))
     }
 
-    @Test
-    fun testFindAllBySlugs() {
+    test("#findAllBySlugs") {
         execSql("""
           insert into article(id, feed_id, title, link, content, date) values
           (100, 10, 'My First Article', 'http://example.com/blog/articles/1', 'This is a first great article...', '2010-01-02T03:04:05'),
@@ -78,8 +72,7 @@ class ArticleRepositoryTest : RepositoryTest() {
         )))
     }
 
-    @Test
-    fun testCreate() {
+    test("#create") {
         val feed = buildFeedEntity(id = 10)
         val article = ArticleEntity(
             title = "My Article",
@@ -103,8 +96,7 @@ class ArticleRepositoryTest : RepositoryTest() {
         }
     }
 
-    @Test
-    fun testDeleteByFeed() {
+    test("#deleteByFeed") {
         execSql("""
             insert into article(id, feed_id, title, link, content, date) values
             (20, 10, 'My Article 1', 'http://example.com/article1', 'content 1...', '2010-01-02T03:04:05Z'),
@@ -127,13 +119,7 @@ class ArticleRepositoryTest : RepositoryTest() {
             assertThat(rs.getString("date"), equalTo("2010-01-02 03:04:05"))
         }
     }
-
-    @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN")
-    private fun getCount(sql: String): Long {
-        return jdbcTemplate.queryForObject(sql, java.lang.Long::class.java) as Long
-    }
-}
-
+})
 
 private fun buildFeedEntity(
     id: Long? = 10,

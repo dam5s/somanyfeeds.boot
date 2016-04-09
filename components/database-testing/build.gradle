@@ -1,6 +1,5 @@
 dependencies {
-    compile "junit:junit:4.12"
-    compile "javax.inject:javax.inject:1"
+    compile "io.damo.kspec:kspec-spring:$kspecVersion"
     compile "org.springframework.data:spring-data-jpa:$springDataVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
     compile "org.springframework:spring-test:$springVersion"

@@ -4,7 +4,7 @@ description "SoManyFeeds a simple feed aggregator"
 
 buildscript {
     ext {
-        kspecVersion = "1.2.0"
+        kspecVersion = "1.2.1"
         kotlinVersion = "1.0.1-2"
         jacksonKotlinVersion = "2.7.3"
         springBootVersion = "1.2.7.RELEASE"
