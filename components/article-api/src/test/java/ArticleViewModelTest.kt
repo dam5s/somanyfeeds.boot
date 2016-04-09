@@ -1,16 +1,16 @@
 import com.jayway.jsonpath.JsonPath.read
 import com.somanyfeeds.jsonserialization.ObjectMapperProvider
+import io.damo.kspec.Spec
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
-import org.junit.Test
 import testing.buildArticleViewModel
 import java.time.LocalDateTime
 
-class ArticleViewModelTest {
+class ArticleViewModelTest : Spec({
+
     val mapper = ObjectMapperProvider().get()
 
-    @Test
-    fun testSerialization() {
+    test("serialization") {
         val article = buildArticleViewModel(
             id = 1011,
             title = "My Article",
@@ -29,4 +29,4 @@ class ArticleViewModelTest {
         assertThat(read(json, "$.content"), equalTo("This is a great article on a very interesting topic..."))
         assertThat(read(json, "$.date"), equalTo("2011-02-03T04:05:06Z"))
     }
-}
+})

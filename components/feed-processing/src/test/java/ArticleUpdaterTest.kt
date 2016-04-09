@@ -1,14 +1,12 @@
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
-import org.junit.Test
+import io.damo.kspec.Spec
 import org.mockito.Mockito.*
 
-class ArticleUpdaterTest {
-    val mockArticleRepo = mock(ArticleRepository::class.java)
-    val articlesUpdater = DefaultArticleUpdater(mockArticleRepo, 2)
-
-    @Test
-    fun testUpdateArticles() {
+class ArticleUpdaterTest : Spec({
+    test {
+        val mockArticleRepo = mock(ArticleRepository::class.java)
+        val articlesUpdater = DefaultArticleUpdater(mockArticleRepo, 2)
         val feed = buildFeedEntity(id = 90)
 
 
@@ -24,4 +22,4 @@ class ArticleUpdaterTest {
         verify(mockArticleRepo).create(buildArticleEntity(id = 104), feed)
         verifyNoMoreInteractions(mockArticleRepo)
     }
-}
+})

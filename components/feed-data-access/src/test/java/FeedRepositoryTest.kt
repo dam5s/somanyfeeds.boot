@@ -20,7 +20,7 @@ class FeedRepositoryTest : RepositoryTest() {
             insert into feed (id, name, slug, url, type) values
             (210, 'G+', 'g-plus', 'http://gplus.example.com/feed.rss', 'RSS'),
             (211, 'Github', 'github', 'http://github.example.com/feed.atom', 'ATOM'),
-            (212, 'Tumblr', 'tumblr', 'http://tumb.example.com/feed.rss', 'RSS');
+            (212, 'Tumblr', 'tumblr', 'http://tumb.example.com/feed.rss', 'RSS')
         """)
 
 

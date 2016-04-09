@@ -9,7 +9,7 @@ import java.util.*
 open class RepositoryTest : AbstractTransactionalJUnit4SpringContextTests() {
 
     init {
-        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
     }
 
     fun execSql(sql: String) {

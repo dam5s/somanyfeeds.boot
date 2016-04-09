@@ -1,11 +1,8 @@
 import com.somanyfeeds.articleapi.ArticlesController
 import com.somanyfeeds.articledataaccess.ArticleRepository
+import io.damo.kspec.Spec
 import org.hamcrest.Matchers.hasSize
-import org.junit.Before
-import org.junit.Test
-import org.mockito.Mockito.doReturn
-import org.mockito.Mockito.mock
-import org.springframework.test.web.servlet.MockMvc
+import org.mockito.Mockito.*
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
@@ -13,20 +10,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetu
 import testing.buildArticleEntity
 import java.time.LocalDateTime
 
-class ArticlesControllerTest {
-    lateinit var mockRepository: ArticleRepository
-    lateinit var controller: ArticlesController
-    lateinit var mockMvc: MockMvc
+class ArticlesControllerTest : Spec ({
 
-    @Before
-    fun setup() {
-        mockRepository = mock(ArticleRepository::class.java);
-        controller = ArticlesController(mockRepository);
-        mockMvc = standaloneSetup(controller).build()
+    val mockRepository = mock(ArticleRepository::class.java)
+    val controller = ArticlesController(mockRepository)
+    val mockMvc = standaloneSetup(controller).build()
+
+    before {
+        reset(mockRepository)
     }
 
-    @Test
-    fun listArticles_ReturnsThemInReverseChronologicalOrder() {
+    test("#listArticles") {
         val articles = arrayListOf(
             buildArticleEntity(
                 id = 100,
@@ -61,4 +55,4 @@ class ArticlesControllerTest {
             .andExpect(jsonPath("$.articles[1].id").value(102))
             .andExpect(jsonPath("$.articles[2].id").value(100))
     }
-}
+})

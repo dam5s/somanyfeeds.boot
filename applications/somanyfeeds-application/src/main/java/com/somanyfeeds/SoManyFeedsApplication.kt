@@ -3,7 +3,9 @@ package com.somanyfeeds
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedRepository
 import com.somanyfeeds.feeddataaccess.FeedType
-import com.somanyfeeds.feedprocessing.*
+import com.somanyfeeds.feedprocessing.ArticleUpdater
+import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
+import com.somanyfeeds.feedprocessing.FeedsUpdater
 import com.somanyfeeds.feedprocessing.atom.AtomFeedProcessor
 import com.somanyfeeds.feedprocessing.rss.RssFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
@@ -27,7 +29,7 @@ open class SoManyFeedsApplication {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+            TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
             SpringApplication.run(SoManyFeedsApplication::class.java, *args)
         }
     }

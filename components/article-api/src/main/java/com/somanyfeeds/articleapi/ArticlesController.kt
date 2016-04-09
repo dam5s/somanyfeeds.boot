@@ -1,7 +1,9 @@
 package com.somanyfeeds.articleapi
 
 import com.somanyfeeds.articledataaccess.ArticleRepository
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import javax.inject.Inject
 
 @RestController
@@ -11,7 +13,7 @@ class ArticlesController {
 
     @Inject
     constructor(articleRepository: ArticleRepository) {
-        this.articleRepository = articleRepository;
+        this.articleRepository = articleRepository
     }
 
     @RequestMapping("/articles/{slugs}")
@@ -21,7 +23,7 @@ class ArticlesController {
             .sortedByDescending { it.date }
             .map { presentArticle(it, "My Feed") }
 
-        return ArticleListJson(articles = presentedArticles);
+        return ArticleListJson(articles = presentedArticles)
     }
 
     data class ArticleListJson(val articles: List<ArticleViewModel>)

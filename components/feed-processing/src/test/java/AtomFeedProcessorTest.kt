@@ -1,18 +1,16 @@
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.atom.AtomFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
+import io.damo.kspec.Spec
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat
-import org.junit.Test
 import org.mockito.Matchers.anyString
 import org.mockito.Mockito.*
 import java.time.LocalDateTime
 import java.time.Month
 
-class AtomFeedProcessorTest {
-
-    @Test
-    fun testProcess() {
+class AtomFeedProcessorTest : Spec({
+    test {
         val httpGateway = mock(HttpGateway::class.java)
         val processor = AtomFeedProcessor(httpGateway)
         val feed = buildFeedEntity(
@@ -39,4 +37,4 @@ class AtomFeedProcessorTest {
         assertThat(article.title, containsString("dam5s created branch master at dam5s/somanyfeeds.java"))
         assertThat(article.content, containsString("<!-- create -->\n            <div class=\"simple\">\n"))
     }
-}
+})

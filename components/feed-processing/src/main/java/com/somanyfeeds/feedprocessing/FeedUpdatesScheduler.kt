@@ -1,7 +1,9 @@
-package com.somanyfeeds.feedprocessing;
+package com.somanyfeeds.feedprocessing
 
 import org.slf4j.LoggerFactory
-import java.util.concurrent.*
+import java.util.concurrent.ScheduledExecutorService
+import java.util.concurrent.ScheduledFuture
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 interface FeedUpdatesScheduler {

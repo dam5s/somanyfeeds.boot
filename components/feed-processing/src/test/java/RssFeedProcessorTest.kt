@@ -1,28 +1,24 @@
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.rss.RssFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
+import io.damo.kspec.Spec
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat
-import org.junit.Before
-import org.junit.Test
 import org.mockito.Matchers.anyString
 import org.mockito.Mockito.*
 import java.time.LocalDateTime
 import java.time.Month
 
-class RssFeedProcessorTest {
+class RssFeedProcessorTest : Spec({
 
-    lateinit var httpGateway: HttpGateway
-    lateinit var processor: RssFeedProcessor
+    val httpGateway = mock(HttpGateway::class.java)
+    val processor = RssFeedProcessor(httpGateway)
 
-    @Before
-    fun setup() {
-        httpGateway = mock(HttpGateway::class.java)
-        processor = RssFeedProcessor(httpGateway)
+    before {
+        reset(httpGateway)
     }
 
-    @Test
-    fun testProcess() {
+    test {
         val feed = buildFeedEntity(
             url = "http://example.com/feed/rss",
             type = FeedType.RSS
@@ -48,8 +44,7 @@ class RssFeedProcessorTest {
         assertThat(article.content, containsString("<div class='content'>Considering taking some of wednesday/thursday "))
     }
 
-    @Test
-    fun testProcess_WithFeedWithUnwantedCharacters() {
+    test("with feed with unwanted characters") {
         val feed = buildFeedEntity()
         val xml = getResourceAsStream("gplus.rss.xml").asString()
 
@@ -60,4 +55,4 @@ class RssFeedProcessorTest {
         assertThat(articles.get(0).content, containsString("not the opposite."))
         assertThat(articles.get(0).content, containsString("not the opposite.</div>"))
     }
-}
+})
