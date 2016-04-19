@@ -1,8 +1,11 @@
+import com.nhaarman.mockito_kotlin.doReturn
+import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.reset
+import com.nhaarman.mockito_kotlin.whenever
 import com.somanyfeeds.articleapi.ArticlesController
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import io.damo.kspec.Spec
 import org.hamcrest.Matchers.hasSize
-import org.mockito.Mockito.*
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
@@ -12,7 +15,7 @@ import java.time.LocalDateTime
 
 class ArticlesControllerTest : Spec ({
 
-    val mockRepository = mock(ArticleRepository::class.java)
+    val mockRepository: ArticleRepository = mock()
     val controller = ArticlesController(mockRepository)
     val mockMvc = standaloneSetup(controller).build()
 
@@ -40,7 +43,7 @@ class ArticlesControllerTest : Spec ({
         )
 
         val expectedSlugs = listOf("github", "gplus", "pivotal")
-        doReturn(articles).`when`(mockRepository).findAllBySlugs(expectedSlugs)
+        doReturn(articles).whenever(mockRepository).findAllBySlugs(expectedSlugs)
 
         mockMvc
             .perform(get("/articles/github,gplus,pivotal"))

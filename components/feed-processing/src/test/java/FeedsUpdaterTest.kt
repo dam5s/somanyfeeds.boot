@@ -1,17 +1,20 @@
+import com.nhaarman.mockito_kotlin.doReturn
+import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.whenever
 import com.somanyfeeds.feeddataaccess.FeedRepository
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.ArticleUpdater
 import com.somanyfeeds.feedprocessing.FeedProcessor
 import com.somanyfeeds.feedprocessing.FeedsUpdater
 import io.damo.kspec.Spec
-import org.mockito.Mockito.*
 
 class FeedsUpdaterTest : Spec({
 
-    val mockFeedRepo = mock(FeedRepository::class.java)
-    val mockRssProcessor = mock(FeedProcessor::class.java)
-    val mockAtomProcessor = mock(FeedProcessor::class.java)
-    val mockArticleUpdater = mock(ArticleUpdater::class.java)
+    val mockFeedRepo: FeedRepository = mock()
+    val mockRssProcessor: FeedProcessor = mock()
+    val mockAtomProcessor: FeedProcessor = mock()
+    val mockArticleUpdater: ArticleUpdater = mock()
 
     val feedsUpdater = FeedsUpdater(
         feedRepository = mockFeedRepo,
@@ -31,7 +34,7 @@ class FeedsUpdaterTest : Spec({
             url = "http://example.com/github",
             type = FeedType.ATOM
         )
-        doReturn(listOf(rssFeed, atomFeed)).`when`(mockFeedRepo).findAll()
+        doReturn(listOf(rssFeed, atomFeed)).whenever(mockFeedRepo).findAll()
 
 
         feedsUpdater.run()

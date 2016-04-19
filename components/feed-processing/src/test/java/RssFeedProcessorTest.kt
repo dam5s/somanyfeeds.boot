@@ -1,17 +1,16 @@
+import com.nhaarman.mockito_kotlin.*
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.rss.RssFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
 import io.damo.kspec.Spec
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat
-import org.mockito.Matchers.anyString
-import org.mockito.Mockito.*
 import java.time.LocalDateTime
 import java.time.Month
 
 class RssFeedProcessorTest : Spec({
 
-    val httpGateway = mock(HttpGateway::class.java)
+    val httpGateway: HttpGateway = mock()
     val processor = RssFeedProcessor(httpGateway)
 
     before {
@@ -25,7 +24,7 @@ class RssFeedProcessorTest : Spec({
         )
         val xml = getResourceAsStream("sample.rss.xml").asString()
 
-        doReturn(xml).`when`(httpGateway).get(anyString())
+        doReturn(xml).whenever(httpGateway).get(any())
 
 
         val articles = processor.process(feed)
@@ -48,7 +47,7 @@ class RssFeedProcessorTest : Spec({
         val feed = buildFeedEntity()
         val xml = getResourceAsStream("gplus.rss.xml").asString()
 
-        doReturn(xml).`when`(httpGateway).get(anyString())
+        doReturn(xml).whenever(httpGateway).get(any())
 
         val articles = processor.process(feed)
 

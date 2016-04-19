@@ -1,11 +1,13 @@
+import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockito_kotlin.verify
+import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
 import io.damo.kspec.Spec
-import org.mockito.Mockito.*
 
 class ArticleUpdaterTest : Spec({
     test {
-        val mockArticleRepo = mock(ArticleRepository::class.java)
+        val mockArticleRepo: ArticleRepository = mock()
         val articlesUpdater = DefaultArticleUpdater(mockArticleRepo, 2)
         val feed = buildFeedEntity(id = 90)
 

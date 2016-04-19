@@ -1,17 +1,16 @@
+import com.nhaarman.mockito_kotlin.*
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.atom.AtomFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
 import io.damo.kspec.Spec
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat
-import org.mockito.Matchers.anyString
-import org.mockito.Mockito.*
 import java.time.LocalDateTime
 import java.time.Month
 
 class AtomFeedProcessorTest : Spec({
     test {
-        val httpGateway = mock(HttpGateway::class.java)
+        val httpGateway: HttpGateway = mock()
         val processor = AtomFeedProcessor(httpGateway)
         val feed = buildFeedEntity(
             url = "http://example.com/feed/atom",
@@ -19,7 +18,7 @@ class AtomFeedProcessorTest : Spec({
         )
         val xml = getResourceAsStream("sample.atom.xml").asString()
 
-        doReturn(xml).`when`(httpGateway).get(anyString())
+        doReturn(xml).whenever(httpGateway).get(any())
 
 
         val articles = processor.process(feed)
