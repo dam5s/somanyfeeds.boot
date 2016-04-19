@@ -2,19 +2,18 @@ package articledataaccess
 
 import com.somanyfeeds.RepositorySpec
 import com.somanyfeeds.articledataaccess.ArticleEntity
-import com.somanyfeeds.articledataaccess.JpaArticleRepository
+import com.somanyfeeds.articledataaccess.PostgresArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedType
-import io.damo.kspec.spring.inject
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.Matchers.hasSize
 import org.junit.Assert.assertThat
 import java.time.LocalDateTime
 
 
-class ArticleRepositoryTest : RepositorySpec({
+class PostgresArticleRepositoryTest : RepositorySpec({
 
-    val repo = inject(JpaArticleRepository::class)
+    val repo = PostgresArticleRepository(dataSource)
 
     before {
         execSql("truncate table feed cascade")

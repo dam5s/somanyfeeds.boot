@@ -1,20 +1,19 @@
 import com.somanyfeeds.RepositorySpec
 import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedType
-import com.somanyfeeds.feeddataaccess.JpaFeedRepository
-import io.damo.kspec.spring.inject
+import com.somanyfeeds.feeddataaccess.PostgresFeedRepository
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
 
-class FeedRepositoryTest : RepositorySpec({
+class PostgresFeedRepositoryTest : RepositorySpec({
 
-    val repo = inject(JpaFeedRepository::class)
+    val repo = PostgresFeedRepository(dataSource)
 
     test("#findAll") {
-        execSql("truncate table feed cascade")
+        execSql("TRUNCATE TABLE feed CASCADE")
 
         execSql("""
-            insert into feed (id, name, slug, url, type) values
+            INSERT INTO feed (id, name, slug, url, type) VALUES
             (210, 'G+', 'g-plus', 'http://gplus.example.com/feed.rss', 'RSS'),
             (211, 'Github', 'github', 'http://github.example.com/feed.atom', 'ATOM'),
             (212, 'Tumblr', 'tumblr', 'http://tumb.example.com/feed.rss', 'RSS')

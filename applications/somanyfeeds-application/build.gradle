@@ -4,9 +4,10 @@ dependencies {
     compile project(":components/http-gateway")
 
     compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.springframework.data:spring-data-jpa:$springDataVersion"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa"
-    compile "org.postgresql:postgresql:9.3-1102-jdbc41"
+
+    compile "org.springframework:spring-jdbc:$springVersion"
+    compile "com.zaxxer:HikariCP:$hikariVersion"
+    compile "org.postgresql:postgresql:$postgresVersion"
 
     compile "javax.inject:javax.inject:1"
 }

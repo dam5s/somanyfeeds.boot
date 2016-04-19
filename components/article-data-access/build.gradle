@@ -1,7 +1,7 @@
 dependencies {
     compile project(":components/feed-data-access")
     compile "javax.inject:javax.inject:1"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile "org.springframework:spring-jdbc:$springVersion"
 
     testCompile project(":components/database-testing")
 }

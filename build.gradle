@@ -11,6 +11,8 @@ buildscript {
         springVersion = "4.1.8.RELEASE"
         springDataVersion = "1.9.0.RELEASE"
         slf4jVersion = "1.7.12"
+        postgresVersion = "9.4.1208"
+        hikariVersion = "2.4.5"
     }
 
     repositories {

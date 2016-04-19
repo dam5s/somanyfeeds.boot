@@ -6,4 +6,3 @@ spring:
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate.naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy

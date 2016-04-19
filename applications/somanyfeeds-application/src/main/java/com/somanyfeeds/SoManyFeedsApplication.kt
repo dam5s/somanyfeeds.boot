@@ -1,8 +1,10 @@
 package com.somanyfeeds
 
 import com.somanyfeeds.articledataaccess.ArticleRepository
+import com.somanyfeeds.articledataaccess.PostgresArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedRepository
 import com.somanyfeeds.feeddataaccess.FeedType
+import com.somanyfeeds.feeddataaccess.PostgresFeedRepository
 import com.somanyfeeds.feedprocessing.ArticleUpdater
 import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
 import com.somanyfeeds.feedprocessing.FeedsUpdater
@@ -14,16 +16,12 @@ import com.somanyfeeds.jsonserialization.ObjectMapperProvider
 import com.squareup.okhttp.OkHttpClient
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.boot.orm.jpa.EntityScan
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Primary
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters
 import java.util.*
 import java.util.concurrent.ScheduledThreadPoolExecutor
+import javax.sql.DataSource
 
-@EntityScan(basePackageClasses = arrayOf(
-    SoManyFeedsApplication::class, Jsr310JpaConverters::class
-))
 @SpringBootApplication
 open class SoManyFeedsApplication {
     companion object {
@@ -45,8 +43,13 @@ open class SoManyFeedsApplication {
     open fun execService() = ScheduledThreadPoolExecutor(2)
 
     @Bean
-    open fun articleUpdater(articleRepo: ArticleRepository): ArticleUpdater
-        = DefaultArticleUpdater(articleRepo, 20)
+    open fun articleUpdater(articleRepo: ArticleRepository) = DefaultArticleUpdater(articleRepo, 20)
+
+    @Bean
+    open fun feedRepository(dataSource: DataSource) = PostgresFeedRepository(dataSource)
+
+    @Bean
+    open fun articleRepository(dataSource: DataSource) = PostgresArticleRepository(dataSource)
 
     @Bean
     open fun feedsUpdater(feedRepo: FeedRepository, articleUpdater: ArticleUpdater, httpGateway: HttpGateway)

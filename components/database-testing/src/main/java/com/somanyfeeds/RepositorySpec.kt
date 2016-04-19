@@ -1,22 +1,20 @@
 package com.somanyfeeds
 
 import io.damo.kspec.Spec
-import io.damo.kspec.spring.SpringTransactionalSpecTreeRunner
+import io.damo.kspec.spring.SpringSpecTreeRunner
 import io.damo.kspec.spring.inject
 import org.junit.runner.RunWith
 import org.springframework.boot.test.SpringApplicationConfiguration
 import org.springframework.jdbc.core.JdbcTemplate
-import org.springframework.test.context.TestExecutionListeners
-import org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener
-import org.springframework.test.context.transaction.TransactionalTestExecutionListener
 import java.util.*
+import javax.sql.DataSource
 
 
-@RunWith(SpringTransactionalSpecTreeRunner::class)
+@RunWith(SpringSpecTreeRunner::class)
 @SpringApplicationConfiguration(classes = arrayOf(RepositoryTestConfiguration::class))
-@TestExecutionListeners(TransactionalTestExecutionListener::class, SqlScriptsTestExecutionListener::class)
 open class RepositorySpec : Spec {
 
+    lateinit var dataSource: DataSource
     lateinit var jdbcTemplate: JdbcTemplate
 
 
@@ -35,7 +33,8 @@ open class RepositorySpec : Spec {
 
 
     override fun readSpecBody() {
-        jdbcTemplate = inject(JdbcTemplate::class)
+        dataSource = inject(DataSource::class)
+        jdbcTemplate = JdbcTemplate(dataSource)
 
         this.body.invoke(this)
         super.readSpecBody()
