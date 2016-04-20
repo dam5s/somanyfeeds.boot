@@ -1,7 +1,7 @@
 package com.somanyfeeds.feedprocessing
 
+import com.somanyfeeds.feeddataaccess.FeedEntity
 import com.somanyfeeds.feeddataaccess.FeedRepository
-import com.somanyfeeds.feeddataaccess.FeedType
 import javax.inject.Inject
 
 
@@ -9,13 +9,13 @@ class FeedsUpdater : Runnable {
 
     val feedRepository: FeedRepository
     val articleUpdater: ArticleUpdater
-    val feedProcessors: Map<FeedType, FeedProcessor>
+    val feedProcessors: List<FeedProcessor>
 
     @Inject
     constructor(
         feedRepository: FeedRepository,
         articleUpdater: ArticleUpdater,
-        feedProcessors: Map<FeedType, FeedProcessor>
+        feedProcessors: List<FeedProcessor>
     ) {
         this.feedRepository = feedRepository
         this.articleUpdater = articleUpdater
@@ -25,13 +25,22 @@ class FeedsUpdater : Runnable {
     override fun run() {
         feedRepository.findAll().forEach { feed ->
             try {
-                val processor = feedProcessors[feed.type]
-                val articles = processor!!.process(feed)
-
-                articleUpdater.updateArticles(articles, feed)
+                process(feed)
             } catch (e: Exception) {
                 throw Exception("There was an error when processing feed $feed", e)
             }
         }
+    }
+
+    private fun process(feed: FeedEntity) {
+        feedProcessors.forEach {
+            if (it.canProcess(feed)) {
+                val articles = it.process(feed)
+                articleUpdater.updateArticles(articles, feed)
+                return
+            }
+        }
+
+        throw IllegalStateException("No processor was found for processing the feed, available processors were $feedProcessors")
     }
 }

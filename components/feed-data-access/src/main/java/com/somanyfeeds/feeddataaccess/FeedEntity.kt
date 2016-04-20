@@ -8,8 +8,12 @@ data class FeedEntity(
     val type: FeedType
 )
 
-enum class FeedType { RSS, ATOM }
+enum class FeedType { RSS, ATOM, TWITTER, CUSTOM }
 
 fun feedTypeFromString(value: String) =
-    if (value.equals("RSS")) FeedType.RSS
-    else FeedType.ATOM
+    when (value) {
+        "RSS" -> FeedType.RSS
+        "ATOM" -> FeedType.ATOM
+        "TWITTER" -> FeedType.TWITTER
+        else -> FeedType.CUSTOM
+    }

@@ -3,7 +3,6 @@ package com.somanyfeeds
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.articledataaccess.PostgresArticleRepository
 import com.somanyfeeds.feeddataaccess.FeedRepository
-import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feeddataaccess.PostgresFeedRepository
 import com.somanyfeeds.feedprocessing.ArticleUpdater
 import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
@@ -53,8 +52,8 @@ open class SoManyFeedsApplication {
 
     @Bean
     open fun feedsUpdater(feedRepo: FeedRepository, articleUpdater: ArticleUpdater, httpGateway: HttpGateway)
-        = FeedsUpdater(feedRepo, articleUpdater, mapOf(
-            FeedType.RSS to RssFeedProcessor(httpGateway),
-            FeedType.ATOM to AtomFeedProcessor(httpGateway)
+        = FeedsUpdater(feedRepo, articleUpdater, listOf(
+        RssFeedProcessor(httpGateway),
+        AtomFeedProcessor(httpGateway)
         ))
 }

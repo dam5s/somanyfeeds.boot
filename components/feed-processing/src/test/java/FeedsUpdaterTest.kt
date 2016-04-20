@@ -18,10 +18,7 @@ class FeedsUpdaterTest : Spec({
 
     val feedsUpdater = FeedsUpdater(
         feedRepository = mockFeedRepo,
-        feedProcessors = mapOf(
-            FeedType.RSS to mockRssProcessor,
-            FeedType.ATOM to mockAtomProcessor
-        ),
+        feedProcessors = listOf(mockRssProcessor, mockAtomProcessor),
         articleUpdater = mockArticleUpdater
     )
 
@@ -35,6 +32,12 @@ class FeedsUpdaterTest : Spec({
             type = FeedType.ATOM
         )
         doReturn(listOf(rssFeed, atomFeed)).whenever(mockFeedRepo).findAll()
+
+        doReturn(true).whenever(mockRssProcessor).canProcess(rssFeed)
+        doReturn(false).whenever(mockRssProcessor).canProcess(atomFeed)
+
+        doReturn(false).whenever(mockAtomProcessor).canProcess(rssFeed)
+        doReturn(true).whenever(mockAtomProcessor).canProcess(atomFeed)
 
 
         feedsUpdater.run()
