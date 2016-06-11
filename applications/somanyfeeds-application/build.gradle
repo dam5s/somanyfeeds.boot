@@ -1,10 +1,11 @@
+apply from: "../../kotlin.gradle"
+
 dependencies {
     compile project(":components/article-api")
     compile project(":components/feed-processing")
     compile project(":components/http-gateway")
 
     compile "org.springframework.boot:spring-boot-starter-web"
-
     compile "org.springframework:spring-jdbc:$springVersion"
     compile "com.zaxxer:HikariCP:$hikariVersion"
     compile "org.postgresql:postgresql:$postgresVersion"
@@ -14,11 +15,14 @@ dependencies {
 
 apply plugin: "spring-boot"
 
-springBoot {
-    mainClassName = "com.somanyfeeds.SoManyFeedsApplication"
-}
-
 task deploy(type: Exec) {
     workingDir project.projectDir
     commandLine "cf", "push", "damo", "-p", "build/libs/applications/somanyfeeds-application.jar"
 }
+
+task addFrontendToJar(type: Copy, dependsOn: ":components/frontend:build") {
+    from "$project.rootDir/components/frontend/build"
+    into "$project.projectDir/build/classes/main/static"
+}
+
+jar.dependsOn("addFrontendToJar")

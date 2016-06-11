@@ -1,0 +1,19 @@
+task clean(type: Delete) {
+    delete "build"
+}
+
+task compileElm(type: Exec) {
+    workingDir "$project.projectDir/src/elm"
+    commandLine "elm-make", "SoManyFeeds/App.elm", "--output", "../../build/app.js"
+}
+
+task build(type: Copy, dependsOn: "compileElm") {
+    from("$project.projectDir/src") {
+        include "**/*.html"
+        include "**/*.css"
+        include "**/*.png"
+        include "**/*.ico"
+        exclude "elm"
+    }
+    into "$project.projectDir/build"
+}

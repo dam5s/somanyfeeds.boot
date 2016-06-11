@@ -1,4 +1,6 @@
+apply from: "../../kotlin.gradle"
+
 dependencies {
-    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonKotlinVersion"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion"
     runtime "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
 }

@@ -1,3 +1,5 @@
+apply from: "../../kotlin.gradle"
+
 dependencies {
     compile project(":components/feed-data-access")
     compile project(":components/article-data-access")
@@ -6,6 +8,6 @@ dependencies {
     compile "javax.inject:javax.inject:1"
     compile "javax.transaction:javax.transaction-api:1.2"
 
-    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.5.4"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion"
     compile "org.slf4j:slf4j-api:$slf4jVersion"
 }

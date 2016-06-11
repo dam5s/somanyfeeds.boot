@@ -1,3 +1,5 @@
+apply from: "../../kotlin.gradle"
+
 dependencies {
     compile project(":components/feed-data-access")
     compile "javax.inject:javax.inject:1"
