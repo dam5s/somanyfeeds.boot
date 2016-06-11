@@ -12,7 +12,7 @@ class AtomFeedProcessorTest : Spec({
     test {
         val httpGateway: HttpGateway = mock()
         val processor = AtomFeedProcessor(httpGateway)
-        val feed = buildFeedEntity(
+        val feed = buildFeed(
             url = "http://example.com/feed/atom",
             type = FeedType.ATOM
         )

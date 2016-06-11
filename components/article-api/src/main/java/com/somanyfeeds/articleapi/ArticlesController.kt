@@ -1,7 +1,8 @@
 package com.somanyfeeds.articleapi
 
-import com.somanyfeeds.articledataaccess.ArticleEntity
+import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.articledataaccess.ArticleRepository
+import org.springframework.web.bind.annotation.CrossOrigin
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -9,6 +10,7 @@ import javax.inject.Inject
 
 @RestController
 @RequestMapping("/articles")
+@CrossOrigin
 class ArticlesController {
 
     private val articleRepository: ArticleRepository
@@ -19,22 +21,12 @@ class ArticlesController {
     }
 
     @RequestMapping
-    fun listAll(): ArticleListJson {
-        return renderArticles(articleRepository.findAll())
-    }
+    fun listAll()
+        = ArticleListView(articleRepository.findAll())
 
     @RequestMapping("/{slugs}")
-    fun listArticles(@PathVariable slugs: List<String>): ArticleListJson {
-        return renderArticles(articleRepository.findAllBySlugs(slugs))
-    }
+    fun listArticles(@PathVariable slugs: List<String>)
+        = ArticleListView(articleRepository.findAllBySlugs(slugs))
 
-    private fun renderArticles(articleEntities: Iterable<ArticleEntity>): ArticleListJson {
-        val presentedArticles = articleEntities
-            .sortedByDescending { it.date }
-            .map { presentArticle(it, "My Feed") }
-
-        return ArticleListJson(articles = presentedArticles)
-    }
-
-    data class ArticleListJson(val articles: List<ArticleViewModel>)
+    data class ArticleListView(val articles: Iterable<Article>)
 }

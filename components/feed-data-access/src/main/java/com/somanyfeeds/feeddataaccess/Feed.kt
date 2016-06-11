@@ -1,6 +1,6 @@
 package com.somanyfeeds.feeddataaccess
 
-data class FeedEntity(
+data class Feed(
     val id: Long? = null,
     val name: String,
     val slug: String,

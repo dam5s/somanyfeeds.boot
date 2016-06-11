@@ -1,5 +1,5 @@
 package com.somanyfeeds.feeddataaccess
 
 interface FeedRepository {
-    fun findAll(): Iterable<FeedEntity>
+    fun findAll(): Iterable<Feed>
 }

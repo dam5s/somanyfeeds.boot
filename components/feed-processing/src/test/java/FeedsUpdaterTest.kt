@@ -23,11 +23,11 @@ class FeedsUpdaterTest : Spec({
     )
 
     test {
-        val rssFeed = buildFeedEntity(
+        val rssFeed = buildFeed(
             url = "http://example.com/gplus",
             type = FeedType.RSS
         )
-        val atomFeed = buildFeedEntity(
+        val atomFeed = buildFeed(
             url = "http://example.com/github",
             type = FeedType.ATOM
         )

@@ -1,11 +1,11 @@
 package com.somanyfeeds.feedprocessing
 
-import com.somanyfeeds.articledataaccess.ArticleEntity
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.articledataaccess.Article
+import com.somanyfeeds.feeddataaccess.Feed
 
 interface FeedProcessor {
 
-    fun canProcess(feed: FeedEntity): Boolean
+    fun canProcess(feed: Feed): Boolean
 
-    fun process(feed: FeedEntity): List<ArticleEntity>
+    fun process(feed: Feed): List<Article>
 }

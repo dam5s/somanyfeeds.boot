@@ -2,8 +2,8 @@ package com.somanyfeeds.feedprocessing.rss
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
-import com.somanyfeeds.articledataaccess.ArticleEntity
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.articledataaccess.Article
+import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.FeedProcessor
 import com.somanyfeeds.feedprocessing.toLocalDateTime
@@ -17,19 +17,20 @@ class RssFeedProcessor(private val httpGateway: HttpGateway) : FeedProcessor {
         configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
     }
 
-    override fun canProcess(feed: FeedEntity) = (feed.type == FeedType.RSS)
+    override fun canProcess(feed: Feed) = (feed.type == FeedType.RSS)
 
-    override fun process(feed: FeedEntity): List<ArticleEntity> {
+    override fun process(feed: Feed): List<Article> {
         logger.debug("Processing Feed: {}", feed)
 
         val rssString = httpGateway.get(feed.url).replace("\uFEFF", "")
         val rss = xmlMapper.readValue(rssString, Rss::class.java)
         val articles = rss.channel.items.map {
-            ArticleEntity(
+            Article(
                 title = it.title,
                 link = it.link,
                 date = it.pubDate.toLocalDateTime(),
-                content = it.description
+                content = it.description,
+                source = null
             )
         }
 

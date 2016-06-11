@@ -2,8 +2,8 @@ package com.somanyfeeds.feedprocessing.atom
 
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
-import com.somanyfeeds.articledataaccess.ArticleEntity
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.articledataaccess.Article
+import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.FeedProcessor
 import com.somanyfeeds.feedprocessing.toLocalDateTime
@@ -17,19 +17,20 @@ class AtomFeedProcessor(private val httpGateway: HttpGateway) : FeedProcessor {
         configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
     }
 
-    override fun canProcess(feed: FeedEntity) = (feed.type == FeedType.ATOM)
+    override fun canProcess(feed: Feed) = (feed.type == FeedType.ATOM)
 
-    override fun process(feed: FeedEntity): List<ArticleEntity> {
+    override fun process(feed: Feed): List<Article> {
         logger.debug("Processing Feed: {}", feed)
 
         val atomString = httpGateway.get(feed.url)
         val atom = xmlMapper.readValue(atomString, Atom::class.java)
         val articles = atom.entries.map {
-            ArticleEntity(
+            Article(
                 title = it.title.text,
                 link = it.link.href,
                 date = it.published.toLocalDateTime(),
-                content = it.content.text
+                content = it.content.text,
+                source = null
             )
         }
 

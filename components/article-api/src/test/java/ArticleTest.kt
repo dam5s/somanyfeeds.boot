@@ -3,15 +3,15 @@ import com.somanyfeeds.jsonserialization.ObjectMapperProvider
 import io.damo.kspec.Spec
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
-import testing.buildArticleViewModel
+import testing.buildArticle
 import java.time.LocalDateTime
 
-class ArticleViewModelTest : Spec({
+class ArticleTest : Spec({
 
     val mapper = ObjectMapperProvider().get()
 
     test("serialization") {
-        val article = buildArticleViewModel(
+        val article = buildArticle(
             id = 1011,
             title = "My Article",
             link = "http://example.com/blog/article-1",

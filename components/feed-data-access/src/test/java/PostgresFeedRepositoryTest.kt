@@ -1,5 +1,5 @@
 import com.somanyfeeds.RepositorySpec
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feeddataaccess.PostgresFeedRepository
 import org.hamcrest.Matchers.equalTo
@@ -24,21 +24,21 @@ class PostgresFeedRepositoryTest : RepositorySpec({
 
 
         val expectedFeeds = listOf(
-            FeedEntity(
+            Feed(
                 id = 210,
                 name = "G+",
                 slug = "g-plus",
                 url = "http://gplus.example.com/feed.rss",
                 type = FeedType.RSS
             ),
-            FeedEntity(
+            Feed(
                 id = 211,
                 name = "Github",
                 slug = "github",
                 url = "http://github.example.com/feed.atom",
                 type = FeedType.ATOM
             ),
-            FeedEntity(
+            Feed(
                 id = 212,
                 name = "Tumblr",
                 slug = "tumblr",

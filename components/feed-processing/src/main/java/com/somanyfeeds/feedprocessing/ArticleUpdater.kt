@@ -1,13 +1,13 @@
 package com.somanyfeeds.feedprocessing
 
-import com.somanyfeeds.articledataaccess.ArticleEntity
+import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.articledataaccess.ArticleRepository
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.feeddataaccess.Feed
 import javax.inject.Inject
 import javax.transaction.Transactional
 
 interface ArticleUpdater {
-    fun updateArticles(articles: List<ArticleEntity>, feed: FeedEntity)
+    fun updateArticles(articles: List<Article>, feed: Feed)
 }
 
 class DefaultArticleUpdater : ArticleUpdater {
@@ -22,7 +22,7 @@ class DefaultArticleUpdater : ArticleUpdater {
     }
 
     @Transactional
-    override fun updateArticles(articles: List<ArticleEntity>, feed: FeedEntity) {
+    override fun updateArticles(articles: List<Article>, feed: Feed) {
         articleRepo.deleteByFeed(feed)
 
         var count = 0

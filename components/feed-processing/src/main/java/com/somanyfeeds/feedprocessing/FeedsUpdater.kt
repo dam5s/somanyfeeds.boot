@@ -1,6 +1,6 @@
 package com.somanyfeeds.feedprocessing
 
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedRepository
 import javax.inject.Inject
 
@@ -32,7 +32,7 @@ class FeedsUpdater : Runnable {
         }
     }
 
-    private fun process(feed: FeedEntity) {
+    private fun process(feed: Feed) {
         feedProcessors.forEach {
             if (it.canProcess(feed)) {
                 val articles = it.process(feed)

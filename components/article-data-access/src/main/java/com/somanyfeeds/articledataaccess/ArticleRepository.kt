@@ -1,13 +1,13 @@
 package com.somanyfeeds.articledataaccess
 
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.feeddataaccess.Feed
 
 interface ArticleRepository {
-    fun findAll(): Iterable<ArticleEntity>
+    fun findAll(): Iterable<Article>
 
-    fun findAllBySlugs(slugs: List<String>): Iterable<ArticleEntity>
+    fun findAllBySlugs(slugs: List<String>): Iterable<Article>
 
-    fun create(article: ArticleEntity, feed: FeedEntity): Long
+    fun create(article: Article, feed: Feed): Long
 
-    fun deleteByFeed(feed: FeedEntity)
+    fun deleteByFeed(feed: Feed)
 }

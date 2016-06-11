@@ -11,9 +11,9 @@ class PostgresFeedRepository : FeedRepository {
         jdbcTemplate = JdbcTemplate(dataSource)
     }
 
-    override fun findAll(): List<FeedEntity> {
+    override fun findAll(): List<Feed> {
         return jdbcTemplate.query("SELECT id, name, slug, url, type FROM feed", { rs, rowNum ->
-            FeedEntity(
+            Feed(
                 id = rs.getLong(1),
                 name = rs.getString(2),
                 slug = rs.getString(3),

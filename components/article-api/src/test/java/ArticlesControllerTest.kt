@@ -10,7 +10,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup
-import testing.buildArticleEntity
+import testing.buildArticle
 import java.time.LocalDateTime
 
 class ArticlesControllerTest : Spec ({
@@ -25,18 +25,18 @@ class ArticlesControllerTest : Spec ({
 
     test("#listArticles") {
         val articles = arrayListOf(
-            buildArticleEntity(
+            buildArticle(
                 id = 100,
-                date = LocalDateTime.parse("2011-02-03T04:05:06")
-            ),
-            buildArticleEntity(
-                id = 101,
+                date = LocalDateTime.parse("2011-02-03T04:05:06"),
                 title = "Awesome Article",
                 link = "http://example.com/articles/1",
-                content = "This is it.",
+                content = "This is it."
+            ),
+            buildArticle(
+                id = 101,
                 date = LocalDateTime.parse("2011-02-04T04:05:07")
             ),
-            buildArticleEntity(
+            buildArticle(
                 id = 102,
                 date = LocalDateTime.parse("2011-02-03T04:05:07")
             )
@@ -50,12 +50,12 @@ class ArticlesControllerTest : Spec ({
             .andExpect(status().isOk)
             .andExpect(jsonPath("$.articles", hasSize<Any>(3)))
 
-            .andExpect(jsonPath("$.articles[0].id").value(101))
+            .andExpect(jsonPath("$.articles[0].id").value(100))
             .andExpect(jsonPath("$.articles[0].title").value("Awesome Article"))
             .andExpect(jsonPath("$.articles[0].link").value("http://example.com/articles/1"))
             .andExpect(jsonPath("$.articles[0].content").value("This is it."))
 
-            .andExpect(jsonPath("$.articles[1].id").value(102))
-            .andExpect(jsonPath("$.articles[2].id").value(100))
+            .andExpect(jsonPath("$.articles[1].id").value(101))
+            .andExpect(jsonPath("$.articles[2].id").value(102))
     }
 })

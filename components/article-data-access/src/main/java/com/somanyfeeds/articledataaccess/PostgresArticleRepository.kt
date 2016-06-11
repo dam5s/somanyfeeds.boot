@@ -1,9 +1,10 @@
 package com.somanyfeeds.articledataaccess
 
-import com.somanyfeeds.feeddataaccess.FeedEntity
+import com.somanyfeeds.feeddataaccess.Feed
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert
 import javax.sql.DataSource
 
 class PostgresArticleRepository : ArticleRepository {
@@ -17,45 +18,49 @@ class PostgresArticleRepository : ArticleRepository {
     }
 
 
-    override fun findAll() = jdbcTemplate.query("SELECT id, title, link, content, date FROM article", articleMapper)
+    override fun findAll() = jdbcTemplate.query(findAllSQL, articleMapper)
 
-    override fun findAllBySlugs(slugs: List<String>): List<ArticleEntity> {
-        val sql = """
-            SELECT a.id, a.title, a.link, a.content, a.date FROM article a
-            JOIN feed f ON f.id = a.feed_id AND f.slug IN (:slugs)
-        """
+    override fun findAllBySlugs(slugs: List<String>)
+        = namedParamJdbcTemplate.query(findAllBySlugsSQL, mapOf("slugs" to slugs), articleMapper)
 
-        val params = mapOf("slugs" to slugs)
+    override fun create(article: Article, feed: Feed)
+        = SimpleJdbcInsert(jdbcTemplate)
+        .withTableName("article")
+        .usingGeneratedKeyColumns("id")
+        .executeAndReturnKey(mutableMapOf(
+            "feed_id" to feed.id,
+            "title" to article.title,
+            "link" to article.link,
+            "content" to article.content,
+            "date" to article.date.toDate()
+        )).toLong()
 
-        return namedParamJdbcTemplate.query(sql, params, articleMapper)
+    override fun deleteByFeed(feed: Feed) {
+        jdbcTemplate.update(deleteSQL, feed.id)
     }
-
-    override fun create(article: ArticleEntity, feed: FeedEntity): Long {
-        val sql = """
-            INSERT INTO article (feed_id, title, link, content, date)
-            VALUES (?, ?, ?, ?, ?)
-            RETURNING id
-        """
-
-        return jdbcTemplate.queryForObject(sql, javaLong,
-            feed.id, article.title, article.link, article.content, article.date.toDate()) as Long
-    }
-
-    override fun deleteByFeed(feed: FeedEntity) {
-        jdbcTemplate.update("DELETE FROM article WHERE feed_id = ?", feed.id)
-    }
-
-
-    @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN")
-    private val javaLong = java.lang.Long::class.java
 
     private val articleMapper = RowMapper { rs, rowNum ->
-        ArticleEntity(
+        Article(
             id = rs.getLong(1),
             title = rs.getString(2),
             link = rs.getString(3),
             content = rs.getString(4),
-            date = rs.getLocalDateTime(5)
+            date = rs.getLocalDateTime(5),
+            source = rs.getString(6)
         )
     }
+
+    private val findAllSQL = """
+        SELECT a.id, a.title, a.link, a.content, a.date, f.slug
+        FROM article a
+        JOIN feed f ON f.id = a.feed_id
+        ORDER BY a.date DESC
+    """
+    private val findAllBySlugsSQL = """
+        SELECT a.id, a.title, a.link, a.content, a.date, f.slug
+        FROM article a
+        JOIN feed f ON f.id = a.feed_id AND f.slug IN (:slugs)
+        ORDER BY a.date DESC
+    """
+    private val deleteSQL = "DELETE FROM article WHERE feed_id = ?"
 }

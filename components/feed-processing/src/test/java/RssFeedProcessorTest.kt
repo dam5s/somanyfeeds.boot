@@ -18,7 +18,7 @@ class RssFeedProcessorTest : Spec({
     }
 
     test {
-        val feed = buildFeedEntity(
+        val feed = buildFeed(
             url = "http://example.com/feed/rss",
             type = FeedType.RSS
         )
@@ -44,7 +44,7 @@ class RssFeedProcessorTest : Spec({
     }
 
     test("with feed with unwanted characters") {
-        val feed = buildFeedEntity()
+        val feed = buildFeed()
         val xml = getResourceAsStream("gplus.rss.xml").asString()
 
         doReturn(xml).whenever(httpGateway).get(any())
