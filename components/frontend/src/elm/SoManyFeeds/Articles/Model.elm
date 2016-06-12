@@ -8,4 +8,6 @@ type alias Article =
   { title : String
   , link : String
   , content : String
+  , date : String
+  , source : String
   }

@@ -19,8 +19,10 @@ listDecoder =
 
 memberDecoder : Decode.Decoder Article
 memberDecoder =
-  Decode.object3
+  Decode.object5
     Article
     ("title" := Decode.string)
     ("link" := Decode.string)
     ("content" := Decode.string)
+    ("date" := Decode.string)
+    ("source" := Decode.string)

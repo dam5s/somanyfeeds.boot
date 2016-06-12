@@ -45,8 +45,29 @@ view model =
       Html.App.map FeedMsg (FeedList.list model.feeds)
     ],
 
-    Html.App.map ArticleMsg (ArticleList.list model.articles)
+    Html.App.map ArticleMsg (ArticleList.list (articlesToDisplay model))
   ]
+
+
+articlesToDisplay: AppModel -> List Article
+articlesToDisplay model =
+  selectedArticles model.articles (selectedSources model.feeds)
+
+selectedArticles: List Article -> List String -> List Article
+selectedArticles allArticles selectedSources =
+ allArticles
+  |> List.filter (isSelected selectedSources)
+
+isSelected: List String -> Article -> Bool
+isSelected sources article =
+  List.any (\s -> s == article.source) sources
+
+selectedSources: List Feed -> List String
+selectedSources feeds =
+  feeds
+    |> List.filter (\f -> f.selected)
+    |> List.map (\f -> f.slug)
+
 
 update : Msg -> AppModel -> (AppModel, Cmd Msg)
 update message model =
