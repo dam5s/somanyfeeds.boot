@@ -53,8 +53,6 @@ section.content {
     column-count: 2;
     column-gap: 1em;
     column-fill: auto;
-
-    background: inherit url("../svg/bg.svg") no-repeat center;
 }
 
 #app-header {
@@ -81,7 +79,7 @@ section.content {
     color: #fff;
 }
 
-#app-header h1 svg {
+#app-header h1 img {
     width: 7em;
     height: 2.7em;
 

@@ -4,8 +4,8 @@ import SoManyFeeds.Feeds.Model exposing (Feed)
 import SoManyFeeds.Feeds.Messages exposing (..)
 import SoManyFeeds.Feeds.Messages as Messages
 
-import Html exposing (Html, text, ul, li, a)
-import Html.Attributes exposing (href)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
 
@@ -15,9 +15,15 @@ list feeds =
 
 listItem : Feed -> Html Msg
 listItem feed =
-  li [] [
+  li [ class (selectedClass feed) ] [
     a [ href "#", onClick (Toggle feed) ] [
       text feed.name
-    ],
-    text (toString feed.selected)
+    ]
   ]
+
+selectedClass : Feed -> String
+selectedClass feed =
+  if feed.selected then
+    "selected"
+  else
+    "not"

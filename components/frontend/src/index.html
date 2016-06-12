@@ -13,108 +13,12 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body ng-app="SoManyFeedsApp" ng-controller="articlesController">
-<header id="app-header">
-  <section class="content">
-    <h1>
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
-        <circle
-          cx="595"
-          cy="100"
-          r="130"
-          fill="#00BCD4">
-        </circle>
-        <text
-          x="0"
-          y="160"
-          text-anchor="start"
-          font-family="Roboto Slab"
-          font-size="180"
-          font-weight="500"
-          fill="#FFFFFF">
-          damo.io
-        </text>
-      </svg>
-    </h1>
-
-    <aside id="app-menu">
-      <ul>
-        <li ng-repeat="feed in feeds" class="{{feed.selectedClass}}">
-          <a href="{{feed.path}}">{{feed.name}}</a>
-        </li>
-      </ul>
-    </aside>
-  </section>
-</header>
-
-<section id="app-content" class="content">
-  <article ng-if="aboutSelected">
-    <header>
-      <h1>About</h1>
-    </header>
-    <section>
-      <p>
-        I'm <strong>Damien Le Berrigaud</strong>, Software Engineer for
-        <a href="https://pivotal.io/labs">Pivotal Labs</a>. I like working with
-        <a href="https://kotlinlang.org">Kotlin</a>,
-        <a href="https://www.oracle.com/technetwork/java/index.html">Java</a>,
-        <a href="https://spring.io">Spring</a>,
-        <a href="https://developer.android.com">Android</a>,
-        <a href="https://developer.apple.com/ios">iOS (Swift or Objective-C)</a>,
-        <a href="https://golang.org">Go</a>...
-        and I've had previous experiences in
-        <a href="https://www.ruby-lang.org">Ruby</a> and
-        <a href="https://www.microsoft.com/net">.NET</a>.
-      </p>
-
-      <p>
-        That's a lot of technologies that I got to work with while working at <em>Pivotal Labs</em> and in my previous
-        jobs.
-        In order to keep up-to-date, I keep rebuilding this website.
-      </p>
-
-      <p>
-        This version is written in <em>Kotlin</em>, using <em>Spring Boot</em>: including <em>Spring MVC</em> and <em>Spring
-        Data JPA</em>.
-        The current front-end is written with <em>AngularJS</em> in <em>TypeScript</em>. The source code is entirely
-        available
-        <a href="https://github.com/dam5s/somanyfeeds.boot">on my github</a>.
-      </p>
-
-      <p>
-        You can choose to follow multiple of my feeds, on a single page, by using the menu at the top of the page.
-      </p>
-    </section>
-  </article>
-
-  <article ng-repeat="article in articles">
-    <header>
-      <h1><a href="{{article.link}}">{{article.title}}</a></h1>
-
-      <h2 class="date">{{article.date}}</h2>
-    </header>
-    <section ng-bind-html="article.content">
-    </section>
-  </article>
-
-  <article ng-if="articles.length == 0 && !aboutSelected">
-    <header>
-      <h1><a href="http://damo.io">Nothing to see here.</a></h1>
-    </header>
-    <section>
-      <p>
-        You have deselected all the feeds in the menu. There is nothing to show.
-        Feel free to select one or more feeds to display more entries.
-      </p>
-    </section>
-  </article>
-</section>
+<body>
 
 <script type="application/javascript" src="app.js"></script>
 <script type="application/javascript">
   Elm.SoManyFeeds.App.fullscreen();
 </script>
+
 </body>
 </html>
-
-

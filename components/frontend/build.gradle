@@ -13,6 +13,7 @@ task build(type: Copy, dependsOn: "compileElm") {
         include "**/*.css"
         include "**/*.png"
         include "**/*.ico"
+        include "**/*.svg"
         exclude "elm"
     }
     into "$project.projectDir/build"

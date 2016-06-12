@@ -1,6 +1,7 @@
 module SoManyFeeds.App exposing (..)
 
-import Html exposing (Html, text, div, header, h1)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Html.App
 
 import SoManyFeeds.Articles.Model exposing (Article)
@@ -40,11 +41,16 @@ type Msg
 view : AppModel -> Html Msg
 view model =
   div [] [
-    header [] [
-      h1 [] [ text "SoManyFeeds" ],
-      Html.App.map FeedMsg (FeedList.list model.feeds)
+    header [ id "app-header" ] [
+      section [ class "content" ] [
+        h1 [] [
+          img [ src "logo.svg", alt "damo.io" ] []
+        ],
+        aside [ id "app-menu" ] [
+          Html.App.map FeedMsg (FeedList.list model.feeds)
+        ]
+      ]
     ],
-
     Html.App.map ArticleMsg (ArticleList.list (articlesToDisplay model))
   ]
 
