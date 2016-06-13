@@ -3,6 +3,7 @@ apply from: "../../kotlin.gradle"
 dependencies {
     compile "javax.inject:javax.inject:1"
     compile "org.springframework:spring-jdbc:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
 
     testCompile project(":components/database-testing")
 }

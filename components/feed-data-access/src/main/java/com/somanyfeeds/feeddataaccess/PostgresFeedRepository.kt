@@ -1,12 +1,16 @@
 package com.somanyfeeds.feeddataaccess
 
 import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.stereotype.Repository
+import javax.inject.Inject
 import javax.sql.DataSource
 
-class PostgresFeedRepository : FeedRepository {
+@Repository
+open class PostgresFeedRepository : FeedRepository {
 
     private val jdbcTemplate: JdbcTemplate
 
+    @Inject
     constructor(dataSource: DataSource) {
         jdbcTemplate = JdbcTemplate(dataSource)
     }

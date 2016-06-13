@@ -5,13 +5,17 @@ import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert
+import org.springframework.stereotype.Repository
+import javax.inject.Inject
 import javax.sql.DataSource
 
-class PostgresArticleRepository : ArticleRepository {
+@Repository
+open class PostgresArticleRepository : ArticleRepository {
 
     private val jdbcTemplate: JdbcTemplate
     private val namedParamJdbcTemplate: NamedParameterJdbcTemplate
 
+    @Inject
     constructor(dataSource: DataSource) {
         this.jdbcTemplate = JdbcTemplate(dataSource)
         this.namedParamJdbcTemplate = NamedParameterJdbcTemplate(dataSource)

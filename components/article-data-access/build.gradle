@@ -4,6 +4,7 @@ dependencies {
     compile project(":components/feed-data-access")
     compile "javax.inject:javax.inject:1"
     compile "org.springframework:spring-jdbc:$springVersion"
+    compile "org.springframework:spring-context:$springVersion"
 
     testCompile project(":components/database-testing")
 }
