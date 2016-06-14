@@ -5,18 +5,19 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
 
-
 type alias Feed =
-  { name : String
-  , slug : String
-  , selected : Bool
+  {
+    name : String,
+    slug : String,
+    selected : Bool
   }
 
 defaultFeeds : List Feed
-defaultFeeds = [
-  { name = "Google+" , slug = "gplus" , selected = True },
-  { name = "Pivotal Blog" , slug = "pivotal" , selected = True },
-  { name = "Github" , slug = "github" , selected = False }
+defaultFeeds =
+  [
+    { name = "Google+" , slug = "gplus" , selected = True },
+    { name = "Pivotal Blog" , slug = "pivotal" , selected = True },
+    { name = "Github" , slug = "github" , selected = False }
   ]
 
 selectedSources: List Feed -> List String

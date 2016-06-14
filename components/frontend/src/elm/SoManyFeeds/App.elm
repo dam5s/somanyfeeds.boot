@@ -71,8 +71,9 @@ subscriptions model =
 
 main =
   Html.App.program
-    { init = init
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
+    {
+      init = init,
+      view = view,
+      update = update,
+      subscriptions = subscriptions
     }

@@ -8,15 +8,17 @@ import Html.Attributes exposing (..)
 import Markdown
 
 type alias ArticleList =
-  { articles : (List Article)
+  {
+    articles : (List Article)
   }
 
 type alias Article =
-  { title : String
-  , link : String
-  , content : String
-  , date : String
-  , source : String
+  {
+    title : String,
+    link : String,
+    content : String,
+    date : String,
+    source : String
   }
 
 selectedArticles: List Article -> List String -> List Article
