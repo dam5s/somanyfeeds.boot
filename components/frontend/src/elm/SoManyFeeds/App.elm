@@ -4,39 +4,30 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App
 
-import SoManyFeeds.Articles.Model exposing (Article)
-import SoManyFeeds.Articles.Model as ArticleModel
-import SoManyFeeds.Articles.List as ArticleList
-import SoManyFeeds.Articles.Messages as ArticleMessages
-import SoManyFeeds.Articles.Update as ArticleUpdate
-import SoManyFeeds.Articles.Commands as ArticleCmd
-
-import SoManyFeeds.Feeds.Model exposing (Feed, defaultFeeds)
-import SoManyFeeds.Feeds.List as FeedList
-import SoManyFeeds.Feeds.Messages as FeedMessages
-import SoManyFeeds.Feeds.Update as FeedUpdate
+import SoManyFeeds.Feeds as Feeds
+import SoManyFeeds.Articles as Articles
 
 
 type alias AppModel =
   {
-    articles : List Article,
-    feeds : List Feed
+    articles : List Articles.Article,
+    feeds : List Feeds.Feed
   }
 
 initialModel : AppModel
 initialModel =
   {
     articles = [],
-    feeds = defaultFeeds
+    feeds = Feeds.defaultFeeds
   }
 
 init : (AppModel, Cmd Msg)
 init =
-  (initialModel, Cmd.map ArticleMsg ArticleCmd.fetchAll)
+  (initialModel, Cmd.map ArticleMsg Articles.fetchAll)
 
 type Msg
-  = ArticleMsg ArticleMessages.Msg
-  | FeedMsg FeedMessages.Msg
+  = ArticleMsg Articles.Msg
+  | FeedMsg Feeds.Msg
 
 view : AppModel -> Html Msg
 view model =
@@ -47,28 +38,28 @@ view model =
           img [ src "logo.svg", alt "damo.io" ] []
         ],
         aside [ id "app-menu" ] [
-          Html.App.map FeedMsg (FeedList.list model.feeds)
+          Html.App.map FeedMsg (Feeds.view model.feeds)
         ]
       ]
     ],
-    Html.App.map ArticleMsg (ArticleList.list (articlesToDisplay model))
+    Html.App.map ArticleMsg (Articles.view (articlesToDisplay model))
   ]
 
 
-articlesToDisplay: AppModel -> List Article
+articlesToDisplay: AppModel -> List Articles.Article
 articlesToDisplay model =
   selectedArticles model.articles (selectedSources model.feeds)
 
-selectedArticles: List Article -> List String -> List Article
+selectedArticles: List Articles.Article -> List String -> List Articles.Article
 selectedArticles allArticles selectedSources =
  allArticles
   |> List.filter (isSelected selectedSources)
 
-isSelected: List String -> Article -> Bool
+isSelected: List String -> Articles.Article -> Bool
 isSelected sources article =
   List.any (\s -> s == article.source) sources
 
-selectedSources: List Feed -> List String
+selectedSources: List Feeds.Feed -> List String
 selectedSources feeds =
   feeds
     |> List.filter (\f -> f.selected)
@@ -80,12 +71,12 @@ update message model =
   case message of
     ArticleMsg subMsg ->
       let (updatedArticles, articleCmd) =
-        ArticleUpdate.update subMsg model.articles
+        Articles.update subMsg model.articles
       in
         ({ model | articles = updatedArticles } , Cmd.map ArticleMsg articleCmd)
     FeedMsg subMsg ->
       let (updatedFeeds, feedCmd) =
-        FeedUpdate.update subMsg model.feeds
+        Feeds.update subMsg model.feeds
       in
         ({ model | feeds = updatedFeeds } , Cmd.map FeedMsg feedCmd)
 
