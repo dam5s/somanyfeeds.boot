@@ -1,4 +1,4 @@
-module SoManyFeeds.Feeds exposing (Feed, Msg, defaultFeeds, view, update)
+module SoManyFeeds.Feeds exposing (Feed, Msg, defaultFeeds, selectedSources, view, update)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -18,6 +18,13 @@ defaultFeeds = [
   { name = "Pivotal Blog" , slug = "pivotal" , selected = True },
   { name = "Github" , slug = "github" , selected = False }
   ]
+
+selectedSources: List Feed -> List String
+selectedSources feeds =
+  feeds
+    |> List.filter (\f -> f.selected)
+    |> List.map (\f -> f.slug)
+
 
 type Msg
   = Toggle Feed

@@ -1,4 +1,4 @@
-module SoManyFeeds.Articles exposing (ArticleList, Article, Msg, view, update, fetchAll)
+module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, Msg, view, update, fetchAll)
 
 import Http
 import Task exposing (Task)
@@ -18,6 +18,16 @@ type alias Article =
   , date : String
   , source : String
   }
+
+selectedArticles: List Article -> List String -> List Article
+selectedArticles allArticles selectedSources =
+ allArticles
+  |> List.filter (isSelected selectedSources)
+
+isSelected: List String -> Article -> Bool
+isSelected sources article =
+  List.any (\s -> s == article.source) sources
+
 
 type Msg
   = FetchAllDone ArticleList
