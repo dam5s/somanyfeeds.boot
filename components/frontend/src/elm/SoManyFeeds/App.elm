@@ -4,6 +4,7 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.App
 
+import SoManyFeeds.Logo as Logo
 import SoManyFeeds.Feeds as Feeds
 import SoManyFeeds.Articles as Articles
 
@@ -34,12 +35,8 @@ view model =
   div [] [
     header [ id "app-header" ] [
       section [ class "content" ] [
-        h1 [] [
-          img [ src "logo.svg", alt "damo.io" ] []
-        ],
-        aside [ id "app-menu" ] [
-          Html.App.map FeedMsg (Feeds.view model.feeds)
-        ]
+        h1 [] [ Logo.view ],
+        aside [ id "app-menu" ] [ Html.App.map FeedMsg (Feeds.view model.feeds) ]
       ]
     ],
     Html.App.map ArticleMsg (Articles.view (articlesToDisplay model))
