@@ -1,11 +1,13 @@
 module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, Msg, view, update, fetchAll)
 
 import Http
+import Date
 import Task exposing (Task)
 import Json.Decode as Decode exposing ((:=))
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Markdown
+import SoManyFeeds.DateFormat as DateFormat exposing (parseAndFormat)
 
 type alias ArticleList =
   {
@@ -47,11 +49,10 @@ listItem model =
       h1 [] [
         a [ href model.link ] [ text model.title ]
       ],
-      h2 [ class "date" ] [ text model.date ]
+      h2 [ class "date" ] [ text (DateFormat.parseAndFormat model.date) ]
     ],
     section [] [ (Markdown.toHtml [] model.content) ]
   ]
-
 
 update : Msg -> List Article -> (List Article, Cmd Msg)
 update action articles =
