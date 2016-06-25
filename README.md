@@ -32,6 +32,10 @@ Build the entire app from the top level folder with:
 $ ./gradlew
 ```
 
+### Database
+
+TODO there is some local DB setup needed.
+
 
 ## Working on the Elm frontend
 
