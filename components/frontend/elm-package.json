@@ -4,7 +4,8 @@
     "repository": "https://github.com/dam5s/somanyfeeds-boot.git",
     "license": "MIT",
     "source-directories": [
-        "."
+        "src/elm",
+        "tests/elm"
     ],
     "exposed-modules": [],
     "dependencies": {

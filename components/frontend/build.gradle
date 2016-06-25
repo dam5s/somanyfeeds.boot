@@ -2,9 +2,19 @@ task clean(type: Delete) {
     delete "build"
 }
 
-task compileElm(type: Exec) {
-    workingDir "$project.projectDir/src/elm"
-    commandLine "elm-make", "SoManyFeeds/App.elm", "--output", "../../build/app.js"
+task installNodeDependencies(type: Exec) {
+    workingDir project.projectDir
+    commandLine "npm", "install"
+}
+
+task installElm(type: Exec) {
+    workingDir project.projectDir
+    commandLine "./node_modules/.bin/elm-package", "install", "-y"
+}
+
+task compileElm(type: Exec, dependsOn: "installElm") {
+    workingDir project.projectDir
+    commandLine "./node_modules/.bin/elm-make", "src/elm/SoManyFeeds/App.elm", "--output", "build/app.js"
 }
 
 task build(type: Copy, dependsOn: "compileElm") {
@@ -17,4 +27,9 @@ task build(type: Copy, dependsOn: "compileElm") {
         exclude "elm"
     }
     into "$project.projectDir/build"
+}
+
+task elmReactor(type: Exec) {
+    workingDir project.projectDir
+    commandLine "./node_modules/.bin/elm-reactor"
 }
