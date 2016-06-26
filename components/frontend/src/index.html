@@ -15,8 +15,14 @@
 </head>
 <body>
 
-<script type="application/javascript" src="app.js"></script>
-<script type="application/javascript">
+<script>
+  if (!window.location.hash) {
+    window.location.hash = "#about,gplus,pivotal"
+  }
+</script>
+
+<script src="app.js"></script>
+<script>
   Elm.SoManyFeeds.App.fullscreen();
 </script>
 

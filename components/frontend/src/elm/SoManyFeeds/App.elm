@@ -31,9 +31,9 @@ initialModel route =
 feedsForRoute : Routing.Route -> List Feeds.Feed
 feedsForRoute route =
   case route of
-    Routing.DefaultFeedsRoute -> Feeds.defaultFeeds
-    Routing.SelectedFeedsRoute sources -> (Feeds.selectFeeds Feeds.defaultFeeds sources)
-    Routing.NotFoundRoute -> []
+    Routing.NoFeedsSelectedRoute -> Feeds.defaultFeeds
+    Routing.SelectedFeedsRoute sources -> Feeds.selectFeeds sources
+    Routing.NotFoundRoute -> Feeds.defaultFeeds
 
 
 init : Result String Routing.Route -> (AppModel, Cmd Msg)
@@ -71,7 +71,14 @@ view model =
 
 articlesToDisplay: AppModel -> List Articles.Article
 articlesToDisplay model =
-  Articles.selectedArticles model.articles (Feeds.selectedSources model.feeds)
+  let
+    selectedSources = Feeds.selectedSources model.feeds
+  in
+    if List.length selectedSources > 0 then
+      Articles.selectedArticles model.articles selectedSources
+    else
+      [Articles.defaultArticle]
+
 
 
 update : Msg -> AppModel -> (AppModel, Cmd Msg)

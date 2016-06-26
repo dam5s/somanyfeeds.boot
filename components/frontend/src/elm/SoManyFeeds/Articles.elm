@@ -1,4 +1,4 @@
-module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, Msg, view, update, fetchAll)
+module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, defaultArticle, Msg, view, update, fetchAll)
 
 import Http
 import Date
@@ -42,7 +42,9 @@ type Msg
 
 view : List Article -> Html Msg
 view articles =
-  section [ id "app-content", class "content" ] (List.map listItem articles)
+  section
+    [ id "app-content", class "content" ]
+    (List.map listItem articles)
 
 
 listItem : Article -> Html Msg
@@ -110,6 +112,26 @@ memberDecoder =
     ("content" := Decode.string)
     ("date" := Decode.maybe Decode.string)
     ("source" := Decode.string)
+
+
+defaultArticle : Article
+defaultArticle =
+  {
+    title = "Nothing to see here.",
+    link = Just "http://damo.io",
+    content = defaultContent,
+    date = Nothing,
+    source = "none"
+  }
+
+
+defaultContent : String
+defaultContent = """
+  <p>
+    You have deselected all the feeds in the menu. There is nothing to show.
+    Feel free to select one or more feeds to display more entries.
+  </p>
+"""
 
 
 aboutArticle : Article

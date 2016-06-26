@@ -19,9 +19,9 @@ type alias Feed =
 defaultFeeds : List Feed
 defaultFeeds =
   [
-    { name = "About" , slug = "about" , selected = True },
-    { name = "Google+" , slug = "gplus" , selected = True },
-    { name = "Pivotal Blog" , slug = "pivotal" , selected = True },
+    { name = "About" , slug = "about" , selected = False },
+    { name = "Google+" , slug = "gplus" , selected = False },
+    { name = "Pivotal Blog" , slug = "pivotal" , selected = False },
     { name = "Github" , slug = "github" , selected = False }
   ]
 
@@ -33,14 +33,14 @@ selectedSources feeds =
     |> List.map (\f -> f.slug)
 
 
-selectFeeds : List Feed -> String -> List Feed
-selectFeeds feeds sources =
+selectFeeds : String -> List Feed
+selectFeeds sources =
   let
     sourceList = String.split "," sources
   in
     List.map
         (\f -> {f | selected = List.member f.slug sourceList})
-        feeds
+        defaultFeeds
 
 
 view : List Feed -> Html nothing
