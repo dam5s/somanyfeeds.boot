@@ -11,6 +11,10 @@ import SoManyFeeds.Feeds as Feeds
 import SoManyFeeds.Articles as Articles
 
 
+apiServer : String
+apiServer = "http://damo.io"
+
+
 type alias AppModel =
   {
     articles : List Articles.Article,
@@ -41,7 +45,7 @@ init result =
   let
     currentRoute = Routing.routeFromResult result
   in
-    (initialModel currentRoute, Cmd.map ArticleMsg Articles.fetchAll)
+    (initialModel currentRoute, Cmd.map ArticleMsg (Articles.fetchAll apiServer))
 
 
 urlUpdate : Result String Routing.Route -> AppModel -> ( AppModel, Cmd Msg )

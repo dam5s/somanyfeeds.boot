@@ -91,8 +91,8 @@ update action articles =
       (articles, Cmd.none)
 
 
-fetchAll : Cmd Msg
-fetchAll = Http.get listDecoder "http://localhost:8080/articles/"
+fetchAll : String -> Cmd Msg
+fetchAll apiServer = Http.get listDecoder (apiServer ++ "/articles")
   |> Task.perform FetchAllFail FetchAllDone
 
 
