@@ -18,8 +18,7 @@ apiServer = "http://api.damo.io"
 type alias AppModel =
   {
     articles : List Articles.Article,
-    feeds : List Feeds.Feed,
-    route : Routing.Route
+    feeds : List Feeds.Feed
   }
 
 
@@ -27,8 +26,7 @@ initialModel : Routing.Route -> AppModel
 initialModel route =
   {
     articles = [],
-    feeds = feedsForRoute route,
-    route = route
+    feeds = feedsForRoute route
   }
 
 
@@ -53,7 +51,7 @@ urlUpdate result model =
   let
     currentRoute = Routing.routeFromResult result
   in
-    ({ model | route = currentRoute, feeds = feedsForRoute currentRoute }, Cmd.none)
+    ({ model | feeds = feedsForRoute currentRoute }, Cmd.none)
 
 
 type Msg
