@@ -63,7 +63,7 @@ view model =
   div [] [
     header [ id "app-header" ] [
       section [ class "content" ] [
-        h1 [] [ Logo.view ],
+        Logo.view,
         aside [ id "app-menu" ] [ Feeds.view model.feeds ]
       ]
     ],

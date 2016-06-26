@@ -6,7 +6,7 @@ import Svg.Attributes exposing (..)
 
 view : Html nothing
 view =
-  svg [ viewBox "0 0 1000 200" ] [
+  svg [ viewBox "0 0 730 200" ] [
     circle [
       cx "595",
       cy "100",

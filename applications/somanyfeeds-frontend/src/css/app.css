@@ -37,26 +37,40 @@ section.content {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+    overflow: auto;
 }
 
 #app-content {
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 1% 1em 0;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 0 1% 1em 1%;
 
-    -webkit-column-count: 2;
-    -webkit-column-gap: 1em;
-    -webkit-column-fill: auto;
-    -moz-column-count: 2;
-    -moz-column-gap: 1em;
-    -moz-column-fill: auto;
-    column-count: 2;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+
     column-gap: 1em;
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+
     column-fill: auto;
+    -webkit-column-fill: auto;
+    -moz-column-fill: auto;
+}
+
+@media (min-width: 800px) {
+    #app-content {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+
+        padding: 0 1% 1em 0;
+    }
 }
 
 #app-header {
-    height: 5.4em;
     background-color: rgba(43, 43, 43, .90);
     position: fixed;
     width: 100%;
@@ -64,24 +78,19 @@ section.content {
     z-index: 10;
 
     box-shadow: 0 2px 1px rgba(0, 0, 0, .3);
+    overflow: auto;
 }
 
 #app-header section.content {
     position: relative;
-    height: 100%;
 }
 
-#app-header h1 {
-    padding: 0 0 0 2%;
-    margin: 0;
+#app-header svg {
     font-size: 2em;
-    line-height: 2.7em;
-    color: #fff;
-}
-
-#app-header h1 svg {
-    width: 7em;
-    height: 2.7em;
+    width: 3em;
+    height: 1.9em;
+    margin: 0 0 0 2%;
+    visibility: hidden;
 
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
     -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
@@ -89,15 +98,34 @@ section.content {
     -o-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
 }
 
+@media (min-width: 390px) {
+    #app-header svg {
+        visibility: visible;
+    }
+}
+
+@media (min-width: 500px) {
+    #app-header svg {
+        margin: .3em 2%;
+        width: 5em;
+    }
+}
+
 #app-menu {
     margin: 0;
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
 }
 
 #app-header + section {
-    margin-top: 6.4em;
+    margin-top: 3.4em;
+}
+
+@media (min-width: 500px) {
+    #app-header + section {
+        margin-top: 4.7em;
+    }
 }
 
 #app-menu li {
@@ -119,9 +147,10 @@ section.content {
 article {
     display: inline-block;
     background-color: #fff;
-    padding: 1em 2em;
+
+    padding: 1em;
     font-size: 1em;
-    margin: 1em 1%;
+    margin: 1em 0;
     width: 100%;
     box-sizing: border-box;
 
@@ -133,8 +162,20 @@ article {
     column-break-inside: avoid;
 }
 
+@media (min-width: 500px) {
+    article {
+        padding: 1em 2em;
+    }
+}
+
+@media (min-width: 800px) {
+    article {
+        margin: 1em 1%;
+    }
+}
+
 article header {
-    overflow: auto;
+    overflow: hidden;
     margin-bottom: 1em;
 }
 
