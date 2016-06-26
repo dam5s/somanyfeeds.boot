@@ -12,7 +12,7 @@ import SoManyFeeds.Articles as Articles
 
 
 apiServer : String
-apiServer = "http://damo.io"
+apiServer = "http://api.damo.io"
 
 
 type alias AppModel =

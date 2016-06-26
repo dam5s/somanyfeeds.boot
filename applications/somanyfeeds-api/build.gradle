@@ -17,12 +17,5 @@ apply plugin: "spring-boot"
 
 task deploy(type: Exec) {
     workingDir project.projectDir
-    commandLine "cf", "push", "damo", "-p", "build/libs/applications/somanyfeeds-application.jar"
+    commandLine "cf", "push", "damo-api", "-p", "build/libs/applications/somanyfeeds-api.jar"
 }
-
-task addFrontendToJar(type: Copy, dependsOn: ":components/frontend:build") {
-    from "$project.rootDir/components/frontend/build"
-    into "$project.projectDir/build/classes/main/static"
-}
-
-jar.dependsOn("addFrontendToJar")
