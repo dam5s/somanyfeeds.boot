@@ -1,8 +1,11 @@
-module SoManyFeeds.Feeds exposing (Feed, Msg, defaultFeeds, selectedSources, view, update)
+module SoManyFeeds.Feeds exposing (Feed, defaultFeeds, selectFeeds, selectedSources, view)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
+import String
+import List
+
 
 
 type alias Feed =
@@ -12,6 +15,7 @@ type alias Feed =
     selected : Bool
   }
 
+
 defaultFeeds : List Feed
 defaultFeeds =
   [
@@ -20,28 +24,57 @@ defaultFeeds =
     { name = "Github" , slug = "github" , selected = False }
   ]
 
-selectedSources: List Feed -> List String
+
+selectedSources : List Feed -> List String
 selectedSources feeds =
   feeds
     |> List.filter (\f -> f.selected)
     |> List.map (\f -> f.slug)
 
 
-type Msg
-  = Toggle Feed
+selectFeeds : List Feed -> String -> List Feed
+selectFeeds feeds sources =
+  let
+    sourceList = String.split "," sources
+  in
+    List.map
+        (\f -> {f | selected = List.member f.slug sourceList})
+        feeds
 
 
-view : List Feed -> Html Msg
+view : List Feed -> Html nothing
 view feeds =
-  ul [] (List.map listItem feeds)
+  ul [] (List.map (listItem feeds) feeds)
 
-listItem : Feed -> Html Msg
-listItem feed =
+
+listItem : List Feed -> Feed -> Html nothing
+listItem feeds feed =
   li [ class (selectedClass feed) ] [
-    a [ href "#", onClick (Toggle feed) ] [
+    a [ href (feedLink feeds feed) ] [
       text feed.name
     ]
   ]
+
+
+feedLink : List Feed -> Feed -> String
+feedLink feeds feed =
+  "#" ++ (
+    feeds
+      |> List.filterMap (\f ->
+          if f.slug == feed.slug then
+            if f.selected then
+              Nothing
+            else
+              Just f.slug
+
+          else if f.selected then
+            Just f.slug
+          else
+            Nothing
+        )
+      |> String.join ","
+  )
+
 
 selectedClass : Feed -> String
 selectedClass feed =
@@ -49,22 +82,3 @@ selectedClass feed =
     "selected"
   else
     "not"
-
-
-update : Msg -> List Feed -> (List Feed, Cmd Msg)
-update action feeds =
-  case action of
-    Toggle feed ->
-      (toggleFeed feed feeds, Cmd.none)
-
-
-toggleFeed : Feed -> List Feed -> List Feed
-toggleFeed feed list =
-  List.map
-    (\f ->
-      if f.slug == feed.slug then
-        { f | selected = (not f.selected) }
-      else
-        f
-    )
-    list
