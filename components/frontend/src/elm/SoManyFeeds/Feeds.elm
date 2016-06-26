@@ -19,6 +19,7 @@ type alias Feed =
 defaultFeeds : List Feed
 defaultFeeds =
   [
+    { name = "About" , slug = "about" , selected = True },
     { name = "Google+" , slug = "gplus" , selected = True },
     { name = "Pivotal Blog" , slug = "pivotal" , selected = True },
     { name = "Github" , slug = "github" , selected = False }
