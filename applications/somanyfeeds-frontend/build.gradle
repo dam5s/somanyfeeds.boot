@@ -12,12 +12,22 @@ task installElm(type: Exec) {
     commandLine "./node_modules/.bin/elm-package", "install", "-y"
 }
 
+task compileElmTests(type: Exec, dependsOn: "installElm") {
+    workingDir project.projectDir
+    commandLine "./node_modules/.bin/elm-make", "tests/elm/SoManyFeedsTests/Tests.elm", "--output", "build/tests.js"
+}
+
+task test(type: Exec, dependsOn: "compileElmTests") {
+    workingDir project.projectDir
+    commandLine "node", "build/tests.js"
+}
+
 task compileElm(type: Exec, dependsOn: "installElm") {
     workingDir project.projectDir
     commandLine "./node_modules/.bin/elm-make", "src/elm/SoManyFeeds/App.elm", "--output", "build/app.js"
 }
 
-task build(type: Copy, dependsOn: "compileElm") {
+task build(type: Copy, dependsOn: ["test", "compileElm"]) {
     from("$project.projectDir/src") {
         include "**/*.html"
         include "**/*.css"
@@ -34,7 +44,7 @@ task elmReactor(type: Exec) {
     commandLine "./node_modules/.bin/elm-reactor"
 }
 
-task deploy(type: Exec) {
+task deploy(type: Exec, dependsOn: "build") {
     workingDir project.projectDir
     commandLine "cf", "push", "damo", "-p", "build"
 }

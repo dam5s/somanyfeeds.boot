@@ -1,4 +1,4 @@
-module SoManyFeeds.Feeds exposing (Feed, defaultFeeds, selectFeeds, selectedSources, view)
+module SoManyFeeds.Feeds exposing (Feed, defaultFeeds, selectFeeds, selectedSources, view, feedLink)
 
 import Html exposing (..)
 import Html.Attributes exposing (..)

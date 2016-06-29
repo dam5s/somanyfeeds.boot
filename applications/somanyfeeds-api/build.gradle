@@ -15,7 +15,7 @@ dependencies {
 
 apply plugin: "spring-boot"
 
-task deploy(type: Exec) {
+task deploy(type: Exec, dependsOn: "build") {
     workingDir project.projectDir
     commandLine "cf", "push", "damo-api", "-p", "build/libs/applications/somanyfeeds-api.jar"
 }
