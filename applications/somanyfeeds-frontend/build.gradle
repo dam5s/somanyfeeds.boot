@@ -20,6 +20,7 @@ task compileElmTests(type: Exec, dependsOn: "installElm") {
 task test(type: Exec, dependsOn: "compileElmTests") {
     workingDir project.projectDir
     commandLine "node", "build/tests.js"
+    environment TZ: "America/Denver"
 }
 
 task compileElm(type: Exec, dependsOn: "installElm") {
