@@ -14,7 +14,7 @@ task installElm(type: Exec) {
 
 task compileElmTests(type: Exec, dependsOn: "installElm") {
     workingDir project.projectDir
-    commandLine "./node_modules/.bin/elm-make", "tests/elm/SoManyFeedsTests/Tests.elm", "--output", "build/tests.js"
+    commandLine "./node_modules/.bin/elm-make", "--yes", "--output", "build/tests.js", "tests/elm/SoManyFeedsTests/Tests.elm"
 }
 
 task test(type: Exec, dependsOn: "compileElmTests") {
@@ -25,7 +25,7 @@ task test(type: Exec, dependsOn: "compileElmTests") {
 
 task compileElm(type: Exec, dependsOn: "installElm") {
     workingDir project.projectDir
-    commandLine "./node_modules/.bin/elm-make", "src/elm/SoManyFeeds/App.elm", "--output", "build/app.js"
+    commandLine "./node_modules/.bin/elm-make", "--yes", "--output", "build/app.js", "src/elm/SoManyFeeds/App.elm"
 }
 
 task build(type: Copy, dependsOn: ["test", "compileElm"]) {
