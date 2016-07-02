@@ -7,9 +7,9 @@ import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.ArticleUpdater
 import com.somanyfeeds.feedprocessing.FeedProcessor
 import com.somanyfeeds.feedprocessing.FeedsUpdater
-import io.damo.kspec.Spec
+import io.damo.aspen.Test
 
-class FeedsUpdaterTest : Spec({
+class FeedsUpdaterTest : Test({
 
     val mockFeedRepo: FeedRepository = mock()
     val mockRssProcessor: FeedProcessor = mock()

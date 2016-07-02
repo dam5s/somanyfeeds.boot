@@ -1,7 +1,7 @@
 apply from: "../../kotlin.gradle"
 
 dependencies {
-    compile "io.damo.kspec:kspec-spring:$kspecVersion"
+    compile "io.damo.aspen:aspen-spring:$aspenVersion"
     compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
     compile "org.springframework:spring-jdbc:$springVersion"
     compile "org.springframework:spring-test:$springVersion"

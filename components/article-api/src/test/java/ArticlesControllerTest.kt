@@ -4,7 +4,7 @@ import com.nhaarman.mockito_kotlin.reset
 import com.nhaarman.mockito_kotlin.whenever
 import com.somanyfeeds.articleapi.ArticlesController
 import com.somanyfeeds.articledataaccess.ArticleRepository
-import io.damo.kspec.Spec
+import io.damo.aspen.Test
 import org.hamcrest.Matchers.hasSize
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetu
 import testing.buildArticle
 import java.time.LocalDateTime
 
-class ArticlesControllerTest : Spec ({
+class ArticlesControllerTest : Test ({
 
     val mockRepository: ArticleRepository = mock()
     val controller = ArticlesController(mockRepository)

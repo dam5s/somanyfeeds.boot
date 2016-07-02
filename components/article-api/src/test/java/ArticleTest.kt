@@ -1,12 +1,12 @@
 import com.jayway.jsonpath.JsonPath.read
 import com.somanyfeeds.jsonserialization.ObjectMapperProvider
-import io.damo.kspec.Spec
+import io.damo.aspen.Test
 import org.hamcrest.Matchers.equalTo
 import org.junit.Assert.assertThat
 import testing.buildArticle
 import java.time.LocalDateTime
 
-class ArticleTest : Spec({
+class ArticleTest : Test({
 
     val mapper = ObjectMapperProvider().get()
 

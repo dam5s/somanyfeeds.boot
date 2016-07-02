@@ -3,9 +3,9 @@ import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
-import io.damo.kspec.Spec
+import io.damo.aspen.Test
 
-class ArticleUpdaterTest : Spec({
+class ArticleUpdaterTest : Test({
     test {
         val mockArticleRepo: ArticleRepository = mock()
         val articlesUpdater = DefaultArticleUpdater(mockArticleRepo, 2)

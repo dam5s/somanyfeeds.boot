@@ -2,13 +2,13 @@ import com.nhaarman.mockito_kotlin.*
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.rss.RssFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
-import io.damo.kspec.Spec
+import io.damo.aspen.Test
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat
 import java.time.LocalDateTime
 import java.time.Month
 
-class RssFeedProcessorTest : Spec({
+class RssFeedProcessorTest : Test({
 
     val httpGateway: HttpGateway = mock()
     val processor = RssFeedProcessor(httpGateway)

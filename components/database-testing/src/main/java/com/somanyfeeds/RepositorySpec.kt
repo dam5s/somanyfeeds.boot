@@ -1,8 +1,8 @@
 package com.somanyfeeds
 
-import io.damo.kspec.Spec
-import io.damo.kspec.spring.SpringSpecTreeRunner
-import io.damo.kspec.spring.inject
+import io.damo.aspen.Test
+import io.damo.aspen.spring.SpringTestTreeRunner
+import io.damo.aspen.spring.inject
 import org.junit.runner.RunWith
 import org.springframework.boot.test.SpringApplicationConfiguration
 import org.springframework.jdbc.core.JdbcTemplate
@@ -10,9 +10,9 @@ import java.util.*
 import javax.sql.DataSource
 
 
-@RunWith(SpringSpecTreeRunner::class)
+@RunWith(SpringTestTreeRunner::class)
 @SpringApplicationConfiguration(classes = arrayOf(RepositoryTestConfiguration::class))
-open class RepositorySpec : Spec {
+open class RepositorySpec : Test {
 
     lateinit var dataSource: DataSource
     lateinit var jdbcTemplate: JdbcTemplate
@@ -32,11 +32,11 @@ open class RepositorySpec : Spec {
     fun getCount(sql: String) = jdbcTemplate.queryForObject(sql, java.lang.Long::class.java) as Long
 
 
-    override fun readSpecBody() {
+    override fun readTestBody() {
         dataSource = inject(DataSource::class)
         jdbcTemplate = JdbcTemplate(dataSource)
 
         this.body.invoke(this)
-        super.readSpecBody()
+        super.readTestBody()
     }
 }

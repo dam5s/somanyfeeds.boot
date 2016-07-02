@@ -6,12 +6,15 @@ repositories {
     maven {
         url "http://repository.jetbrains.com/all"
     }
+    maven {
+        url "https://dl.bintray.com/dam5s/maven/"
+    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
-    testCompile "io.damo.kspec:kspec:$kspecVersion"
+    testCompile "io.damo.aspen:aspen:$aspenVersion"
     testCompile "org.hamcrest:hamcrest-all:1.3"
     testCompile "com.nhaarman:mockito-kotlin:0.3.1"
 }
