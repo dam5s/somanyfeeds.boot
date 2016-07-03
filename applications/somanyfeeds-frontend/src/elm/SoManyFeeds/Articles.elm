@@ -16,7 +16,7 @@ type alias ArticleList =
 
 type alias Article =
   {
-    title : String,
+    title : Maybe String,
     link : Maybe String,
     content : String,
     date : Maybe String,
@@ -57,28 +57,47 @@ listItem model =
 
 articleHeader : Article -> Html Msg
 articleHeader model =
+  case model.title of
+    Just title ->
+      articleHeaderWithTitle model title
+    Nothing ->
+      articleHeaderWithoutTitle model
+
+articleHeaderWithoutTitle : Article -> Html Msg
+articleHeaderWithoutTitle model =
   case model.date of
     Just date ->
       header [] [
-        articleTitle model,
+        h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
+      ]
+    Nothing ->
+      header [] []
+
+
+articleHeaderWithTitle : Article -> String -> Html Msg
+articleHeaderWithTitle model title =
+  case model.date of
+    Just date ->
+      header [] [
+        articleTitle model title,
         h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
       ]
     Nothing ->
       header [] [
-        articleTitle model
+        articleTitle model title
       ]
 
 
-articleTitle : Article -> Html Msg
-articleTitle model =
+articleTitle : Article -> String -> Html Msg
+articleTitle model title =
   case model.link of
     Just link ->
       h1 [] [
-        a [ href link ] [ text model.title ]
+        a [ href link ] [ text title ]
       ]
     Nothing ->
       h1 [] [
-        text model.title
+        text title
       ]
 
 
@@ -107,7 +126,7 @@ memberDecoder : Decode.Decoder Article
 memberDecoder =
   Decode.object5
     Article
-    ("title" := Decode.string)
+    ("title" := Decode.maybe Decode.string)
     ("link" := Decode.maybe Decode.string)
     ("content" := Decode.string)
     ("date" := Decode.maybe Decode.string)
@@ -117,7 +136,7 @@ memberDecoder =
 defaultArticle : Article
 defaultArticle =
   {
-    title = "Nothing to see here.",
+    title = Just "Nothing to see here.",
     link = Just "http://damo.io",
     content = defaultContent,
     date = Nothing,
@@ -137,7 +156,7 @@ defaultContent = """
 aboutArticle : Article
 aboutArticle =
   {
-    title = "About",
+    title = Just "About",
     link = Nothing,
     content = aboutContent,
     date = Nothing,
