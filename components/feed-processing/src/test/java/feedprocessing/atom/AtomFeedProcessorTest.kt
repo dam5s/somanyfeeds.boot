@@ -1,7 +1,12 @@
+package feedprocessing.atom
+
 import com.nhaarman.mockito_kotlin.*
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.atom.AtomFeedProcessor
 import com.somanyfeeds.httpgateway.HttpGateway
+import feedprocessing.asString
+import feedprocessing.buildFeed
+import feedprocessing.getResourceAsStream
 import io.damo.aspen.Test
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat

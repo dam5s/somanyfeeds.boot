@@ -16,12 +16,12 @@ open class PostgresFeedRepository : FeedRepository {
     }
 
     override fun findAll(): List<Feed> {
-        return jdbcTemplate.query("SELECT id, name, slug, url, type FROM feed", { rs, rowNum ->
+        return jdbcTemplate.query("SELECT id, name, slug, info, type FROM feed", { rs, rowNum ->
             Feed(
                 id = rs.getLong(1),
                 name = rs.getString(2),
                 slug = rs.getString(3),
-                url = rs.getString(4),
+                info = rs.getString(4),
                 type = feedTypeFromString(rs.getString(5))
             )
         })

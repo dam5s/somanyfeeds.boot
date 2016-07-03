@@ -9,5 +9,6 @@ dependencies {
     compile "javax.transaction:javax.transaction-api:1.2"
 
     compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion"
+    compile "org.springframework.social:spring-social-twitter:$springSocialVersion"
     compile "org.slf4j:slf4j-api:$slf4jVersion"
 }

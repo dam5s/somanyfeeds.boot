@@ -2,9 +2,11 @@ package com.somanyfeeds.feedprocessing
 
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedRepository
+import org.springframework.stereotype.Service
 import javax.inject.Inject
 
 
+@Service
 class FeedsUpdater : Runnable {
 
     val feedRepository: FeedRepository

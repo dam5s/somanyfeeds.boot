@@ -13,7 +13,7 @@ class PostgresFeedRepositoryTest : RepositorySpec({
         execSql("TRUNCATE TABLE feed CASCADE")
 
         execSql("""
-            INSERT INTO feed (id, name, slug, url, type) VALUES
+            INSERT INTO feed (id, name, slug, info, type) VALUES
             (210, 'G+', 'g-plus', 'http://gplus.example.com/feed.rss', 'RSS'),
             (211, 'Github', 'github', 'http://github.example.com/feed.atom', 'ATOM'),
             (212, 'Tumblr', 'tumblr', 'http://tumb.example.com/feed.rss', 'RSS')
@@ -28,21 +28,21 @@ class PostgresFeedRepositoryTest : RepositorySpec({
                 id = 210,
                 name = "G+",
                 slug = "g-plus",
-                url = "http://gplus.example.com/feed.rss",
+                info = "http://gplus.example.com/feed.rss",
                 type = FeedType.RSS
             ),
             Feed(
                 id = 211,
                 name = "Github",
                 slug = "github",
-                url = "http://github.example.com/feed.atom",
+                info = "http://github.example.com/feed.atom",
                 type = FeedType.ATOM
             ),
             Feed(
                 id = 212,
                 name = "Tumblr",
                 slug = "tumblr",
-                url = "http://tumb.example.com/feed.rss",
+                info = "http://tumb.example.com/feed.rss",
                 type = FeedType.RSS
             )
         )

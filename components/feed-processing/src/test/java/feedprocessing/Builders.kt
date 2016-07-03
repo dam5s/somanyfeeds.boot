@@ -1,3 +1,5 @@
+package feedprocessing
+
 import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType

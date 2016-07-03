@@ -19,7 +19,7 @@ class PostgresArticleRepositoryTest : RepositorySpec({
         execSql("TRUNCATE TABLE feed CASCADE")
 
         execSql("""
-          INSERT INTO feed(id, name, slug, url, type) VALUES
+          INSERT INTO feed(id, name, slug, info, type) VALUES
           (10, 'My Feed', 'my-feed', 'http://example.com/feed.rss', 'RSS'),
           (11, 'My Other Feed', 'my-other-feed', 'http://example.com/other-feed.atom', 'ATOM'),
           (12, 'My Last Feed', 'my-last-feed', 'http://example.com/last-feed.atom', 'ATOM')
@@ -127,6 +127,6 @@ private fun buildFeedEntity(
     id: Long? = 10,
     name: String = "My Feed",
     slug: String = "my-feed",
-    url: String = "http://example.com/feed.rss",
+    info: String = "http://example.com/feed.rss",
     type: FeedType = FeedType.RSS
-) = Feed(id, name, slug, url, type)
+) = Feed(id, name, slug, info, type)

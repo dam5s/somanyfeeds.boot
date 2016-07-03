@@ -3,6 +3,10 @@ spring:
     url: jdbc:postgresql://localhost/somanyfeeds_dev
     username: dam5s
     driver-class-name: org.postgresql.Driver
+  social:
+    twitter:
+      appId: APP ID
+      appSecret: APP SECRET
 
 banner:
   location: classpath:banner.txt

@@ -20,6 +20,7 @@ defaultFeeds : List Feed
 defaultFeeds =
   [
     { name = "About" , slug = "about" , selected = False },
+    { name = "Twitter" , slug = "twitter" , selected = False },
     { name = "Google+" , slug = "gplus" , selected = False },
     { name = "Pivotal Blog" , slug = "pivotal" , selected = False },
     { name = "Github" , slug = "github" , selected = False }

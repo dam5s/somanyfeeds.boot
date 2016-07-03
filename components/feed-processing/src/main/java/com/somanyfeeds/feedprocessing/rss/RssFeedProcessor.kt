@@ -9,8 +9,13 @@ import com.somanyfeeds.feedprocessing.FeedProcessor
 import com.somanyfeeds.feedprocessing.toLocalDateTime
 import com.somanyfeeds.httpgateway.HttpGateway
 import org.slf4j.LoggerFactory
+import org.springframework.stereotype.Service
+import javax.inject.Inject
 
-class RssFeedProcessor(private val httpGateway: HttpGateway) : FeedProcessor {
+@Service
+class RssFeedProcessor
+@Inject
+constructor(private val httpGateway: HttpGateway) : FeedProcessor {
 
     private val logger = LoggerFactory.getLogger(javaClass)
     private val xmlMapper = XmlMapper().apply {
@@ -22,7 +27,7 @@ class RssFeedProcessor(private val httpGateway: HttpGateway) : FeedProcessor {
     override fun process(feed: Feed): List<Article> {
         logger.debug("Processing Feed: {}", feed)
 
-        val rssString = httpGateway.get(feed.url).replace("\uFEFF", "")
+        val rssString = httpGateway.get(feed.info).replace("\uFEFF", "")
         val rss = xmlMapper.readValue(rssString, Rss::class.java)
         val articles = rss.channel.items.map {
             Article(
@@ -30,7 +35,7 @@ class RssFeedProcessor(private val httpGateway: HttpGateway) : FeedProcessor {
                 link = it.link,
                 date = it.pubDate.toLocalDateTime(),
                 content = it.description,
-                source = null
+                source = feed.slug
             )
         }
 

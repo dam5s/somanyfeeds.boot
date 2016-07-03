@@ -5,20 +5,21 @@ DROP TABLE IF EXISTS feed;
 DROP TYPE IF EXISTS feed_type;
 
 
-CREATE TYPE feed_type AS ENUM ('RSS', 'ATOM');
+CREATE TYPE feed_type AS ENUM ('RSS', 'ATOM', 'TWITTER', 'CUSTOM');
 
 CREATE TABLE feed (
   id   BIGSERIAL PRIMARY KEY,
   name TEXT,
   slug TEXT,
-  url  TEXT,
+  info TEXT,
   type feed_type
 );
 
-INSERT INTO feed (name, slug, url, type) VALUES
+INSERT INTO feed (name, slug, info, type) VALUES
   ('Github', 'github', 'https://github.com/dam5s.atom', 'ATOM'),
   ('Google+', 'gplus', 'http://gplusrss.com/rss/feed/aa49b266059d0628a1c112dabaec23a152aa2bad054d8', 'RSS'),
-  ('Pivotal Blog', 'pivotal', 'http://blog.pivotal.io/author/dleberrigaud/feed', 'RSS');
+  ('Pivotal Blog', 'pivotal', 'http://blog.pivotal.io/author/dleberrigaud/feed', 'RSS'),
+  ('Twitter', 'twitter', 'its_damo', 'TWITTER');
 
 CREATE TABLE article (
   id      BIGSERIAL PRIMARY KEY,

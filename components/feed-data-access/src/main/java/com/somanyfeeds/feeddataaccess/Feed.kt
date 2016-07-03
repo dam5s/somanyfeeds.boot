@@ -4,7 +4,7 @@ data class Feed(
     val id: Long? = null,
     val name: String,
     val slug: String,
-    val url: String,
+    val info: String,
     val type: FeedType
 )
 
