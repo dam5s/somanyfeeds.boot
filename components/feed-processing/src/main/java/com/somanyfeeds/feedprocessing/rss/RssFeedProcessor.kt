@@ -34,12 +34,22 @@ constructor(private val httpGateway: HttpGateway) : FeedProcessor {
                 title = it.title,
                 link = it.link,
                 date = it.pubDate.toLocalDateTime(),
-                content = it.description,
+                content = getContent(it),
                 source = feed.slug
             )
         }
 
         logger.debug("Processed #{} articles", articles.size)
         return articles
+    }
+
+    private fun getContent(item: Item): String {
+        var content = item.description
+
+        if (content.isEmpty()) {
+            content = item.encoded
+        }
+
+        return content
     }
 }

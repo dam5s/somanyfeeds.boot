@@ -59,4 +59,15 @@ class RssFeedProcessorTest : Test({
         assertThat(articles.get(0).content, containsString("not the opposite."))
         assertThat(articles.get(0).content, containsString("not the opposite.</div>"))
     }
+
+    test("medium rss feed processing") {
+        val feed = buildFeed()
+        val xml = getResourceAsStream("medium.rss.xml").asString()
+
+        doReturn(xml).whenever(httpGateway).get(any())
+
+        val articles = processor.process(feed)
+
+        assertThat(articles.get(0).content, containsString("TL;DR — Aspen 2.0 is out, check it out"))
+    }
 })

@@ -19,4 +19,5 @@ internal class Item {
     var link: String = ""
     var pubDate: Date = Date()
     var description: String = ""
+    var encoded: String = ""
 }

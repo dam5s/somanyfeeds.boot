@@ -6,7 +6,8 @@ import Task exposing (Task)
 import Json.Decode as Decode exposing ((:=))
 import Html exposing (..)
 import Html.Attributes exposing (..)
-import Markdown
+import VirtualDom
+import Json.Encode as Encode
 import SoManyFeeds.DateFormat as DateFormat exposing (parseAndFormat)
 
 type alias ArticleList =
@@ -32,7 +33,7 @@ selectedArticles allArticles selectedSources =
 
 isSelected: List String -> Article -> Bool
 isSelected sources article =
-  List.any (\s -> s == article.source) sources
+  List.member article.source sources
 
 
 type Msg
@@ -47,11 +48,16 @@ view articles =
     (List.map listItem articles)
 
 
+innerHtml : String -> Attribute Msg
+innerHtml =
+  VirtualDom.property "innerHTML" << Encode.string
+
+
 listItem : Article -> Html Msg
 listItem model =
   article [] [
     articleHeader model,
-    section [] [ (Markdown.toHtml [] model.content) ]
+    section [ innerHtml model.content ] []
   ]
 
 

@@ -1,0 +1,49 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     version="2.0">
+    <channel>
+        <title>
+            <![CDATA[ Damien Le Berrigaud on Medium ]]>
+        </title>
+        <description>
+            <![CDATA[ Latest posts by Damien Le Berrigaud on Medium ]]>
+        </description>
+        <link>
+            https://medium.com/@its_damo?source=rss-cc848065c96b------2
+        </link>
+        <image>
+            <url>
+                https://d262ilb51hltx0.cloudfront.net/fit/c/150/150/0*rsrV9zxUYaMoNWMP.
+            </url>
+            <title>Damien Le Berrigaud on Medium</title>
+            <link>
+                https://medium.com/@its_damo?source=rss-cc848065c96b------2
+            </link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 05 Jul 2016 23:53:03 GMT</lastBuildDate>
+        <atom:link href="https://medium.com/feed/@its_damo" rel="self" type="application/rss+xml"/>
+        <webMaster>
+            <![CDATA[ yourfriends@medium.com ]]>
+        </webMaster>
+        <atom:link href="http://medium.superfeedr.com" rel="hub"/>
+        <item>
+            <title>
+                <![CDATA[ Kotlin testing with Aspen and Aspen Spring ]]>
+            </title>
+            <link>
+                https://medium.com/@its_damo/kotlin-testing-with-aspen-and-aspen-spring-59a3d211a374?source=rss-cc848065c96b------2
+            </link>
+            <guid isPermaLink="false">https://medium.com/p/59a3d211a374</guid>
+            <dc:creator>
+                <![CDATA[ Damien Le Berrigaud ]]>
+            </dc:creator>
+            <pubDate>Tue, 05 Jul 2016 21:14:57 GMT</pubDate>
+            <content:encoded>
+                <![CDATA[
+<p>TL;DR — Aspen 2.0 is out, check it out: <a href="https://github.com/dam5s/aspen">https://github.com/dam5s/aspen</a></p><h4>How I got into Kotlin</h4><p>I started looking at Kotlin around release M9, it was quite a few months before it was released as 1.0, but it was already very usable. Kotlin promised easy integration with your Java code, running on the Java 6 VM and a lot of features that make the code a lot nicer to work with.</p><p>Having worked with Java for a couple years with some of our clients, I was really excited to get rid of the verbosity and keep the things I like in Java: a good build system (Gradle), easy to build modular applications, a decent type system (that gets improved a lot by Kotlin), and a huge ecosystem with mature libraries.</p><p>Our first production project for a client was using Kotlin M12 for an Android application. The experience was great, the client developers were former C# developers. They loved the language, and despite a few quirks here and there, we shipped it by the time Kotlin M13 was released. A few weeks later, Kotlin 1.0 was released.</p><p>Now I have been through a couple more projects with Kotlin and I would advise any Java developer out there to look into it. It’s easy to get started with, and you can introduce it in your existing projects without pain.</p><h4>Why I decided to create Aspen</h4><p>I have been really enjoying the simplicity of Java unit tests using JUnit. Its simplicity encourages you to write simple tests that are easy to read. Using only one “@Before” annotated function encourages you to make each test readable from top to bottom without having to jump around.</p><p>The only thing I really miss from my Ruby days was being able to write a short sentence to describe my test. With JUnit, I would name tests following this pattern:</p><pre>public void testMyFunction // testing the happy path<br>public void testMyFunction_WhenInput... // testing another context</pre><p>Some developers would also describe the expected outcome in the function name. I do not do that because I want to encourage developers in my team to name variables and write assertions that talk for themselves. Also I do not want to have yet another comment that can get out of sync easily.</p><p>Kotlin allowing to create type safe DSLs, I decided to write a DSL for testing. It is inspired by RSpec and Spek, but it is a lot simplified and easy to extend with your own DSL if you would like.</p><h4>Here comes Aspen</h4><p>An Aspen test looks like this:</p><pre>class PersonTestExample : Test(<strong>{<br> </strong>describe(&quot;#fullName&quot;) <strong>{<br> </strong>test <strong>{<br> </strong>val person = <em>buildPerson</em>(<br> firstName = &quot;Jane&quot;,<br> lastName = &quot;Doe&quot;<br> )<br> assertThat(person.fullName(), equalTo(&quot;Jane Doe&quot;))<br> <strong>}<br><br> </strong>test(&quot;with a middle name&quot;) <strong>{<br> </strong>val person = <em>buildPerson</em>(<br> firstName = &quot;John&quot;,<br> middleName = &quot;William&quot;,<br> lastName = &quot;Doe&quot;<br> )<br> assertThat(person.fullName(), equalTo(&quot;John W. Doe&quot;))<br> <strong>}<br> }<br><br> </strong>describe(&quot;#greeting&quot;) <strong>{<br> </strong>test <strong>{<br> </strong>val person = <em>buildPerson</em>(<br> firstName = &quot;Jane&quot;,<br> lastName = &quot;Doe&quot;<br> )<br> assertThat(person.greeting(), equalTo(&quot;Greetings Jane!&quot;))<br> <strong>}<br> }<br>}</strong>)</pre><figure><img src="https://d262ilb51hltx0.cloudfront.net/max/1024/1*SYm5JoxIMi_Xr0ikR4u2hA.png" /><figcaption>Output from running the test above in IntelliJ IDEA.</figcaption></figure><p>With the help of a few colleagues (Joe, Jack, Mike G, Travis, Nathan, Alex… thanks guys!), we wrote Aspen. It’s a really simple DSL that makes unit tests easier to organize, and it’s built on top of JUnit.</p><h4>Spring Integration</h4><p>A big requirement for us to use a testing framework: it has to work with Spring. Most of the tests we write with Spring are pure unit tests, so that already just works. But we also have a few tests that require us to use the Spring test runner in order to spin up the server and run some higher level tests.</p><p>Thankfully the Spring team has done a great job at abstracting the way the Spring runner work. It’s been very easy to write our own runner for Spring that reuses the code by the Spring team.</p><p>A test with Aspen Spring can look like this:</p><pre>@RunWith(SpringTestTreeRunner::class)<br>@SpringApplicationConfiguration(ExampleApplication::class)<br>@WebIntegrationTest(&quot;server.port:0&quot;)<br>class SpringApplicationTestExample : Test({</pre><pre> val message: String = inject(&quot;myMessage&quot;)<br> val port = injectValue(&quot;local.server.port&quot;, Int::class)<br> val client = OkHttpClient()</pre><pre> test(&quot;GET /hello&quot;) {<br> val request = Request.Builder()<br> .url(&quot;http://localhost:$port/hello&quot;)<br> .build()<br> val response = client.newCall(request).execute()</pre><pre> val body = response.body().string()</pre><pre> assertThat(body, equalTo(&quot;&quot;&quot;{&quot;hello&quot;:&quot;world&quot;}&quot;&quot;&quot;))<br> assertThat(body, equalTo(&quot;&quot;&quot;{&quot;hello&quot;:&quot;$message&quot;}&quot;&quot;&quot;))<br> }</pre><pre> test(&quot;GET /world&quot;) {<br> //...<br> }<br>})</pre><h4>Getting Aspen and Aspen Spring</h4><p>Aspen and Aspen Spring are on Github and can be added to your project via JCenter.</p><ul><li><a href="https://github.com/dam5s/aspen">dam5s/aspen</a></li><li><a href="https://bintray.com/dam5s/maven/aspen/view">aspen</a></li></ul><img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=59a3d211a374" width="1" height="1">
+]]>
+            </content:encoded>
+        </item>
+    </channel>
+</rss>
