@@ -114,8 +114,9 @@ section.content {
 #app-menu {
     margin: 0;
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    top: 0;
 }
 
 #app-header + section {
@@ -128,20 +129,30 @@ section.content {
     }
 }
 
-#app-menu li {
-    display: inline-block;
-    padding: 1em;
-    border-bottom: 2px solid transparent;
+#app-menu ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-#app-menu li:hover {
-    border-color: #fff;
+#app-menu li a {
+    padding: .5em 1em;
+    margin-left: .3em;
+    border: 1px solid transparent;
+    border-radius: 3px;
 }
 
-#app-menu li.selected,
-#app-menu li.selected:hover {
-    font-weight: 500;
-    border-color: #00BCD4;
+#app-menu li a:last-child {
+    margin-right: .3em;
+}
+
+#app-menu li.selected a,
+#app-menu li a:hover {
+    border-color: rgba(0, 188, 212, 0.3);
+}
+
+#app-menu li.selected a {
+    background-color: rgba(0, 188, 212, 0.1);
 }
 
 article {
