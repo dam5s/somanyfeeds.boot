@@ -35,6 +35,7 @@ task build(type: Copy, dependsOn: ["test", "compileElm"]) {
         include "**/*.png"
         include "**/*.ico"
         include "**/*.svg"
+        include "Staticfile"
         exclude "elm"
     }
     into "$project.projectDir/build"
