@@ -1,8 +1,8 @@
 task clean(type: Delete) {
-    delete "build"
+    delete "build", "elm-stuff/build-artifacts"
 }
 
-task installNodeDependencies(type: Exec) {
+task npmInstall(type: Exec) {
     workingDir project.projectDir
     commandLine "npm", "install"
 }
