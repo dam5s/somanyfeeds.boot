@@ -10,12 +10,9 @@ import com.somanyfeeds.feedprocessing.toLocalDateTime
 import com.somanyfeeds.httpgateway.HttpGateway
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import javax.inject.Inject
 
 @Service
-class RssFeedProcessor
-@Inject
-constructor(private val httpGateway: HttpGateway) : FeedProcessor {
+class RssFeedProcessor(val httpGateway: HttpGateway) : FeedProcessor {
 
     private val logger = LoggerFactory.getLogger(javaClass)
     private val xmlMapper = XmlMapper().apply {

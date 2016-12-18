@@ -1,20 +1,18 @@
 package com.somanyfeeds
 
-import com.somanyfeeds.feedprocessing.*
+import com.somanyfeeds.feedprocessing.FeedUpdatesScheduler
+import com.somanyfeeds.feedprocessing.FeedsUpdater
 import org.springframework.beans.factory.DisposableBean
 import org.springframework.stereotype.Service
 import java.util.concurrent.ScheduledExecutorService
-import javax.inject.Inject
 
 
 @Service
-class FeedUpdatesSchedulerBean : DisposableBean {
+class FeedUpdatesSchedulerBean(execService: ScheduledExecutorService, feedsUpdater: FeedsUpdater) : DisposableBean {
 
-    val scheduler: FeedUpdatesScheduler
+    val scheduler = FeedUpdatesScheduler(execService, feedsUpdater)
 
-    @Inject
-    constructor(execService: ScheduledExecutorService, feedsUpdater: FeedsUpdater) {
-        scheduler = DefaultFeedUpdatesScheduler(execService, feedsUpdater)
+    init {
         scheduler.start()
     }
 

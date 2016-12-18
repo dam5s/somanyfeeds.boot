@@ -3,26 +3,12 @@ package com.somanyfeeds.feedprocessing
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedRepository
 import org.springframework.stereotype.Service
-import javax.inject.Inject
 
 
 @Service
-class FeedsUpdater : Runnable {
-
-    val feedRepository: FeedRepository
-    val articleUpdater: ArticleUpdater
-    val feedProcessors: List<FeedProcessor>
-
-    @Inject
-    constructor(
-        feedRepository: FeedRepository,
-        articleUpdater: ArticleUpdater,
-        feedProcessors: List<FeedProcessor>
-    ) {
-        this.feedRepository = feedRepository
-        this.articleUpdater = articleUpdater
-        this.feedProcessors = feedProcessors
-    }
+class FeedsUpdater(val feedRepository: FeedRepository,
+                   val articleUpdater: ArticleUpdater,
+                   val feedProcessors: List<FeedProcessor>) : Runnable {
 
     override fun run() {
         feedRepository.findAll().forEach { feed ->

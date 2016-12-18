@@ -4,13 +4,13 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.somanyfeeds.articledataaccess.ArticleRepository
-import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
+import com.somanyfeeds.feedprocessing.ArticleUpdater
 import io.damo.aspen.Test
 
 class ArticleUpdaterTest : Test({
     test {
         val mockArticleRepo: ArticleRepository = mock()
-        val articlesUpdater = DefaultArticleUpdater(mockArticleRepo, 2)
+        val articlesUpdater = ArticleUpdater(mockArticleRepo, 2)
         val feed = buildFeed(id = 90)
 
 

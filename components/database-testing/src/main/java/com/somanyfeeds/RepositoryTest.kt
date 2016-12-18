@@ -4,23 +4,32 @@ import io.damo.aspen.Test
 import io.damo.aspen.spring.SpringTestTreeRunner
 import io.damo.aspen.spring.inject
 import org.junit.runner.RunWith
-import org.springframework.boot.test.SpringApplicationConfiguration
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.test.context.TestExecutionListeners
 import java.util.*
 import javax.sql.DataSource
 
 
 @RunWith(SpringTestTreeRunner::class)
-@SpringApplicationConfiguration(classes = arrayOf(RepositoryTestConfiguration::class))
-open class RepositorySpec : Test {
+@SpringBootTest(
+    classes = arrayOf(RepositoryTestConfiguration::class),
+    properties = arrayOf(
+        "spring.datasource.url=jdbc:postgresql://localhost/somanyfeeds_test",
+        "spring.datasource.username=dam5s",
+        "spring.datasource.driver-class-name=org.postgresql.Driver"
+    )
+)
+@TestExecutionListeners(listeners = arrayOf())
+open class RepositoryTest : Test {
 
     lateinit var dataSource: DataSource
     lateinit var jdbcTemplate: JdbcTemplate
 
 
-    private val body: RepositorySpec.() -> Unit
+    private val body: RepositoryTest.() -> Unit
 
-    constructor(body: RepositorySpec.() -> Unit) : super({}) {
+    constructor(body: RepositoryTest.() -> Unit) : super({}) {
         this.body = body
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
     }

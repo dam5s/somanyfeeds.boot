@@ -1,17 +1,15 @@
 package articledataaccess
 
-import com.somanyfeeds.RepositorySpec
+import com.somanyfeeds.RepositoryTest
 import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.articledataaccess.PostgresArticleRepository
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
-import org.hamcrest.Matchers.equalTo
-import org.hamcrest.Matchers.hasSize
-import org.junit.Assert.assertThat
+import org.assertj.core.api.Assertions.assertThat
 import java.time.LocalDateTime
 
 
-class PostgresArticleRepositoryTest : RepositorySpec({
+class PostgresArticleRepositoryTest : RepositoryTest({
 
     val repo = PostgresArticleRepository(dataSource)
 
@@ -46,8 +44,8 @@ class PostgresArticleRepositoryTest : RepositorySpec({
             date = LocalDateTime.parse("2012-01-02T03:04:05"),
             source = "my-other-feed"
         )
-        assertThat(entities, hasSize(3))
-        assertThat(entities.first(), equalTo(expectedArticle))
+        assertThat(entities).hasSize(3)
+        assertThat(entities.first()).isEqualTo(expectedArticle)
     }
 
     test("#findAllBySlugs") {
@@ -62,15 +60,15 @@ class PostgresArticleRepositoryTest : RepositorySpec({
         val entities = repo.findAllBySlugs(listOf("my-feed", "my-last-feed"))
 
 
-        assertThat(entities, hasSize(2))
-        assertThat(entities.first(), equalTo(Article(
+        assertThat(entities).hasSize(2)
+        assertThat(entities.first()).isEqualTo(Article(
             id = 102,
             title = "My Other Article",
             link = "http://example.com/blog/other-articles/1",
             content = "This is another great article...",
             date = LocalDateTime.parse("2012-01-02T03:04:05"),
             source = "my-last-feed"
-        )))
+        ))
     }
 
     test("#create") {
@@ -86,15 +84,15 @@ class PostgresArticleRepositoryTest : RepositorySpec({
 
         val created = repo.create(article, feed)
 
-        assertThat(getCount("select count(*) from article where id = $created"), equalTo(1L))
+        assertThat(getCount("select count(*) from article where id = $created")).isEqualTo(1L)
 
         jdbcTemplate.query("select * from article where id = $created") { rs ->
-            assertThat(rs.getLong("id"), equalTo(created))
-            assertThat(rs.getLong("feed_id"), equalTo(10L))
-            assertThat(rs.getString("title"), equalTo("My Article"))
-            assertThat(rs.getString("link"), equalTo("http://example.com/my/article"))
-            assertThat(rs.getString("content"), equalTo("It's great and stuff..."))
-            assertThat(rs.getString("date"), equalTo("2010-01-02 03:04:05"))
+            assertThat(rs.getLong("id")).isEqualTo(created)
+            assertThat(rs.getLong("feed_id")).isEqualTo(10L)
+            assertThat(rs.getString("title")).isEqualTo("My Article")
+            assertThat(rs.getString("link")).isEqualTo("http://example.com/my/article")
+            assertThat(rs.getString("content")).isEqualTo("It's great and stuff...")
+            assertThat(rs.getString("date")).isEqualTo("2010-01-02 03:04:05")
         }
     }
 
@@ -110,15 +108,15 @@ class PostgresArticleRepositoryTest : RepositorySpec({
         repo.deleteByFeed(buildFeedEntity(id = 10))
 
 
-        assertThat(getCount("select count(*) from article"), equalTo(1L))
+        assertThat(getCount("select count(*) from article")).isEqualTo(1L)
 
         jdbcTemplate.query("select * from article") { rs ->
-            assertThat(rs.getLong("id"), equalTo(22L))
-            assertThat(rs.getLong("feed_id"), equalTo(11L))
-            assertThat(rs.getString("title"), equalTo("My Article 3"))
-            assertThat(rs.getString("link"), equalTo("http://example.com/article3"))
-            assertThat(rs.getString("content"), equalTo("content 3..."))
-            assertThat(rs.getString("date"), equalTo("2010-01-02 03:04:05"))
+            assertThat(rs.getLong("id")).isEqualTo(22L)
+            assertThat(rs.getLong("feed_id")).isEqualTo(11L)
+            assertThat(rs.getString("title")).isEqualTo("My Article 3")
+            assertThat(rs.getString("link")).isEqualTo("http://example.com/article3")
+            assertThat(rs.getString("content")).isEqualTo("content 3...")
+            assertThat(rs.getString("date")).isEqualTo("2010-01-02 03:04:05")
         }
     }
 })

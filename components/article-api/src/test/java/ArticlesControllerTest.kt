@@ -5,7 +5,6 @@ import com.nhaarman.mockito_kotlin.whenever
 import com.somanyfeeds.articleapi.ArticlesController
 import com.somanyfeeds.articledataaccess.ArticleRepository
 import io.damo.aspen.Test
-import org.hamcrest.Matchers.hasSize
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
@@ -13,7 +12,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetu
 import testing.buildArticle
 import java.time.LocalDateTime
 
-class ArticlesControllerTest : Test ({
+class ArticlesControllerTest : Test({
 
     val mockRepository: ArticleRepository = mock()
     val controller = ArticlesController(mockRepository)
@@ -48,7 +47,6 @@ class ArticlesControllerTest : Test ({
         mockMvc
             .perform(get("/articles/github,gplus,pivotal"))
             .andExpect(status().isOk)
-            .andExpect(jsonPath("$.articles", hasSize<Any>(3)))
 
             .andExpect(jsonPath("$.articles[0].id").value(100))
             .andExpect(jsonPath("$.articles[0].title").value("Awesome Article"))

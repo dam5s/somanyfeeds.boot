@@ -6,25 +6,19 @@ import org.springframework.jdbc.core.RowMapper
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert
 import org.springframework.stereotype.Repository
-import javax.inject.Inject
 import javax.sql.DataSource
 
 @Repository
-open class PostgresArticleRepository : ArticleRepository {
+open class PostgresArticleRepository(dataSource: DataSource) : ArticleRepository {
 
-    private val jdbcTemplate: JdbcTemplate
-    private val namedParamJdbcTemplate: NamedParameterJdbcTemplate
-
-    @Inject
-    constructor(dataSource: DataSource) {
-        this.jdbcTemplate = JdbcTemplate(dataSource)
-        this.namedParamJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
-    }
+    val jdbcTemplate = JdbcTemplate(dataSource)
+    val namedParamJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
 
 
-    override fun findAll() = jdbcTemplate.query(findAllSQL, articleMapper)
+    override fun findAll(): List<Article>
+        = jdbcTemplate.query(findAllSQL, articleMapper)
 
-    override fun findAllBySlugs(slugs: List<String>)
+    override fun findAllBySlugs(slugs: List<String>): List<Article>
         = namedParamJdbcTemplate.query(findAllBySlugsSQL, mapOf("slugs" to slugs), articleMapper)
 
     override fun create(article: Article, feed: Feed)
@@ -42,6 +36,7 @@ open class PostgresArticleRepository : ArticleRepository {
     override fun deleteByFeed(feed: Feed) {
         jdbcTemplate.update(deleteSQL, feed.id)
     }
+
 
     private val articleMapper = RowMapper { rs, rowNum ->
         Article(

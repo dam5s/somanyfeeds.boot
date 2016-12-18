@@ -2,18 +2,13 @@ package com.somanyfeeds.feeddataaccess
 
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Repository
-import javax.inject.Inject
 import javax.sql.DataSource
 
 @Repository
-open class PostgresFeedRepository : FeedRepository {
+open class PostgresFeedRepository(dataSource: DataSource) : FeedRepository {
 
-    private val jdbcTemplate: JdbcTemplate
+    val jdbcTemplate = JdbcTemplate(dataSource)
 
-    @Inject
-    constructor(dataSource: DataSource) {
-        jdbcTemplate = JdbcTemplate(dataSource)
-    }
 
     override fun findAll(): List<Feed> {
         return jdbcTemplate.query("SELECT id, name, slug, info, type FROM feed", { rs, rowNum ->

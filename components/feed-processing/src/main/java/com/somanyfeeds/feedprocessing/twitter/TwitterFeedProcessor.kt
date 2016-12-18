@@ -8,14 +8,12 @@ import com.somanyfeeds.feedprocessing.toLocalDateTime
 import org.slf4j.LoggerFactory
 import org.springframework.social.twitter.api.Twitter
 import org.springframework.stereotype.Service
-import javax.inject.Inject
 
 @Service
-class TwitterFeedProcessor
-@Inject
-constructor(private val twitter: Twitter) : FeedProcessor {
+class TwitterFeedProcessor(val twitter: Twitter) : FeedProcessor {
 
     private val logger = LoggerFactory.getLogger(javaClass)
+
 
     override fun canProcess(feed: Feed) = feed.type == FeedType.TWITTER
 

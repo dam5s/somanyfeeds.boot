@@ -2,29 +2,19 @@ package com.somanyfeeds.articleapi
 
 import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.articledataaccess.ArticleRepository
-import org.springframework.web.bind.annotation.CrossOrigin
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
-import javax.inject.Inject
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/articles")
 @CrossOrigin
-class ArticlesController {
+class ArticlesController(val articleRepository: ArticleRepository) {
 
-    private val articleRepository: ArticleRepository
 
-    @Inject
-    constructor(articleRepository: ArticleRepository) {
-        this.articleRepository = articleRepository
-    }
-
-    @RequestMapping
+    @GetMapping
     fun listAll()
         = ArticleListView(articleRepository.findAll())
 
-    @RequestMapping("/{slugs}")
+    @GetMapping("/{slugs}")
     fun listArticles(@PathVariable slugs: List<String>)
         = ArticleListView(articleRepository.findAllBySlugs(slugs))
 

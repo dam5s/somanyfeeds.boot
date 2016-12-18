@@ -1,7 +1,7 @@
 package com.somanyfeeds
 
 import com.somanyfeeds.articledataaccess.ArticleRepository
-import com.somanyfeeds.feedprocessing.DefaultArticleUpdater
+import com.somanyfeeds.feedprocessing.ArticleUpdater
 import com.somanyfeeds.httpgateway.OkHttpGateway
 import com.somanyfeeds.jsonserialization.ObjectMapperProvider
 import com.squareup.okhttp.OkHttpClient
@@ -18,25 +18,32 @@ import java.util.concurrent.ScheduledThreadPoolExecutor
 @SpringBootApplication
 open class SoManyFeedsApplication {
 
+    @Value("\${spring.social.twitter.appId}")
+    lateinit var twitterAppId: String
+
+    @Value("\${spring.social.twitter.appSecret}")
+    lateinit var twitterAppSecret: String
+
+
     @Bean
     @Primary
     open fun objectMapper() = ObjectMapperProvider().get()
 
     @Bean
-    open fun twitter(@Value("\${spring.social.twitter.appId}") appId: String,
-                     @Value("\${spring.social.twitter.appSecret}") appSecret: String): Twitter {
-
-        return TwitterTemplate(appId, appSecret)
-    }
+    open fun twitter(): Twitter
+        = TwitterTemplate(twitterAppId, twitterAppSecret)
 
     @Bean
-    open fun httpGateway() = OkHttpGateway(OkHttpClient())
+    open fun httpGateway()
+        = OkHttpGateway(OkHttpClient())
 
     @Bean
-    open fun execService() = ScheduledThreadPoolExecutor(2)
+    open fun execService()
+        = ScheduledThreadPoolExecutor(2)
 
     @Bean
-    open fun articleUpdater(articleRepo: ArticleRepository) = DefaultArticleUpdater(articleRepo, 20)
+    open fun articleUpdater(articleRepo: ArticleRepository)
+        = ArticleUpdater(articleRepo, 20)
 }
 
 fun main(args: Array<String>) {

@@ -8,8 +8,7 @@ import feedprocessing.asString
 import feedprocessing.buildFeed
 import feedprocessing.getResourceAsStream
 import io.damo.aspen.Test
-import org.hamcrest.Matchers.*
-import org.junit.Assert.assertThat
+import org.assertj.core.api.Assertions.assertThat
 import java.time.LocalDateTime
 import java.time.Month
 
@@ -37,15 +36,15 @@ class RssFeedProcessorTest : Test({
 
         verify(httpGateway).get("http://example.com/feed/rss")
 
-        assertThat(articles, hasSize(10))
+        assertThat(articles).hasSize(10)
 
-        val article = articles.get(9)
+        val article = articles[9]
         val expectedDate = LocalDateTime.of(2013, Month.MAY, 12, 19, 33, 13)
 
-        assertThat(article.link, equalTo("https://plus.google.com/105039413587880910287/posts/FiXRB9KBvYY"))
-        assertThat(article.date, equalTo(expectedDate))
-        assertThat(article.title, containsString("Considering taking some of wednesday/thursday off to be able to follow Google I/O live streamsÂ  #io2013..."))
-        assertThat(article.content, containsString("<div class='content'>Considering taking some of wednesday/thursday "))
+        assertThat(article.link).isEqualTo("https://plus.google.com/105039413587880910287/posts/FiXRB9KBvYY")
+        assertThat(article.date).isEqualTo(expectedDate)
+        assertThat(article.title).contains("Considering taking some of wednesday/thursday off to be able to follow Google I/O live streamsÂ  #io2013...")
+        assertThat(article.content).contains("<div class='content'>Considering taking some of wednesday/thursday ")
     }
 
     test("with feed with unwanted characters") {
@@ -56,8 +55,8 @@ class RssFeedProcessorTest : Test({
 
         val articles = processor.process(feed)
 
-        assertThat(articles.get(0).content, containsString("not the opposite."))
-        assertThat(articles.get(0).content, containsString("not the opposite.</div>"))
+        assertThat(articles.first().content).contains("not the opposite.")
+        assertThat(articles.first().content).contains("not the opposite.</div>")
     }
 
     test("medium rss feed processing") {
@@ -68,6 +67,6 @@ class RssFeedProcessorTest : Test({
 
         val articles = processor.process(feed)
 
-        assertThat(articles.get(0).content, containsString("TL;DR — Aspen 2.0 is out, check it out"))
+        assertThat(articles.first().content).contains("TL;DR — Aspen 2.0 is out, check it out")
     }
 })

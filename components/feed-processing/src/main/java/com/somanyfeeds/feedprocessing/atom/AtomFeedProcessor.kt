@@ -8,19 +8,18 @@ import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feedprocessing.FeedProcessor
 import com.somanyfeeds.feedprocessing.toLocalDateTime
 import com.somanyfeeds.httpgateway.HttpGateway
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-import javax.inject.Inject
 
 @Service
-class AtomFeedProcessor
-@Inject
-constructor(private val httpGateway: HttpGateway) : FeedProcessor {
+class AtomFeedProcessor(val httpGateway: HttpGateway) : FeedProcessor {
 
-    private val logger = LoggerFactory.getLogger(javaClass)
+    private val logger: Logger = LoggerFactory.getLogger(javaClass)
     private val xmlMapper = XmlMapper().apply {
         configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
     }
+
 
     override fun canProcess(feed: Feed) = (feed.type == FeedType.ATOM)
 

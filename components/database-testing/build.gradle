@@ -2,9 +2,8 @@ apply from: "../../kotlin.gradle"
 
 dependencies {
     compile "io.damo.aspen:aspen-spring:$aspenVersion"
-    compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
     compile "org.springframework:spring-jdbc:$springVersion"
-    compile "org.springframework:spring-test:$springVersion"
 
     compile "com.zaxxer:HikariCP:$hikariVersion"
     compile "org.postgresql:postgresql:$postgresVersion"

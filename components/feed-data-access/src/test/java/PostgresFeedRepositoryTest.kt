@@ -1,11 +1,10 @@
-import com.somanyfeeds.RepositorySpec
+import com.somanyfeeds.RepositoryTest
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feeddataaccess.PostgresFeedRepository
-import org.hamcrest.Matchers.equalTo
-import org.junit.Assert.assertThat
+import org.assertj.core.api.Assertions.assertThat
 
-class PostgresFeedRepositoryTest : RepositorySpec({
+class PostgresFeedRepositoryTest : RepositoryTest({
 
     val repo = PostgresFeedRepository(dataSource)
 
@@ -46,6 +45,6 @@ class PostgresFeedRepositoryTest : RepositorySpec({
                 type = FeedType.RSS
             )
         )
-        assertThat(expectedFeeds, equalTo(feeds))
+        assertThat(expectedFeeds).isEqualTo(feeds)
     }
 })

@@ -5,3 +5,5 @@ build
 
 *.js
 *.js.map
+.DS_Store
+classes
