@@ -18,19 +18,18 @@ type alias Feed =
 
 defaultFeeds : List Feed
 defaultFeeds =
-  [
-    { name = "About" , slug = "about" , selected = False },
-    { name = "Social" , slug = "social" , selected = False },
-    { name = "Blog" , slug = "blog" , selected = False },
-    { name = "Code" , slug = "code" , selected = False }
+  [ { name = "About" , slug = "about" , selected = False }
+  , { name = "Social" , slug = "social" , selected = False }
+  , { name = "Blog" , slug = "blog" , selected = False }
+  , { name = "Code" , slug = "code" , selected = False }
   ]
 
 
 selectedSources : List Feed -> List String
 selectedSources feeds =
   feeds
-    |> List.filter (\f -> f.selected)
-    |> List.map (\f -> f.slug)
+    |> List.filter .selected
+    |> List.map .slug
 
 
 selectFeeds : String -> List Feed

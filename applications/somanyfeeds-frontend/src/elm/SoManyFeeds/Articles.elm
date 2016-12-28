@@ -11,17 +11,15 @@ import Json.Encode as Encode
 import SoManyFeeds.DateFormat as DateFormat exposing (parseAndFormat)
 
 type alias ArticleList =
-  {
-    articles : (List Article)
+  { articles : (List Article)
   }
 
 type alias Article =
-  {
-    title : Maybe String,
-    link : Maybe String,
-    content : String,
-    date : Maybe String,
-    source : String
+  { title : Maybe String
+  , link : Maybe String
+  , content : String
+  , date : Maybe String
+  , source : String
   }
 
 
