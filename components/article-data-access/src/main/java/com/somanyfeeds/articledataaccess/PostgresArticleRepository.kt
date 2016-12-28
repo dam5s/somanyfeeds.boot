@@ -25,13 +25,16 @@ open class PostgresArticleRepository(dataSource: DataSource) : ArticleRepository
         = SimpleJdbcInsert(jdbcTemplate)
         .withTableName("article")
         .usingGeneratedKeyColumns("id")
-        .executeAndReturnKey(mutableMapOf(
-            "feed_id" to feed.id,
-            "title" to article.title,
-            "link" to article.link,
-            "content" to article.content,
-            "date" to article.date.toDate()
-        )).toLong()
+        .executeAndReturnKey(
+            mapOf(
+                "feed_id" to feed.id,
+                "title" to article.title,
+                "link" to article.link,
+                "content" to article.content,
+                "date" to article.date.toDate()
+            )
+        )
+        .toLong()
 
     override fun deleteByFeed(feed: Feed) {
         jdbcTemplate.update(deleteSQL, feed.id)
