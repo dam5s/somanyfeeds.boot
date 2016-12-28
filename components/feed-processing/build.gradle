@@ -1,9 +1,9 @@
 apply from: "../../kotlin.gradle"
 
 dependencies {
-    compile project(":components/feed-data-access")
-    compile project(":components/article-data-access")
-    compile project(":components/http-gateway")
+    compile project(":components:feed-data-access")
+    compile project(":components:article-data-access")
+    compile project(":components:http-gateway")
 
     compile "javax.inject:javax.inject:1"
     compile "javax.transaction:javax.transaction-api:1.2"

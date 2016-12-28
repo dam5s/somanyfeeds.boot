@@ -1,8 +1,8 @@
 apply from: "../../kotlin.gradle"
 
 dependencies {
-    compile project(":components/article-data-access")
-    compile project(":components/json-serialization")
+    compile project(":components:article-data-access")
+    compile project(":components:json-serialization")
 
     compile "org.springframework:spring-webmvc:$springVersion"
     compile "javax.inject:javax.inject:1"

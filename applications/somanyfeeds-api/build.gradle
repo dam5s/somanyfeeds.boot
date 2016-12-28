@@ -1,9 +1,9 @@
 apply from: "../../kotlin.gradle"
 
 dependencies {
-    compile project(":components/article-api")
-    compile project(":components/feed-processing")
-    compile project(":components/http-gateway")
+    compile project(":components:article-api")
+    compile project(":components:feed-processing")
+    compile project(":components:http-gateway")
 
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework:spring-jdbc:$springVersion"
@@ -11,6 +11,7 @@ dependencies {
     compile "org.postgresql:postgresql:$postgresVersion"
 
     compile "javax.inject:javax.inject:1"
+    compile "org.funktionale:funktionale:0.9.5"
 }
 
 apply plugin: "org.springframework.boot"

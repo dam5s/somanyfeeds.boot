@@ -5,5 +5,5 @@ dependencies {
     compile "org.springframework:spring-jdbc:$springVersion"
     compile "org.springframework:spring-context:$springVersion"
 
-    testCompile project(":components/database-testing")
+    testCompile project(":components:database-testing")
 }

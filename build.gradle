@@ -30,4 +30,44 @@ buildscript {
     }
 }
 
-defaultTasks "clean", "build"
+task dependenciesGraphDot {
+
+    mustRunAfter "clean"
+
+    def graphBuildDir = "build/dependenciesGraph"
+    def dotFile = file "$graphBuildDir/graph.dot"
+
+    doLast {
+        delete graphBuildDir
+        mkdir graphBuildDir
+
+        dotFile << "digraph dependencies {\n"
+
+        project.subprojects.forEach { Project subProject ->
+            try {
+
+                Configuration compileConfig = subProject.configurations["compile"]
+
+                compileConfig
+                        .dependencies
+                        .grep { it.respondsTo("getDependencyProject") }
+                        .forEach { dotFile << """  "$subProject.name" -> "$it.dependencyProject.name"\n""" }
+
+            } catch (UnknownConfigurationException ignored) {
+            }
+        }
+
+        dotFile << "}\n"
+    }
+}
+
+task dependenciesGraph(dependsOn: "dependenciesGraphDot", type: Exec) {
+    workingDir "$project.buildDir/dependenciesGraph"
+    commandLine "dot", "-O", "-Tpng", "graph.dot"
+}
+
+task clean(type: Delete) {
+    delete "build"
+}
+
+defaultTasks "clean", "build", "dependenciesGraph"
