@@ -1,14 +1,19 @@
 package articledataaccess
 
 import com.somanyfeeds.RepositoryTest
+import com.somanyfeeds.RepositoryTestConfiguration
 import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.articledataaccess.PostgresArticleRepository
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import org.assertj.core.api.Assertions.assertThat
+import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDateTime
 
-
+@SpringBootTest(
+    classes = arrayOf(RepositoryTestConfiguration::class),
+    properties = arrayOf("spring.datasource.url=jdbc:postgresql://localhost/somanyfeeds_article_test")
+)
 class PostgresArticleRepositoryTest : RepositoryTest({
 
     val repo = PostgresArticleRepository(dataSource)

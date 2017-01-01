@@ -1,9 +1,16 @@
 import com.somanyfeeds.RepositoryTest
+import com.somanyfeeds.RepositoryTestConfiguration
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import com.somanyfeeds.feeddataaccess.PostgresFeedRepository
 import org.assertj.core.api.Assertions.assertThat
+import org.springframework.boot.test.context.SpringBootTest
 
+
+@SpringBootTest(
+    classes = arrayOf(RepositoryTestConfiguration::class),
+    properties = arrayOf("spring.datasource.url=jdbc:postgresql://localhost/somanyfeeds_feed_test")
+)
 class PostgresFeedRepositoryTest : RepositoryTest({
 
     val repo = PostgresFeedRepository(dataSource)

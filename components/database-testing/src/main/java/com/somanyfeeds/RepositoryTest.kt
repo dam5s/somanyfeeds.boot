@@ -4,7 +4,6 @@ import io.damo.aspen.Test
 import io.damo.aspen.spring.SpringTestTreeRunner
 import io.damo.aspen.spring.inject
 import org.junit.runner.RunWith
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.test.context.TestExecutionListeners
 import java.util.*
@@ -12,14 +11,6 @@ import javax.sql.DataSource
 
 
 @RunWith(SpringTestTreeRunner::class)
-@SpringBootTest(
-    classes = arrayOf(RepositoryTestConfiguration::class),
-    properties = arrayOf(
-        "spring.datasource.url=jdbc:postgresql://localhost/somanyfeeds_test",
-        "spring.datasource.username=dam5s",
-        "spring.datasource.driver-class-name=org.postgresql.Driver"
-    )
-)
 @TestExecutionListeners(listeners = arrayOf())
 open class RepositoryTest : Test {
 

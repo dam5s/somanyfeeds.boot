@@ -1,4 +1,4 @@
--- create database somanyfeeds_dev with encoding='utf-8'
+-- CREATE DATABASE somanyfeeds_dev WITH ENCODING='utf-8'
 
 DROP TABLE IF EXISTS article;
 DROP TABLE IF EXISTS feed;
