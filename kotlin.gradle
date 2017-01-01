@@ -1,4 +1,5 @@
 apply plugin: "kotlin"
+apply plugin: "kotlin-spring"
 
 repositories {
     jcenter()
@@ -17,14 +18,4 @@ dependencies {
     testCompile "io.damo.aspen:aspen:$aspenVersion"
     testCompile "org.assertj:assertj-core:3.6.1"
     testCompile "com.nhaarman:mockito-kotlin:1.0.1"
-}
-
-task createTestResources << {
-    def mockMakerFile = new File("$projectDir/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker")
-
-    if (!mockMakerFile.exists()) {
-        mockMakerFile.parentFile.mkdirs()
-        mockMakerFile.createNewFile()
-        mockMakerFile.write("mock-maker-inline")
-    }
 }
