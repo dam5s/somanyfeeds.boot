@@ -7,3 +7,4 @@ build
 *.js.map
 .DS_Store
 classes
+applications/**/application.yml

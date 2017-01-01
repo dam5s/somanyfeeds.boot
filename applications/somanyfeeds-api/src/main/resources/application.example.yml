@@ -5,8 +5,8 @@ spring:
     driver-class-name: org.postgresql.Driver
   social:
     twitter:
-      appId: APP ID
-      appSecret: APP SECRET
+      appId: <app-id>
+      appSecret: <app-secret>
 
 banner:
   location: classpath:banner.txt
