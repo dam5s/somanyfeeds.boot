@@ -1,19 +1,13 @@
 package articledataaccess
 
 import com.somanyfeeds.RepositoryTest
-import com.somanyfeeds.RepositoryTestConfiguration
 import com.somanyfeeds.articledataaccess.Article
 import com.somanyfeeds.articledataaccess.PostgresArticleRepository
 import com.somanyfeeds.feeddataaccess.Feed
 import com.somanyfeeds.feeddataaccess.FeedType
 import org.assertj.core.api.Assertions.assertThat
-import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDateTime
 
-@SpringBootTest(
-    classes = arrayOf(RepositoryTestConfiguration::class),
-    properties = arrayOf("spring.datasource.url=jdbc:postgresql://localhost/somanyfeeds_article_test")
-)
 class PostgresArticleRepositoryTest : RepositoryTest({
 
     val repo = PostgresArticleRepository(dataSource)
@@ -115,7 +109,7 @@ class PostgresArticleRepositoryTest : RepositoryTest({
 
         assertThat(getCount("select count(*) from article")).isEqualTo(1L)
 
-        jdbcTemplate.query("select * from article") { rs ->
+        jdbcTemplate.query("SELECT * FROM article") { rs ->
             assertThat(rs.getLong("id")).isEqualTo(22L)
             assertThat(rs.getLong("feed_id")).isEqualTo(11L)
             assertThat(rs.getString("title")).isEqualTo("My Article 3")

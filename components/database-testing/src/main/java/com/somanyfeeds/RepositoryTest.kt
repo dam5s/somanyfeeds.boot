@@ -4,6 +4,7 @@ import io.damo.aspen.Test
 import io.damo.aspen.spring.SpringTestTreeRunner
 import io.damo.aspen.spring.inject
 import org.junit.runner.RunWith
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.test.context.TestExecutionListeners
 import java.util.*
@@ -12,6 +13,7 @@ import javax.sql.DataSource
 
 @RunWith(SpringTestTreeRunner::class)
 @TestExecutionListeners(listeners = arrayOf())
+@SpringBootTest(classes = arrayOf(RepositoryTestConfiguration::class))
 open class RepositoryTest : Test {
 
     lateinit var dataSource: DataSource
