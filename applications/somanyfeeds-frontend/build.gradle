@@ -1,31 +1,26 @@
 task clean(type: Delete) {
-    delete "build", "elm-stuff/build-artifacts"
-}
-
-task npmInstall(type: Exec) {
-    workingDir project.projectDir
-    commandLine "npm", "install"
+    delete "build", "elm-stuff/build-artifacts", "tests/elm-stuff/build-artifacts"
 }
 
 task installElm(type: Exec) {
     workingDir project.projectDir
-    commandLine "./node_modules/.bin/elm-package", "install", "-y"
+    commandLine "elm", "package", "install", "-y"
 }
 
-task compileElmTests(type: Exec, dependsOn: "installElm") {
-    workingDir project.projectDir
-    commandLine "./node_modules/.bin/elm-make", "--yes", "--output", "build/tests.js", "tests/elm/SoManyFeedsTests/Tests.elm"
+task installElmTests(type: Exec, dependsOn: "installElm") {
+    workingDir "$project.projectDir/tests"
+    commandLine "elm", "package", "install", "-y"
 }
 
-task test(type: Exec, dependsOn: "compileElmTests") {
+task test(type: Exec, dependsOn: "installElmTests") {
     workingDir project.projectDir
-    commandLine "node", "build/tests.js"
+    commandLine "elm-test"
     environment TZ: "America/Denver"
 }
 
 task compileElm(type: Exec, dependsOn: "installElm") {
     workingDir project.projectDir
-    commandLine "./node_modules/.bin/elm-make", "--yes", "--output", "build/app.js", "src/elm/SoManyFeeds/App.elm"
+    commandLine "elm", "make", "--yes", "--output", "build/app.js", "src/elm/SoManyFeeds/App.elm"
 }
 
 task build(type: Copy, dependsOn: ["test", "compileElm"]) {
@@ -39,11 +34,6 @@ task build(type: Copy, dependsOn: ["test", "compileElm"]) {
         exclude "elm"
     }
     into "$project.projectDir/build"
-}
-
-task elmReactor(type: Exec) {
-    workingDir project.projectDir
-    commandLine "./node_modules/.bin/elm-reactor"
 }
 
 task deploy(type: Exec, dependsOn: "build") {

@@ -2,154 +2,163 @@ module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, de
 
 import Http
 import Date
-import Task exposing (Task)
-import Json.Decode as Decode exposing ((:=))
+import Json.Decode as Decode exposing (field)
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import VirtualDom
 import Json.Encode as Encode
 import SoManyFeeds.DateFormat as DateFormat exposing (parseAndFormat)
 
+
 type alias ArticleList =
-  { articles : (List Article)
-  }
+    { articles : List Article
+    }
+
 
 type alias Article =
-  { title : Maybe String
-  , link : Maybe String
-  , content : String
-  , date : Maybe String
-  , source : String
-  }
+    { title : Maybe String
+    , link : Maybe String
+    , content : String
+    , date : Maybe String
+    , source : String
+    }
 
 
-selectedArticles: List Article -> List String -> List Article
+selectedArticles : List Article -> List String -> List Article
 selectedArticles allArticles selectedSources =
- allArticles
-  |> List.filter (isSelected selectedSources)
+    allArticles
+        |> List.filter (isSelected selectedSources)
 
 
-isSelected: List String -> Article -> Bool
+isSelected : List String -> Article -> Bool
 isSelected sources article =
-  List.member article.source sources
+    List.member article.source sources
 
 
 type Msg
-  = FetchAllDone ArticleList
-  | FetchAllFail Http.Error
+    = FetchAll (Result Http.Error ArticleList)
 
 
 view : List Article -> Html Msg
 view articles =
-  section
-    [ id "app-content", class "content" ]
-    (List.map listItem articles)
+    section
+        [ id "app-content", class "content" ]
+        (List.map listItem articles)
 
 
 innerHtml : String -> Attribute Msg
 innerHtml =
-  VirtualDom.property "innerHTML" << Encode.string
+    VirtualDom.property "innerHTML" << Encode.string
 
 
 listItem : Article -> Html Msg
 listItem model =
-  article [] [
-    articleHeader model,
-    section [ innerHtml model.content ] []
-  ]
+    article []
+        [ articleHeader model
+        , section [ innerHtml model.content ] []
+        ]
 
 
 articleHeader : Article -> Html Msg
 articleHeader model =
-  case model.title of
-    Just title ->
-      articleHeaderWithTitle model title
-    Nothing ->
-      articleHeaderWithoutTitle model
+    case model.title of
+        Just title ->
+            articleHeaderWithTitle model title
+
+        Nothing ->
+            articleHeaderWithoutTitle model
+
 
 articleHeaderWithoutTitle : Article -> Html Msg
 articleHeaderWithoutTitle model =
-  case model.date of
-    Just date ->
-      header [] [
-        h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
-      ]
-    Nothing ->
-      header [] []
+    case model.date of
+        Just date ->
+            header []
+                [ h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
+                ]
+
+        Nothing ->
+            header [] []
 
 
 articleHeaderWithTitle : Article -> String -> Html Msg
 articleHeaderWithTitle model title =
-  case model.date of
-    Just date ->
-      header [] [
-        articleTitle model title,
-        h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
-      ]
-    Nothing ->
-      header [] [
-        articleTitle model title
-      ]
+    case model.date of
+        Just date ->
+            header []
+                [ articleTitle model title
+                , h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
+                ]
+
+        Nothing ->
+            header []
+                [ articleTitle model title
+                ]
 
 
 articleTitle : Article -> String -> Html Msg
 articleTitle model title =
-  case model.link of
-    Just link ->
-      h1 [] [
-        a [ href link ] [ text title ]
-      ]
-    Nothing ->
-      h1 [] [
-        text title
-      ]
+    case model.link of
+        Just link ->
+            h1 []
+                [ a [ href link ] [ text title ]
+                ]
+
+        Nothing ->
+            h1 []
+                [ text title
+                ]
 
 
-update : Msg -> List Article -> (List Article, Cmd Msg)
+update : Msg -> List Article -> ( List Article, Cmd Msg )
 update action articles =
-  case action of
-    FetchAllDone newArticleList ->
-      (List.append [ aboutArticle ] newArticleList.articles, Cmd.none)
-    FetchAllFail error ->
-      (articles, Cmd.none)
+    case action of
+        FetchAll result ->
+            case result of
+                Ok newArticleList ->
+                    ( List.append [ aboutArticle ] newArticleList.articles, Cmd.none )
+
+                Err error ->
+                    ( articles, Cmd.none )
 
 
 fetchAll : String -> Cmd Msg
-fetchAll apiServer = Http.get listDecoder (apiServer ++ "/articles")
-  |> Task.perform FetchAllFail FetchAllDone
+fetchAll apiServer =
+    Http.get (apiServer ++ "/articles") listDecoder
+        |> Http.send FetchAll
 
 
 listDecoder : Decode.Decoder ArticleList
 listDecoder =
-  Decode.object1
-    ArticleList
-    ("articles" := Decode.list memberDecoder)
+    Decode.map
+        ArticleList
+        (field "articles" (Decode.list memberDecoder))
 
 
 memberDecoder : Decode.Decoder Article
 memberDecoder =
-  Decode.object5
-    Article
-    ("title" := Decode.maybe Decode.string)
-    ("link" := Decode.maybe Decode.string)
-    ("content" := Decode.string)
-    ("date" := Decode.maybe Decode.string)
-    ("source" := Decode.string)
+    Decode.map5
+        Article
+        (field "title" (Decode.maybe Decode.string))
+        (field "link" (Decode.maybe Decode.string))
+        (field "content" (Decode.string))
+        (field "date" (Decode.maybe Decode.string))
+        (field "source" (Decode.string))
 
 
 defaultArticle : Article
 defaultArticle =
-  {
-    title = Just "Nothing to see here.",
-    link = Just "http://damo.io",
-    content = defaultContent,
-    date = Nothing,
-    source = "none"
-  }
+    { title = Just "Nothing to see here."
+    , link = Just "http://damo.io"
+    , content = defaultContent
+    , date = Nothing
+    , source = "none"
+    }
 
 
 defaultContent : String
-defaultContent = """
+defaultContent =
+    """
   <p>
     You have deselected all the feeds in the menu. There is nothing to show.
     Feel free to select one or more feeds to display more entries.
@@ -159,17 +168,17 @@ defaultContent = """
 
 aboutArticle : Article
 aboutArticle =
-  {
-    title = Just "About",
-    link = Nothing,
-    content = aboutContent,
-    date = Nothing,
-    source = "about"
-  }
+    { title = Just "About"
+    , link = Nothing
+    , content = aboutContent
+    , date = Nothing
+    , source = "about"
+    }
 
 
 aboutContent : String
-aboutContent = """
+aboutContent =
+    """
   <p>
     I'm <strong>Damien Le Berrigaud</strong>, Software Engineer for
     <a href="https://pivotal.io/labs">Pivotal Labs</a>.

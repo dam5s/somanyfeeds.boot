@@ -1,37 +1,24 @@
-module SoManyFeeds.Routing exposing (Route(..), routeFromResult, parser)
+module SoManyFeeds.Routing exposing (Route(..), parseRoute)
 
 import UrlParser exposing (..)
 import Navigation
 import String
 
+
 type Route
-  = NoFeedsSelectedRoute
-  | SelectedFeedsRoute String
-  | NotFoundRoute
+    = NoFeedsSelectedRoute
+    | SelectedFeedsRoute String
+    | NotFoundRoute
 
 
 matchers : Parser (Route -> a) a
 matchers =
-  oneOf [
-    format NoFeedsSelectedRoute (s ""),
-    format SelectedFeedsRoute (string)
-  ]
+    oneOf
+        [ map NoFeedsSelectedRoute (s "")
+        , map SelectedFeedsRoute (string)
+        ]
 
 
-hashParser : Navigation.Location -> Result String Route
-hashParser location =
-  location.hash
-    |> String.dropLeft 1
-    |> parse identity matchers
-
-
-parser : Navigation.Parser (Result String Route)
-parser =
-  Navigation.makeParser hashParser
-
-
-routeFromResult : Result String Route -> Route
-routeFromResult result =
-  case result of
-    Ok route -> route
-    Err string -> NotFoundRoute
+parseRoute : Navigation.Location -> Route
+parseRoute location =
+    Maybe.withDefault NotFoundRoute (parseHash matchers location)

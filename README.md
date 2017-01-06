@@ -12,46 +12,35 @@ both as a web page and as a RSS feed.
 
 ## Setup
 
-You will need
+Install the following
 
  * Java 8
- * Node
+ * Elm 0.18
+ * Elm Test for Elm 0.18 (`npm install -g elm-test`)
+ * Postgres
+ * Graphviz (for the Dependencies Graph)
 
-The JAVA_HOME needs to be setup, `java` needs to be in your PATH and `npm` needs to be in your PATH.
-
-Install node dependencies:
+Setup your databases
 
 ```
-$ ./gradlew installNodeDependencies
+ $ psql
+ > CREATE DATABASE somanyfeeds_dev WITH ENCODING='utf-8'; 
+ > CREATE DATABASE somanyfeeds_feed_test WITH ENCODING='utf-8'; 
+ > CREATE DATABASE somanyfeeds_article_test WITH ENCODING='utf-8';
+ > ^D
+ $ psql somanyfeeds_dev < db/schema.ddl
+ $ psql somanyfeeds_feed_test < db/schema.ddl
+ $ psql somanyfeeds_article_test < db/schema.ddl
 ```
 
-This should install Elm locally.
-Build the entire app from the top level folder with:
+Build the entire app from the top level folder:
 
 ```
 $ ./gradlew
 ```
 
-### Database
-
-TODO there is some local DB setup needed.
-
-
-## Working on the Elm frontend
-
-I created a convenience gradle task to launch the elm reactor using the local version of elm:
+Check the dependencies graph:
 
 ```
-$ ./gradlew elmReactor
+$ open build/dependenciesGraph/graph.dot.png
 ```
-
-When working on the frontend with the reactor you may want to have the backend running too:
-
-```
-$ ./gradlew bootRun
-```
-
-Also CSS styling does not get applied to the UI in elm reactor,
-until it becomes configurable I recommend configuring your browser.
-For example, the [Chrome styler](https://chrome.google.com/webstore/detail/styler/bogdgcfoocbajfkjjolkmcdcnnellpkb)
-extension can help.
