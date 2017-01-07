@@ -19,8 +19,8 @@ view =
             [ x "0"
             , y "160"
             , textAnchor "130"
-            , fontFamily "Roboto Slab"
-            , fontSize "180"
+            , fontFamily "Vollkorn"
+            , fontSize "200"
             , fontWeight "500"
             , fill "#FFFFFF"
             ]

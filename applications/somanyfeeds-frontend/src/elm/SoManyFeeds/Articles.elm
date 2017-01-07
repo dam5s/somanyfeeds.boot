@@ -1,4 +1,4 @@
-module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, defaultArticle, Msg, view, update, fetchAll)
+module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, defaultArticle, Msg, view, update, fetchAll, titleText)
 
 import Http
 import Date
@@ -8,6 +8,7 @@ import Html.Attributes exposing (..)
 import VirtualDom
 import Json.Encode as Encode
 import SoManyFeeds.DateFormat as DateFormat exposing (parseAndFormat)
+import Regex
 
 
 type alias ArticleList =
@@ -51,49 +52,42 @@ innerHtml =
     VirtualDom.property "innerHTML" << Encode.string
 
 
+compact : List (Maybe a) -> List a
+compact list =
+    List.filterMap identity list
+
+
 listItem : Article -> Html Msg
 listItem model =
-    article []
+    article [ class (articleClass model) ]
         [ articleHeader model
         , section [ innerHtml model.content ] []
         ]
 
 
+articleClass : Article -> String
+articleClass model =
+    case model.title of
+        Just t ->
+            "normal"
+
+        Nothing ->
+            "tweet"
+
+
 articleHeader : Article -> Html Msg
 articleHeader model =
-    case model.title of
-        Just title ->
-            articleHeaderWithTitle model title
-
-        Nothing ->
-            articleHeaderWithoutTitle model
-
-
-articleHeaderWithoutTitle : Article -> Html Msg
-articleHeaderWithoutTitle model =
-    case model.date of
-        Just date ->
-            header []
-                [ h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
-                ]
-
-        Nothing ->
-            header [] []
+    header []
+        (compact
+            [ Maybe.map (articleTitle model) model.title
+            , Maybe.map articleDate model.date
+            ]
+        )
 
 
-articleHeaderWithTitle : Article -> String -> Html Msg
-articleHeaderWithTitle model title =
-    case model.date of
-        Just date ->
-            header []
-                [ articleTitle model title
-                , h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
-                ]
-
-        Nothing ->
-            header []
-                [ articleTitle model title
-                ]
+articleDate : String -> Html Msg
+articleDate date =
+    h2 [ class "date" ] [ text (DateFormat.parseAndFormat date) ]
 
 
 articleTitle : Article -> String -> Html Msg
@@ -101,13 +95,22 @@ articleTitle model title =
     case model.link of
         Just link ->
             h1 []
-                [ a [ href link ] [ text title ]
+                [ a [ href link ] [ text (titleText title) ]
                 ]
 
         Nothing ->
             h1 []
-                [ text title
+                [ text (titleText title)
                 ]
+
+
+titleText : String -> String
+titleText title =
+    let
+        regex =
+            Regex.regex "\\shttp(s?)://[^\\s]*"
+    in
+        Regex.replace Regex.All regex (\_ -> "") title
 
 
 update : Msg -> List Article -> ( List Article, Cmd Msg )

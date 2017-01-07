@@ -11,7 +11,7 @@ import SoManyFeeds.Articles as Articles
 
 apiServer : String
 apiServer =
-    "http://api.damo.io"
+    "http://localhost:8080"
 
 
 type alias AppModel =

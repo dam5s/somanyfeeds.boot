@@ -2,21 +2,19 @@ html, body {
     height: 100%;
     margin: 0;
     background-color: #f6f6f6;
-    font-size: 14px;
-    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
-    font-weight: 300;
+    font-size: 16px;
+    font-family: 'Vollkorn', serif;
+    font-weight: 400;
     color: #888;
 }
 
 h1, h2, h3 {
-    font-family: 'Roboto Slab', serif;
     line-height: 130%;
     color: #333;
-    font-weight: 400;
 }
 
 h1 {
-    font-size: 1.8em;
+    font-size: 2em;
     margin: .5em 0;
 }
 
@@ -35,7 +33,7 @@ p {
 
 section.content {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1600px;
     margin: 0 auto;
     overflow: auto;
 }
@@ -190,10 +188,6 @@ article header {
     margin-bottom: 1em;
 }
 
-article h1 {
-    font-weight: 300;
-}
-
 article h1 a:link, article h1 a:visited {
     color: #444;
 }
@@ -212,6 +206,13 @@ article section {
     line-height: 180%;
 }
 
+article.tweet section {
+    line-height: 130%;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 /* Google Plus articles */
 article .attachments {
     border-top: 1px solid #E5E5E5;
@@ -223,4 +224,10 @@ article .attachments {
 article .attachment_article_content,
 article .attachment_photo_content {
     display: none;
+}
+
+article pre {
+    overflow-x: auto;
+    background-color: #f6f9f9;
+    padding: 1em;
 }
