@@ -8,6 +8,7 @@ import Html.Attributes exposing (..)
 import VirtualDom
 import Json.Encode as Encode
 import SoManyFeeds.DateFormat as DateFormat exposing (parseAndFormat)
+import SoManyFeeds.Tweet as Tweet
 import Regex
 
 
@@ -59,20 +60,18 @@ compact list =
 
 listItem : Article -> Html Msg
 listItem model =
-    article [ class (articleClass model) ]
-        [ articleHeader model
-        , section [ innerHtml model.content ] []
-        ]
-
-
-articleClass : Article -> String
-articleClass model =
     case model.title of
         Just t ->
-            "normal"
+            article []
+                [ articleHeader model
+                , section [ innerHtml model.content ] []
+                ]
 
         Nothing ->
-            "tweet"
+            article [ class "tweet" ]
+                [ articleHeader model
+                , Tweet.display model.content
+                ]
 
 
 articleHeader : Article -> Html Msg
