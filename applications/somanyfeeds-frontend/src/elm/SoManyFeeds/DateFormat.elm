@@ -23,4 +23,12 @@ format date =
         ++ " @ "
         ++ toString (Date.hour date)
         ++ ":"
-        ++ toString (Date.minute date)
+        ++ withZeroPadding (toString (Date.minute date))
+
+
+withZeroPadding : String -> String
+withZeroPadding text =
+    if String.length text > 1 then
+        text
+    else
+        "0" ++ text
