@@ -63,7 +63,13 @@ view model =
                 , aside [ id "app-menu" ] [ Feeds.view model.feeds ]
                 ]
             ]
-        , Html.map ArticleMsg (Articles.view (articlesToDisplay model))
+        , Logo.view
+        , section
+            [ id "app-content", class "content" ]
+            (List.map
+                (Html.map ArticleMsg)
+                (Articles.views (articlesToDisplay model))
+            )
         ]
 
 

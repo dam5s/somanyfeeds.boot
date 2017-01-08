@@ -1,4 +1,4 @@
-module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, defaultArticle, Msg, view, update, fetchAll, titleText)
+module SoManyFeeds.Articles exposing (ArticleList, Article, selectedArticles, defaultArticle, Msg, views, update, fetchAll, titleText)
 
 import Http
 import Date
@@ -41,11 +41,9 @@ type Msg
     = FetchAll (Result Http.Error ArticleList)
 
 
-view : List Article -> Html Msg
-view articles =
-    section
-        [ id "app-content", class "content" ]
-        (List.map listItem articles)
+views : List Article -> List (Html Msg)
+views articles =
+    List.map listItem articles
 
 
 innerHtml : String -> Attribute Msg

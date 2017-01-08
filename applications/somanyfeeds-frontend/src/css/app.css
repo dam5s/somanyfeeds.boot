@@ -85,20 +85,14 @@ section.content {
 
 #app-header svg {
     visibility: hidden;
+    height: 4rem;
 }
 
 @media (min-width: 600px) {
     #app-header svg {
         font-size: 2rem;
         width: 10rem;
-        height: 4rem;
         margin: .5rem 0 0 2%;
-
-        filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
-        -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
-        -moz-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
-        -o-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
-
         visibility: visible;
     }
 }
@@ -111,14 +105,25 @@ section.content {
     top: 0;
 }
 
-#app-header + section {
-    margin-top: 3.4rem;
+#app-header + svg {
+    margin: 5.1rem 0 0.5rem 1rem;
+    visibility: visible;
+    height: 4rem;
+    width: 11rem;
 }
 
-@media (min-width: 500px) {
-    #app-header + section {
-        margin-top: 4.7rem;
+@media (min-width: 600px) {
+    #app-header + svg {
+        margin-top: 0;
+        visibility: hidden;
     }
+}
+
+svg {
+    filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
+    -webkit-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
+    -moz-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
+    -o-filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.9));
 }
 
 #app-menu ul {
@@ -153,7 +158,7 @@ article {
 
     padding: 1rem;
     font-size: 1rem;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
     width: 100%;
     box-sizing: border-box;
 
