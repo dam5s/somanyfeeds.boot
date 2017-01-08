@@ -15,5 +15,5 @@ apply plugin: "org.springframework.boot"
 
 task deploy(type: Exec, dependsOn: "build") {
     workingDir project.projectDir
-    commandLine "cf", "push", "damo-api", "-p", "build/libs/applications/somanyfeeds-api.jar"
+    commandLine "cf", "push", "damo-api", "-p", "build/libs/somanyfeeds-api.jar"
 }
