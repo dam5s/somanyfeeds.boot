@@ -9,19 +9,7 @@ import Regex
 
 display : String -> Html msg
 display content =
-    let
-        tweetContent =
-            createLinks content
-    in
-        if isRetweet content then
-            section [ class "retweet", innerHtml (retweetContent tweetContent) ] []
-        else
-            section [ innerHtml tweetContent ] []
-
-
-isRetweet : String -> Bool
-isRetweet =
-    String.startsWith "RT"
+    section [ innerHtml <| createLinks content ] []
 
 
 innerHtml : String -> Attribute msg
@@ -56,8 +44,3 @@ mentionLink match =
 
         _ ->
             match.match
-
-
-retweetContent : String -> String
-retweetContent =
-    String.dropLeft 3
