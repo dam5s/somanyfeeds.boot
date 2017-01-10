@@ -18,29 +18,42 @@ innerHtml =
 
 
 createLinks : String -> String
-createLinks tweet =
-    let
-        mentionRegex =
-            Regex.regex "(^|\\s)@([A-Za-z_]+[A-Za-z0-9_]+)"
-    in
-        Regex.replace Regex.All mentionRegex mentionLink tweet
+createLinks =
+    createMentionLinks << createSimpleLinks << createHashTagLinks
 
 
-mentionLink : Regex.Match -> String
-mentionLink match =
+replaceAll =
+    Regex.replace Regex.All
+
+
+createMentionLinks =
+    replaceAll
+        (Regex.regex "(^|\\s)@([A-Za-z_]+[A-Za-z0-9_]+)")
+        (replaceLink (\s -> "<a href=\"https://twitter.com/" ++ s ++ "\">@" ++ s ++ "</a>"))
+
+
+createSimpleLinks =
+    replaceAll
+        (Regex.regex "(^|\\s)(https?://[^\\s]+)")
+        (replaceLink (\s -> "<a href=\"" ++ s ++ "\">" ++ s ++ "</a>"))
+
+
+createHashTagLinks =
+    replaceAll
+        (Regex.regex "(^|\\s)#([A-Za-z_]+[A-Za-z0-9_]+)")
+        (replaceLink (\s -> "<a href=\"https://twitter.com/hashtag/" ++ s ++ "\">#" ++ s ++ "</a>"))
+
+
+replaceLink : (String -> String) -> Regex.Match -> String
+replaceLink linkBuilder match =
     case match.submatches of
-        maybeLeading :: maybeHandle :: _ ->
-            case maybeHandle of
+        maybeLeading :: maybeTarget :: _ ->
+            case maybeTarget of
                 Nothing ->
                     match.match
 
                 Just submatch ->
-                    (Maybe.withDefault "" maybeLeading)
-                        ++ "<a href=\"https://twitter.com/"
-                        ++ submatch
-                        ++ "\">@"
-                        ++ submatch
-                        ++ "</a>"
+                    (Maybe.withDefault "" maybeLeading) ++ linkBuilder submatch
 
         _ ->
             match.match
